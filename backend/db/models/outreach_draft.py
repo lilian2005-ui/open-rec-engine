@@ -10,11 +10,13 @@ from backend.db.base import Base
 from backend.db.models.enums import DraftStatus, TextEnum, enum_check
 
 if TYPE_CHECKING:
+    from backend.db.models.app_user import AppUser
     from backend.db.models.lead import Lead
 
 
 class OutreachDraft(Base):
-    """A draft message for a qualified lead. Nothing is ever sent.
+    """A draft message for a qualified lead. Nothing is ever sent. The review
+    decision is saved with the id of the logged-in user (``reviewed_by``).
 
     The 120-180 word rule is checked by Pydantic before saving, not here, so a
     reviewer's manual edit is never blocked by the database.
@@ -39,9 +41,13 @@ class OutreachDraft(Base):
     status: Mapped[DraftStatus] = mapped_column(
         TextEnum(DraftStatus), server_default=text("'pending_review'")
     )
-    reviewed_by: Mapped[str | None] = mapped_column(Text)
+    # no ON DELETE: users are deactivated, never deleted
+    reviewed_by: Mapped[int | None] = mapped_column(
+        BigInteger, ForeignKey("app_user.user_id"), index=True
+    )
     reviewed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     review_comment: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     lead: Mapped["Lead"] = relationship(back_populates="drafts")
+    reviewer: Mapped["AppUser | None"] = relationship(back_populates="reviewed_drafts")

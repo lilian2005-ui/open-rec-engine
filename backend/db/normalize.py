@@ -1,4 +1,4 @@
-"""Normalisation rules shared by the pipeline and the database (team decisions Q2, Q3).
+"""Normalisation rules (data contract v1.1 section 7: Q2 company names, Q3 content hash).
 
 Company names and skills reuse the rules in ``backend.schemas.common`` so there is
 only one definition of each.
@@ -15,10 +15,9 @@ def _collapse(text: str) -> str:
 
 
 def company_name_key(name: str) -> str:
-    """Q2: trim, collapse inner spaces, lowercase. Punctuation and Inc./Ltd. are kept.
-
-    Matches the unique index ``uq_company_name_key``:
-    lower(btrim(regexp_replace(name, '\\s+', ' ', 'g'))).
+    """Q2: the value of ``company.normalized_name``. Trim, collapse inner spaces,
+    lowercase; punctuation and Inc./Ltd. are kept so different companies are never
+    merged. Same result as lower(btrim(regexp_replace(name, '\\s+', ' ', 'g'))).
     """
     return normalize_company_name(name)
 

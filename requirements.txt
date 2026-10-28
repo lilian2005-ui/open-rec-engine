@@ -1,6 +1,6 @@
 fastapi
 uvicorn[standard]
-sqlalchemy>=2.0
+sqlalchemy>=2.0,<3
 alembic
 psycopg[binary]
 pydantic>=2.0

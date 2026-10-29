@@ -1,4 +1,4 @@
-"""The 8 enums of data contract section 7, and how they are stored.
+"""The 12 enums of data contract v1.1 section 11, and how they are stored.
 
 The enum classes come from ``backend.schemas.enums`` (one definition for the API
 and the database). Values are stored as TEXT, not a native PostgreSQL ENUM, with a
@@ -10,11 +10,13 @@ from sqlalchemy import CheckConstraint, Text
 from sqlalchemy.types import TypeDecorator
 
 from backend.schemas.enums import (DraftStatus, EmploymentType, ExtractionStatus, JobStatus,
-                                   LeadStatus, RemotePolicy, Seniority, Source)
+                                   LeadStatus, RemotePolicy, RunStatus, SalaryPeriod, Seniority,
+                                   Source, TriggerType, UserRole)
 
 __all__ = [
     "DraftStatus", "EmploymentType", "ExtractionStatus", "JobStatus", "LeadStatus",
-    "RemotePolicy", "Seniority", "Source", "TextEnum", "enum_check",
+    "RemotePolicy", "RunStatus", "SalaryPeriod", "Seniority", "Source", "TextEnum",
+    "TriggerType", "UserRole", "enum_check",
 ]
 
 

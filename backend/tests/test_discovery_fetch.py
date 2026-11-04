@@ -5,7 +5,7 @@ import logging
 import httpx
 import pytest
 
-from backend.discovery.http import SourceFetchError, get_json
+from backend.discovery.fetch import SourceFetchError, get_json
 
 URL = "https://source.test/jobs"
 API_KEY = "secret-key-123"
@@ -169,7 +169,7 @@ def test_to_dict_is_json_safe_and_complete():
 
 def test_logs_one_line_per_retry(caplog):
     server = FakeServer(status(503), httpx.ReadTimeout("slow"), OK)
-    with caplog.at_level(logging.WARNING, logger="backend.discovery.http"):
+    with caplog.at_level(logging.WARNING, logger="backend.discovery.fetch"):
         server.get()
     assert [r.getMessage() for r in caplog.records] == [
         "himalayas: page 2 attempt 1 failed (HTTP 503), retrying in 1 s",
@@ -192,7 +192,7 @@ def test_api_key_never_appears(final, caplog):
 
 def test_key_in_a_url_stays_out_of_our_log_and_error(caplog):
     server = FakeServer(status(503))
-    with caplog.at_level(logging.DEBUG, logger="backend.discovery.http"):
+    with caplog.at_level(logging.DEBUG, logger="backend.discovery.fetch"):
         with pytest.raises(SourceFetchError) as e:
             server.get(params={"api_key": API_KEY})
     assert API_KEY in str(server.requests[0].url)

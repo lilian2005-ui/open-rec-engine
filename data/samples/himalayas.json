@@ -1,0 +1,893 @@
+{
+  "comments": "21/08/2026: Cursor pagination is now available and is the preferred way to page through the feed. Pass the nextCursor value from each response back as ?cursor=. It is faster than offset and will never return the same job twice. The offset parameter is deprecated and will be removed in a future release. 13/03/2026: The API has been updated to include the companySlug field in the response.",
+  "updatedAt": 1793658644,
+  "offset": 0,
+  "limit": 20,
+  "totalCount": 117379,
+  "nextCursor": "MjAyNi0xMS0wMlQyMjoxNDo1My40ODIzODBafDI1MDE2NTU",
+  "jobs": [
+    {
+      "title": "Delivery Manager",
+      "excerpt": "About QuantQuant provides programmable money and settlement infrastructure for regulated institutions.",
+      "companyName": "Quant",
+      "companySlug": "quant-network",
+      "companyLogo": "https://cdn-images.himalayas.app/sledfey9eyj1eq5w53a0s04m1fii",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Entry-level"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "United Kingdom"
+      ],
+      "timezoneRestrictions": [
+        0
+      ],
+      "categories": [
+        "Delivery-Manager",
+        "Agile-Delivery-Manager",
+        "Scrum-Master",
+        "Project-Manager",
+        "Delivery-Coordinator"
+      ],
+      "parentCategories": [
+        "Product",
+        "Operations"
+      ],
+      "description": "<h3>About <a href=\"https://himalayas.app/companies/quant-network\">Quant</a>\n</h3><p><a href=\"https://himalayas.app/companies/quant-network\">Quant</a> provides programmable money and settlement infrastructure for regulated institutions. Its orchestration layer sits below applications, above ledgers, and across existing financial systems, enabling banks, capital markets firms, and financial institutions to coordinate money and asset flows without replacing their core infrastructure. <a href=\"https://himalayas.app/companies/quant-network\">Quant</a>'s technology is deployed in regulator-led programmes with the Bank of England, the European Central Bank, the U.K. Finance Regulated Liability Network, and the Great British Tokenised Deposit (GBTD) network. For more information, visit: <a href=\"https://himalayas.app/companies/quant-network\">Quant</a> Network</p><p>We are scaling fast across the UK, Europe and the Americas. We are looking for an exceptional Executive Assistant to support our CEO as the business continues to grow its footprint with regulated financial institutions worldwide.</p><h3>The role</h3><p>As <a href=\"https://himalayas.app/companies/quant-network\">Quant</a> continues to grow, we are evolving our delivery management practices to support greater scalability, consistency and transparency across product and technology.</p><p>We are looking for a proactive and organised Junior Delivery Manager / Coordinator to join our Engineering organisation and support the effective delivery of technology initiatives across multiple Agile engineering squads.</p><p>The role combines hands-on Agile delivery coordination, stakeholder collaboration, risk and dependency management, and delivery reporting. The successful candidate will progressively take ownership of day-to-day delivery management activities across engineering squads, depending on experience, squad complexity and delivery needs.</p><p>You will also contribute to the development of a more structured and efficient delivery management function, supporting the adoption of common delivery standards, reporting frameworks and AI-enabled workflow improvements.</p><h3>Key Responsibilities</h3><h3>Agile Delivery Coordination</h3><ul>\n<li>      Coordinate day-to-day delivery activities across assigned engineering squads</li>\n<li>      Facilitate Agile ceremonies including sprint planning, refinement, daily stand-ups, reviews and retrospectives as required</li>\n<li>      Work with Product Owners and Engineering Leads to support effective backlog readiness, prioritisation and delivery planning</li>\n<li>      Monitor delivery progress, identify blockers and help teams resolve delivery challenges</li>\n<li>      Support realistic sprint goals, delivery forecasting and continuous improvement</li>\n<li>      Progressively develop independent ownership of assigned squad delivery</li>\n</ul><h3>Planning, Risk and Dependency Management</h3><ul>\n<li>      Track delivery milestones, commitments and cross-team dependencies</li>\n<li>      Maintain visibility of squad-level risks, issues and blockers</li>\n<li>      Coordinate with engineering and product stakeholders to resolve delivery impediments</li>\n<li>      Escalate significant risks, decisions and dependencies to the Delivery Lead when appropriate</li>\n<li>      Support engineering capacity planning and resource visibility</li>\n<li>      Ensure delivery plans accurately reflect capacity, priorities and dependencies</li>\n</ul><h3>Delivery Reporting and Governance</h3><ul>\n<li>      Maintain accurate delivery information in Jira and other agreed delivery management tools</li>\n<li>      Produce consistent sprint, milestone, risk and delivery status reports using established templates</li>\n<li>      Support the implementation of common delivery governance practices across engineering squads</li>\n<li>      Ensure reporting is accurate, timely, concise and focused on meaningful delivery outcomes</li>\n<li>      Provide reliable delivery information to support cross-squad and portfolio-level oversight</li>\n<li>      Identify inconsistencies, gaps and opportunities to improve delivery visibility</li>\n</ul><h3>Stakeholder Collaboration</h3><ul>\n<li>      Develop effective working relationships with Engineering Leads, Product Owners, developers and relevant stakeholders</li>\n<li>      Facilitate clear communication of delivery progress, blockers and priorities</li>\n<li>      Support alignment between product requirements, technical implementation and delivery timelines</li>\n<li>      Promote transparency, accountability and constructive problem-solving</li>\n<li>      Support stakeholder reporting while maintaining effective team autonomy</li>\n</ul><h3>Process Improvement and AI-Enabled Delivery</h3><ul>\n<li>      Adopt and apply established delivery management standards, processes and templates</li>\n<li>      Identify opportunities to reduce manual coordination, repetitive reporting and administrative overhead</li>\n<li>      Support the implementation and adoption of AI-assisted delivery workflows and automation tools</li>\n<li>      Validate automated reporting outputs and ensure the accuracy of underlying delivery information</li>\n<li>      Provide feedback on delivery processes, tools and reporting frameworks</li>\n<li>      Contribute to continuous improvement initiatives across the delivery management function</li>\n</ul><h3>Required Skills and Experience</h3><ul>\n<li>      Practical experience in Agile software delivery, Scrum Master activities, delivery coordination or project management within a technology environment</li>\n<li>      Understanding of Agile principles, Scrum, Kanban and software development lifecycle practices</li>\n<li>      Experience working collaboratively with software engineering and product teams</li>\n<li>      Proficiency with Jira and Confluence</li>\n<li>      Ability to organise multiple workstreams, track progress and coordinate dependencies</li>\n<li>      Strong analytical, communication and problem-solving skills</li>\n<li>      Attention to detail and ability to maintain reliable delivery information</li>\n<li>      A proactive approach to identifying and resolving challenges</li>\n<li>      Willingness to learn, take ownership and develop delivery management capabilities</li>\n</ul><h3>Desirable Skills and Experience</h3><ul>\n<li>      Experience supporting multiple software engineering teams</li>\n<li>      Familiarity with APIs, microservices, software integration, cloud services or distributed systems</li>\n<li>      Experience in financial technology, financial services or payments</li>\n<li>      Understanding of CI/CD, software testing and release processes</li>\n<li>      Experience with reporting dashboards and workflow management tools</li>\n<li>      Interest in AI-assisted productivity, delivery automation and process optimisation</li>\n<li>      Experience improving delivery processes or reporting practices</li>\n</ul><h3>Key Attributes</h3><ul>\n<li>\n<strong>Ownership: </strong>Takes responsibility for assigned activities and follows through on commitments</li>\n<li>\n<strong>Structured thinking: </strong>Can organise complex information into clear plans, actions and priorities</li>\n<li>\n<strong>Collaboration: </strong>Builds effective relationships across Engineering and Product</li>\n<li>\n<strong>Judgement: </strong>Knows when to act independently and when to escalate</li>\n<li>\n<strong>Adaptability: </strong>Responds constructively to changing priorities, new information and evolving delivery needs, adjusting plans and approaches pragmatically</li>\n<li>\n<strong>Comfort with ambiguity: </strong>Thrives in a fast-moving, evolving environment where priorities, requirements and processes may not always be clearly defined; able to bring structure to ambiguity and maintain delivery momentum as circumstances change</li>\n<li>\n<strong>Curiosity: </strong>Interested in technology, delivery practices and emerging tools</li>\n<li>\n<strong>Continuous improvement: </strong>Looks for opportunities to make delivery simpler, more effective and scalable</li>\n</ul><h3>Benefits</h3><p><a href=\"https://himalayas.app/companies/quant-network\">Quant</a> aims to be one of the most desirable employers in fintech, somewhere you are valued and inspired to do the best work of your career, alongside a high-performance team that feels the same. That's why, in addition to a fair market salary and company performance-related bonus, we provide:</p><ul>\n<li>      Pension scheme</li>\n<li>      Health insurance</li>\n<li>      Life assurance</li>\n<li>      Paid parental leave</li>\n<li>      Paid sick leave</li>\n<li>      A number of other corporate benefits that you would expect from a progressive fintech</li>\n</ul><p>Please note that as we are unable to offer sponsorship for this position, we are focusing our search initially to candidates who have the right to work and indefinite leave to remain in the United Kingdom.</p><p>Technology powers our progress, but people drive our success. While we embrace innovation to enhance efficiency, we believe that true talent deserves a personal connection. Every candidate is thoughtfully reviewed by a member of our team - because finding the right people is more than a process, its a commitment to our core values.</p><p>Updated closing date for applications is 17.00 GMT/18.00 CET on Friday 13th November 2026.</p><p>Note to Recruitment Businesses - we are focusing our efforts on sourcing direct candidates for this role and so request not to be sent unsolicited CVs and/or enquiries. Should we decide to enlist the support of a Recruitment Partner, we will reach out to directly to the Organisations with whom we have an established relationship.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658644,
+      "expiryDate": 1798842643,
+      "applicationLink": "https://himalayas.app/companies/quant-network/jobs/delivery-manager?utm_source=api",
+      "guid": "https://himalayas.app/companies/quant-network/jobs/delivery-manager"
+    },
+    {
+      "title": "Sr. Professional Medical Representative",
+      "excerpt": "高级专业医药代表（免疫）2.  负责公司产品在目标区域内的学术推广，并达成既定工作目标。 4.  与医疗卫生专业人士建立常态化学术沟通渠道，开展持续、规范的医学和产品信息交流等工作。 6.",
+      "companyName": "AbbVie",
+      "companySlug": "abbvie",
+      "companyLogo": "https://cdn-images.himalayas.app/kfge4z8cvd7atx3yyf2mdwi3ptl1",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "China"
+      ],
+      "timezoneRestrictions": [
+        6,
+        8
+      ],
+      "categories": [
+        "Pharmaceutical-Sales-Representative",
+        "Medical-Representative",
+        "Healthcare-Sales-Representative"
+      ],
+      "parentCategories": [],
+      "description": "<h3>高级专业医药代表（免疫<strong>）</strong>\n</h3><ol>\n<li><strong>负责公司产品在目标区域内的学术推广，并达成既定工作目标。 </strong></li>\n<li><strong>与医疗卫生专业人士建立常态化学术沟通渠道，开展持续、规范的医学和产品信息交流等工作。 </strong></li>\n<li><strong>完成公司规定的各类报表。 </strong></li>\n<li><strong>根据公司合规指引收集市场动态和产品相关洞察信息。 </strong></li>\n<li><strong>严格遵守公司的道德行为规范（OEC）政策，有效地执行公司的市场计划。 </strong></li>\n<li><strong>及时上报日常工作中发现的与公司产品相关的药品不良事件，如有需要，配合PV收集所需信息。 </strong></li>\n<li><strong>遵守适用法律法规、行业规范以及公司政策要求，在工作中践行公司价值观和诚信合规原则</strong></li>\n</ol><ol>\n<li><strong>本科及以上学历，医学、药学或相关专业毕业。 </strong></li>\n<li><strong>从事两年或以上皮科或消化领域，生物制剂或特药等医药行业工作经验，有外资企业工作背景者优先考虑。 </strong></li>\n<li><strong>具备出色的学术专业能力以及较强地判断能力。 </strong></li>\n<li><strong>良好地沟通和语言表达能力。 </strong></li>\n<li><strong>热爱本职工作，负有责任心，能承受工作压力。 </strong></li>\n<li><strong>具有团队合作及吃苦耐劳精神。</strong></li>\n</ol><p><strong><a href=\"https://himalayas.app/companies/abbvie\">AbbVie</a>是机会均等的雇主，致力于诚信经营，推动创新，改变生活以及服务我们的社区。机会均等雇主/退伍军人/残疾人士。</strong></p><p><strong>艾伯维的使命是发现和提供创新药物，解决复杂且棘手的疾病难题和未来的医学挑战。我们不懈努力，凭借在多个关键治疗领域的科研创新为人们的生活带来深远影响，包括免疫学、肿瘤学、神经科学，以及艾尔建美学产品组合中的产品和服务。有关艾伯维的更多信息，请访问网站  和 YouTube 上关注<a href=\"https://himalayas.app/companies/abbvie\">AbbVie</a>。</strong></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658599,
+      "expiryDate": 1798842598,
+      "applicationLink": "https://himalayas.app/companies/abbvie/jobs/sr-professional-medical-representative?utm_source=api",
+      "guid": "https://himalayas.app/companies/abbvie/jobs/sr-professional-medical-representative"
+    },
+    {
+      "title": "Senior Director, Global People Operations",
+      "excerpt": "Revolution Medicines is a global, commercial-state oncology company dedicated to discovering, developing and delivering innovative medicines for patients with RAS-addicted cancers.",
+      "companyName": "Revolution Medicines",
+      "companySlug": "revolution-medicines",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": 232000,
+      "maxSalary": 290000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Director"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "People-Operations-Director",
+        "HR-Operations-Director",
+        "HR-Services-Director"
+      ],
+      "parentCategories": [],
+      "description": "<div class=\"content-intro\">\n<p><a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> is a global, commercial-state oncology company dedicated to discovering, developing and delivering innovative medicines for patients with RAS-addicted cancers. Leveraging its differentiated RAS(ON) tri-complex inhibitor platform, the company is advancing a broad, integrated portfolio of oral RAS(ON) inhibitors designed to directly target the active, cancer-driving state of RAS. Founded on rigorous scientific inquiry and a willingness to challenge long-held assumptions, <a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> is committed to changing the trajectory of disease for patients with RAS-addicted cancers worldwide.</p>\n<p>Our people are united by a shared way of working: follow the science, challenge assumptions, act with urgency and hold ourselves to a high standard of rigor—all in service of patients.</p>\n</div><h3>The Opportunity:</h3><p>The Senior Director, Global People Operations will evolve and lead the Global People Operations function required for a rapidly scaling global biopharmaceutical company. This leader will translate the company’s growth trajectory into an effective operating model that defines our consistent HR service &amp; delivery approach and creates an effective global Revolutionary experience while balancing regional complexity and nuance.</p><p>Given our growth trajectory thus far, we have the opportunity to build People Operations with AI and automation embedded in how we design and deliver services to enable the experience of employees and managers. This is an opportunity to rethink processes from the ground up, using technology to make support easier, more responsive, and more effective while creating more capacity for work that requires human expertise and care. The role will partner with People Technology &amp; HR leaders to build the integrated service model that combines strong operational foundations, intuitive employee support, and thoughtful use of technology.</p><p>The role owns global service delivery, employee lifecycle operations and controls, global operating and compliance standards, process excellence and the integration of Global Mobility into the broader service model. It is accountable for the employee administrative lifecycle—including operational onboarding and offboarding, leaves and accommodations administration; employee records, data, and employment documentation; payroll coordination and benefits execution; policy administration; and mobility, immigration, and work-authorization administration. You will establish clear operational accountability and build strong partnerships across COEs, HRBPs, regional HR teams, Legal and other cross-functional teams to align strategy, apply judgment, manage exceptions and mitigate risk.</p><p>This is a build-and-run leadership role for a collaborative HR leader capable of building the processes and team needed to support the company’s current and future scale. The successful leader will evolve the operating system while ensuring that today’s operation continues to perform with accuracy, control and care.</p><h3>Key responsibilities</h3><ul>\n<li><p>Build the global operating model.In close collaboration with HR leaders, COEs, HRBPs, regional teams and cross-functional partners, define the Global People Operations charter, multi-year roadmap, organization design, investment priorities, decision rights and governance required to support approximately 3,000-5,000+ employees and continued geographic expansion, within the overall HR strategy and organization framework.</p></li>\n<li><p>Evolve the employee-service model.Evolve the service model to define a Tier 0–3 model: self-service and AI-enabled guidance; a scalable knowledge architecture; centralized People Operations intake and case ownership; specialist resolution; and escalation to HRBPs, ER, COEs and Legal for judgment-heavy matters.</p></li>\n<li><p>Own the employee administrative lifecycle.Set accountability, controls and operational service expectations across onboarding, offboarding, transfers, leaves, accommodations administration, benefits execution, payroll coordination, employee data and records, employment documentation, work authorization and termination operations, partnering with the appropriate COEs, HRBPs, regional HR teams, Legal and cross-functional partners.</p></li>\n<li><p>Align global standards with local execution.Create effective global design with one policy framework, one process standard and one set of service expectations while enabling regional HR and People Operations teams to execute locally and surface required variations.</p></li>\n<li><p>Enable regionalization and new-country readiness.Provide the global People Operations perspective, standards and enablement needed for regional execution across North America, EU, Japan/APAC and other locations; serve as a corporate backstop and support partner for new-country builds, regional capacity constraints and cross-region consistency while ensuring local requirements and feedback inform the global model.</p></li>\n<li><p>Sponsor HR service delivery and the HRSD platform<strong>.</strong>Own the business vision, requirements and adoption outcomes for HR service delivery; ensure the service model, process architecture and knowledge architecture are defined through the lens of user experience and operational effectiveness.</p></li>\n<li><p>Drive process excellence and AI-forward operations.Institutionalize the design sequence of eliminating, simplifying and standardizing work as well as introducing self-service, automation and AI. Prioritize use cases that improve capacity, quality, employee experience and decision speed while preserving appropriate human review, privacy, security and accountability.</p></li>\n<li><p>Own operational governance and controls<strong>. </strong>Establish service standards, controls, reconciliations, audit readiness, vendor governance, risk escalation and corrective-action mechanisms across the function.</p></li>\n<li><p>Measure demand, quality and leverage.Build a fact base using case volume, first-contact resolution, time to resolution, escalation and rework rates, self-service adoption, automation, transaction quality and employee experience; use the data to prioritize investment and workforce planning.</p></li>\n<li><p>Build and lead the team.Hire, develop and align leaders across service delivery, process excellence, core corporate operations, and Global Mobility; create strong functional communities with regional People Operations teams and develop successors as the organization scales.</p></li>\n<li><p>Influence across HR and the enterprise.Build trusted partnerships across HR and cross-functional teams; bring clear process, ownership and decision-rights recommendations to HRLT; surface trade-offs; build alignment across peers; and convert decisions into sustained operational changes rather than one-time projects.</p></li>\n</ul><h3>Required Skills, Experience and Education:</h3><ul>\n<li><p>Bachelor's degree and 12+ years of progressive experience in people operations, human resources or related functions.</p></li>\n<li><p>Proven leadership of global People Operations, HR service delivery or employee-services functions through rapid growth and material organizational change.</p></li>\n<li><p>Experience operating at, or building toward, approximately 3,000–5,000+ employees across multiple countries and regions.</p></li>\n<li><p>Demonstrated ability to build selected capabilities from the ground up and evolve an effective, global, matrixed operating model while leading complex employee lifecycle operations with clear controls, disciplined escalation, strong documentation, operational accuracy and care for the employee experience.</p></li>\n<li><p>Deep knowledge of effective service delivery, case management, process ownership, knowledge management, employee self-service, service metrics and operational controls.</p></li>\n<li><p>Strong global/regional collaboration and judgement including the ability to distinguish enterprise standards from legitimate local variation, enable regional leaders, support new-country readiness and create feedback loops that improve the global operating model.</p></li>\n<li><p>Deep understanding of global employment operations, compliance requirements, audit readiness, and regulatory obligations across multiple countries and regions; proactively partners with Legal, regional HR leaders, payroll, mobility, and other subject matter experts to stay current on evolving requirements and translate them into scalable operational practices.</p></li>\n<li><p>Track record of building and leading teams, developing functional leaders, and driving outcomes through cross-functional partnership, influence, and shared accountability in a fast-paced, highly collaborative environment.</p></li>\n<li><p>Practical experience redesigning HR service delivery through process simplification, self-service, automation and AI-enabled support, with appropriate attention to privacy, security, data stewardship, human review and accountability.</p></li>\n<li><p>Executive presence and influence sufficient to bring complex ownership, process and decision-rights recommendations to HRLT and mobilize peers without relying on direct authority.</p></li>\n</ul><h3>Preferred Skills:</h3><ul>\n<li><p>Fluency with Workday-enabled employee lifecycle processes and the partnership model between People Operations and People Technology.</p></li>\n<li><p>Experience serving as the business owner, executive sponsor or senior requirements owner for an HR service-delivery platform such as ServiceNow HRSD, Workday Help or a comparable case-management and knowledge-management platform.</p></li>\n<li><p>Hands-on experience implementing or improving knowledge architecture, employee self-service content, case-intake taxonomy, service metrics and Tier 0–3 support models in a global or multi-region HR environment.</p></li>\n</ul><div class=\"content-pay-transparency\"><div class=\"pay-input\">\n<div class=\"description\">\n<p>The base pay salary range for this full-time position for candidates working onsite at our headquarters in Redwood City, CA is listed below. The range displayed on each job posting is intended to be the base pay salary range for an individual working onsite in Redwood City and will be adjusted for the local market a candidate is based in. Our base pay salary ranges are determined by role, level, and location. Individual base pay salary is determined by multiple factors, including job-related skills, experience, market dynamics, and relevant education or training.</p>\n<p>Please note that base pay salary range is one part of the overall total rewards program at RevMed, which includes competitive cash compensation, robust equity awards, strong benefits, and significant learning and development opportunities.</p>\n<p><a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> is an equal opportunity employer and prohibits unlawful discrimination based on race, color, religion, gender, sexual orientation, gender identity/expression, national origin/ancestry, age, disability, marital status, medical condition, and veteran status.</p>\n<p><a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> takes protection and security of personal data very seriously and respects your right to privacy while using our website and when contacting us by email or phone. We will only collect, process and use any personal data that you provide to us in accordance with our CCPA Notice and Privacy Policy. For additional information, please contact .</p>\n</div>\n<div class=\"title\">Base Pay Salary Range</div>\n<div class=\"pay-range\">$232,000—$290,000 USD</div>\n</div></div><div class=\"content-conclusion\">\n<hr>\n<p><em>We are aware of recent recruitment scams in which individuals or organizations falsely represent themselves as being affiliated with <a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a>. These scams may appear as false job advertisements or unsolicited contacts through communication or chat platforms, email, phone, or text message.</em><br><br><em>Please note that <a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> does not extend unsolicited employment offers and will never ask candidates to provide financial information, purchase equipment, or pay fees as part of the hiring process. All legitimate communication from <a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> will come from an official <strong>@revmed.com</strong> email address.</em><br><br><em>If you believe you’ve been contacted by someone impersonating a <a href=\"https://himalayas.app/companies/revolution-medicines\">Revolution Medicines</a> recruiter, please report it to <strong></strong> so we can share these impersonations with our IT team for tracking and awareness.</em></p>\n</div><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658497,
+      "expiryDate": 1798842495,
+      "applicationLink": "https://himalayas.app/companies/revolution-medicines/jobs/senior-director-global-people-operations?utm_source=api",
+      "guid": "https://himalayas.app/companies/revolution-medicines/jobs/senior-director-global-people-operations"
+    },
+    {
+      "title": "Co-Founder & CEO - AI Accounting Agents for CPA Firms",
+      "excerpt": "The OpportunityFutureSight is seeking a Co-Founder & CEO to lead Crossfoot, an AI-native accounting agent platform.",
+      "companyName": "FutureSight",
+      "companySlug": "futuresight",
+      "companyLogo": "https://cdn-images.himalayas.app/oduykcqgcsoyoec9052h99ob893f",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Executive"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "Canada"
+      ],
+      "timezoneRestrictions": [
+        -7,
+        -6,
+        -5,
+        -4,
+        -3.5
+      ],
+      "categories": [
+        "Co-Founder-and-CEO",
+        "Startup-CEO",
+        "Chief-Executive-Officer"
+      ],
+      "parentCategories": [],
+      "description": "<h3>The Opportunity</h3><p><a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a> is seeking a Co-Founder &amp; CEO to lead Crossfoot, an AI-native accounting agent platform. This is a co-founder partnership with meaningful founder equity, not a salaried executive role.</p><p>Crossfoot is agentic accounting for small-to-mid CPA firms; a segment where accountant shortages are structural, client intake is capped by production headcount, and the manual close and tax prep workflow consumes the majority of senior staff capacity. Crossfoot connects to the tools firms already use (QuickBooks Online, Xero, Drake) and delivers finished work products ready for partner review, without requiring system migration or enterprise-scale implementation.</p><h3>Market Context</h3><ul>\n<li><p>We didn't just build a thesis; we validated it directly with the market. We've spoken with CPA firm managing partners, CAS leads, and tax preparers. The key insights:</p></li>\n<li><p>The \"why now\" is structural, not hype: the profession lost 300,000+ professionals from 2020–2024, and the replacement pipeline has shrunk ~33% in a decade. Firms now cap new-client intake by production headcount rather than demand. They turn away winnable work they can't staff. Meanwhile, CAS (advisory) revenue is projected to reach 30% of the firm's revenue by 2026.</p></li>\n<li><p>Senior accountants spend 40%+ of their time on document intake and workbook compilation — $90K staff doing $20/hour data entry — while month-end close runs 10–15 business days on a pure manual process.</p></li>\n<li><p>Early AI adopters in accounting already earn 39% more revenue per employee. The gap between firms that move and firms that don't is compounding now.</p></li>\n<li><p>We are targeting a large, fragmented, structurally underserved market. The total addressable market is an estimated $1.5B+ across 87,000+ US accounting firms, with a focused beachhead SAM of $400M+ (small/mid firms).</p></li>\n</ul><h3>About <a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a>\n</h3><p><a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a> is a leading venture builder that co-creates world-class software companies with values-driven entrepreneurs from inception to exit. We are a team of founders, operators and designers with experience successfully bringing software to market at scale.</p><p>You’ll co-create with a proven studio team, led by John Carbrey (4x entrepreneur, $100M ARR), Krista LaRiviere (3x exited, E&amp;Y Top Women Entrepreneur), Alan Smith (Strategyzer co-founder, $120M in products built), Prathna Ramesh (former MD of Maple Leaf Angels, $275M in follow-on capital), and Johnny Tong (0-to-1 builder, acquired by SAP and Stripe) bring a rare combination of operator exits, institutional investing, and AI product depth.</p><h3>The Partnership</h3><ul>\n<li><p>Founder equity with meaningful ownership from inception</p></li>\n<li><p>Pre-seed capital committed by <a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a> for early hires and MVP development, with potential for follow-on funding</p></li>\n<li><p>Venture building resources, including embedded design, engineering, growth, and fundraising support from day one</p></li>\n<li><p>Investor and advisor network across vertical AI and early-stage capital markets</p></li>\n<li><p>A true co-creation model in which you operate as CEO with <a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a>'s cross-functional team as your partner</p></li>\n</ul><h3>What you'll own</h3><p>As Co-Founder &amp; CEO, you will set the venture's direction and lead its execution.</p><ul>\n<li><p>Strategy — Refine the ICP, size-tiered pricing model, and product positioning</p></li>\n<li><p>Customer Development — Lead pilots with managing partners, CAS leads, and outsourced-accounting/BPO operators at small-to-mid CPA firms, convert them to paid engagements, and build the referral-led go-to-market motion</p></li>\n<li><p>Product — Partner with the <a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a> product and engineering team to ship V1 and iterate on user feedback</p></li>\n<li><p>Capital — Lead the seed raise, supported by <a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a>'s network and traction</p></li>\n<li><p>Team — Recruit and lead the founding team, and establish the cultural foundation of the company</p></li>\n</ul><h3>Co-Founder Profile</h3><ul>\n<li><p>Previous founding experience at a venture-backed company</p></li>\n<li><p>Demonstrated success in B2B AI or B2B SaaS go-to-market, including consultative, relationship-driven sales and customer engagement</p></li>\n<li><p>Fundraising fluency, with the ability to develop investor narratives and close capital</p></li>\n<li><p>Proven ability to attract, develop, and retain top talent</p></li>\n<li><p>Clear-eyed understanding of the risks and demands of co-founding a venture-backed company</p></li>\n<li><p>Deep accounting domain expertise, with hands-on experience managing close processes, tax preparation, workpapers, and client accounting services within CPA firms.</p></li>\n</ul><h3>How to Apply</h3><p>Please submit your resume, LinkedIn profile, and a brief note on why this venture aligns with your goals as a founder. We will move quickly for the right candidate.</p><p><a href=\"https://himalayas.app/companies/futuresight\">FutureSight</a> is committed to diversity, equity, and inclusion. We welcome applicants of all backgrounds and experiences.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658494,
+      "expiryDate": 1798842493,
+      "applicationLink": "https://himalayas.app/companies/futuresight/jobs/co-founder-ceo-ai-accounting-agents-for-cpa-firms?utm_source=api",
+      "guid": "https://himalayas.app/companies/futuresight/jobs/co-founder-ceo-ai-accounting-agents-for-cpa-firms"
+    },
+    {
+      "title": "AI Expert – Generative AI & Agentic Workflows",
+      "excerpt": "Worum geht es:Bei Experts Inside baust du AI Agents, die echte Geschäftsprozesse verstehen und automatisieren, nicht nur Chatbots.",
+      "companyName": "Experts Inside AG",
+      "companySlug": "experts-inside-ag",
+      "companyLogo": "https://cdn-images.himalayas.app/l4ror08uppirm71wjvlb84vzeobo",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "Albania",
+        "Andorra",
+        "Austria",
+        "Belarus",
+        "Belgium",
+        "Bosnia and Herzegovina",
+        "Bulgaria",
+        "Croatia",
+        "Cyprus",
+        "Czechia",
+        "Denmark",
+        "Estonia",
+        "Faroe Islands",
+        "Finland",
+        "France",
+        "Germany",
+        "Gibraltar",
+        "Greece",
+        "Guernsey",
+        "Holy See (Vatican City State)",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Isle of Man",
+        "Italy",
+        "Jersey",
+        "Kosovo",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Moldova",
+        "Monaco",
+        "Montenegro",
+        "Netherlands",
+        "North Macedonia",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Romania",
+        "San Marino",
+        "Serbia",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Svalbard and Jan Mayen",
+        "Sweden",
+        "Switzerland",
+        "Ukraine",
+        "United Kingdom",
+        "Åland Islands"
+      ],
+      "timezoneRestrictions": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "categories": [
+        "AI-Consultant",
+        "Generative-AI-Consultant",
+        "AI-Solutions-Architect",
+        "AI-Engineer"
+      ],
+      "parentCategories": [
+        "Data Science"
+      ],
+      "description": "<h3>Worum geht es:</h3><p>Bei Experts Inside baust du <strong>AI Agents</strong>, die echte Geschäftsprozesse verstehen und automatisieren, nicht nur Chatbots. Egal ob Low-Code mit Microsoft Copilot Studio oder Pro-Code mit Frameworks wie LangChain oder Microsoft Agent Framework: Du <strong>verstehst die Mechanik hinter den Modellen</strong> und weisst, wie du Lösungen <strong>sicher und effizient</strong> in Unternehmenslandschaften integrierst. Als Trusted Advisor führst du unsere Kunden von der Use-Case-Idee bis zur produktiven Umsetzung und übersetzt technologische Trends in <strong>greifbare Mehrwerte</strong>.</p><h3>Deine Aufgaben:</h3><ul>\n<li><p><strong>AI Agents:</strong> Du konzipierst, entwickelst und produktivierst Lösungen im Microsoft-Ökosystem sowie mit Open Source (z.B. LangChain, Microsoft Agent Framework).</p></li>\n<li><p><strong>Requirements-to-Solution: </strong>Du übersetzt Fachanforderungen in Prompts, Workflows und Tool-/API-Integrationen (präzise, testbar, wartbar).</p></li>\n<li><p><strong>Integration &amp; Automatisierung:</strong> Du bindest AI-Modelle via Power Automate und APIs in Prozesse ein und sicherst den Datenaustausch (REST/JSON).</p></li>\n<li><p><strong>Kundenberatung:</strong> Du führst Workshops, identifizierst Use Cases und begleitest Kunden von PoC bis Go-Live (Best Practices, Entscheidungsgrundlagen</p></li>\n<li><p><strong>Context &amp; Prompt Engineering:</strong> Du erhöhst Qualität/Performance mit RAG, Tool-Calling und externer Datenanbindung (z.B. via MCP).</p></li>\n<li><p><strong>Knowledge Leadership:</strong> Du evaluierst neue Modelle/Tools, experimentierst und teilst Wissen im Team sowie mit Kunden.</p></li>\n</ul><h3>Deine Stärken:</h3><ul>\n<li><p><strong>Fundiertes AI-Verständnis:</strong> Du verstehst LLMs (Kontext, Tokens, APIs) und den Unterschied zwischen Prompting und Agent-Architekturen</p></li>\n<li><p><strong>Technischer Background:</strong> Du hast Pro-Code-Erfahrung (idealerweise Python) und bist sicher mit APIs/HTTP sowie JSON/XML.</p></li>\n<li><p><strong>Cloud Infrastruktur: </strong>Du setzt Anforderungen in sichere, skalierbare Cloud-Setups um und denkst Governance mit.</p></li>\n<li><p><strong>Transferfähigkeit:</strong> Du findest dich schnell in Tools wie Copilot Studio zurecht, weil du Agent-/Workflow-Logik beherrschst.</p></li>\n<li><p><strong>Consultant-Mindset:</strong> Du erklärst komplexe Themen verständlich, moderierst souverän und treibst Lösungen proaktiv voran.</p></li>\n<li><p><strong>Leidenschaft &amp; Neugier:</strong> Du testest Neues, lernst schnell und bleibst dran, wenn sich Modelle/Tools verändern.</p></li>\n<li><p><strong>Sprachgefühl:</strong> Du kommunizierst souverän auf Deutsch und Englisch – und machst internationale Zusammenarbeit einfach.</p></li>\n<li><p><strong>Präsentationskompetenz:</strong> Du präsentierst technische wie fachliche Inhalte überzeugend – in Workshops, Angeboten und vor Teams.</p></li>\n</ul><h3>Was wir dir bieten:</h3><ul><li><p>Ein Umfeld, das <strong>Expertise, Vertrauen und Weiterentwicklung</strong> fördert</p></li></ul><ul>\n<li><p><strong>Spannende Arbeit als Teil eines führenden Microsoft‑Partners</strong></p></li>\n<li><p><strong>Flexible Arbeitszeiten</strong> und volle <strong>Ortsunabhängigkeit</strong>: Homeoffice bzw. mobiles Arbeiten aus der <strong>Schweiz, Deutschland, Österreich oder weiteren Orten in Europa</strong>.</p></li>\n<li><h3>Attraktive Vergütung deutlich über Marktstandard</h3></li>\n<li><p><strong>Individuelle Weiterbildungs- und Entwicklungsmöglichkeiten</strong> – du wächst in dem Bereich, in dem du deine Stärken weiter ausbauen möchtest.</p></li>\n<li><p><strong>Ein Team aus erfahrenen Experten</strong>, das sich gegenseitig unterstützt und Wissen offen teilt.</p></li>\n<li><p><strong>Flache Strukturen &amp; kurze Entscheidungswege</strong> – du gestaltest mit und übernimmst Verantwortung.</p></li>\n<li><p><strong>Moderne Arbeitsbedingungen &amp; wertschätzende Kultur</strong>, die dir ermöglicht, dein Bestes zu geben.</p></li>\n</ul><h3>Über uns:</h3><p>Experts Inside ist das Beratungshaus für <strong>Microsoft Cloud &amp; AI</strong>. Wir unterstützen Unternehmen dabei, <strong>Microsoft 365, Azure, AI und die Power Platform</strong> wirksam einzusetzen – mit echter Expertise, klarer Umsetzung und spürbarem Kundennutzen. Als <strong>remote-first</strong> Team arbeiten wir vertrauensbasiert, stärkenorientiert und mit hoher Eigenverantwortung – aus der Schweiz, Deutschland und Österreich sowie europaweit.</p><h3>Requirements</h3><ul>\n<li><p>Du brennst für Generative KI und bist bei Trends wie Agentic Workflows, RAG und neuen Modellen immer up-to-date.</p></li>\n<li><p>Tiefes Verständnis der Funktionsweise von LLMs (Tokens, APIs, Context Engineering).</p></li>\n<li><p>Sicherer Umgang mit Python sowie fundierte Kenntnisse in REST-APIs und JSON-Strukturen.</p></li>\n<li><p>Die Fähigkeit, sich extrem schnell in neue Tools einzuarbeiten und diese produktiv einzusetzen.</p></li>\n<li><p>Freude an der Beratung, eine schnelle Auffassungsgabe für Business-Prozesse und starke Kommunikationsfähigkeiten.</p></li>\n<li><p>Hohe Eigenmotivation, Neugier und die Bereitschaft, Verantwortung für innovative Kundenprojekte zu übernehmen.</p></li>\n<li><p>Sehr gute Deutsch- und gute Englischkenntnisse in Wort und Schrift.</p></li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658434,
+      "expiryDate": 1798842433,
+      "applicationLink": "https://himalayas.app/companies/experts-inside-ag/jobs/ai-expert-generative-ai-agentic-workflows?utm_source=api",
+      "guid": "https://himalayas.app/companies/experts-inside-ag/jobs/ai-expert-generative-ai-agentic-workflows"
+    },
+    {
+      "title": "Ocean & Trucking Specialist",
+      "excerpt": "For A Better You At iHerb, we believe that living a healthy and balanced life should be easy and accessible to everyone.",
+      "companyName": "iHerb",
+      "companySlug": "iherb-com",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": 71000,
+      "maxSalary": 74000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Logistics-Specialist",
+        "Freight-Forwarder",
+        "Transportation-Coordinator",
+        "Import-Export-Specialist",
+        "Customs-Clearance"
+      ],
+      "parentCategories": [
+        "Operations",
+        "Logistics"
+      ],
+      "description": "<p><b>For A Better You<br><br></b>At <a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a>, we believe that living a healthy and balanced life should be easy and accessible to everyone. As a team member, we’ll empower you to live this promise each day as you make a truly global impact in your career. <br><br>We constantly strive for innovation, while transforming and improving the online shopping experience for our customers. We believe that individually we are incredible, but when we come together, our growth is infinite. In an industry that is constantly evolving, we are on a mission to make an impact on the global market, and the individual and collaborative efforts of our people are paramount to helping us succeed.<br><br>Whether you work in one of our logistics centers, technology hubs, corporate offices or even from home, your role at <a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a> will take you beyond what’s expected, turning challenge into change. If you're ready for it, we want you to join our team. Get started now. </p><br><br><h3><b>Job Summary:</b></h3><p><b>The Ocean &amp; Trucking Specialist will manage ocean freight forwarding, import customs clearance, and domestic trucking activities. This position is responsible for coordinating daily transportation services for domestics and international shipments while continuously developing enhanced routes as a industry’s subject matter expert and closely managing the industry vendors. The team member will operate in a rapidly expanding, high energy and fast pace environment.</b></p><b><br><h3>Job Expectations:</h3>\n<ul><li>Supports Global Logistics US Operations leaders in managing activities with ocean freight forwarders, customs brokers, trucking companies, ground operations, warehouse operations and Global Freight Forwarding Specialists</li></ul>\n<ul><li>Create and maintain a strong network and relationship with freight forwarders, customs brokers, and trucking companies for assigned trade lane(s)</li></ul>\n<ul><li>Schedules and monitors transportation-related activities, including ocean bookings, vessel schedules, and domestic pickups/deliveries daily</li></ul>\n<ul><li>Continuously look for opportunities that will contribute to enhancement of Global Logistics</li></ul>\n<ul><li>Ensure all import documents are passed on to the customs broker in timely manner</li></ul>\n<ul><li>Works with various internal and external parties while managing international export schedules</li></ul>\n<ul><li>Ensures correct, on time, undamaged and low-cost shipping requirements are met for inbound and outbound shipments</li></ul>\n<ul><li>Maintains adequate driver coverage when required for weekdays, weekends and holidays</li></ul>\n<ul><li>Reports any discrepancies and delays while working with various freight forwarders, freight brokers and trucking companies to ensure on-time arrival</li></ul>\n<ul><li>Keeping record of trucking companies KPI</li></ul>\n<ul><li>Develop and maintain reliable carriers for timely performance</li></ul>\n<ul><li>Maintains knowledge of freight forwarding and domestics trucking regulations</li></ul>\n<ul><li>Suggest and implement corrective actions accordingly, as issues arise</li></ul>\n<ul><li>Prepare accurate shipping reports for upper management daily</li></ul>\n<ul><li>Identifies opportunities to enhance Global Logistics US Operations practices and implements consistent processes across the organization</li></ul>\n<ul><li>Perform other tasks and projects as assigned by the Us Operations Supervisor</li></ul>\n<ul><li>Assist in researching new lanes/routes for global expansion</li></ul>\n<ul><li>Assist in researching new carriers, forwarders, truckers</li></ul>\n<br></b><p>The duties and responsibilities described above may provide only a partial description of this position. This is not an exhaustive list of all aspects of the job.  Other duties and responsibilities not outlined in this document may be added as necessary or desirable, with or without notice.</p><br><h3>Knowledge, Skills and Abilities:</h3><p>Required:</p><ul><li>Excellent verbal and written communication skills</li></ul><ul><li>Proficient in software skills, including Word and Excel.</li></ul><ul><li>Ability to work with little supervision and track multiple processes.</li></ul><ul><li>Outstanding organizational and coordination abilities.</li></ul><ul><li>Detail oriented: attention to accuracy in this role is vital.</li></ul><ul><li>Must have a very strong sense of responsibility for completing tasks and achieving goals.</li></ul><ul><li>Ability to apply knowledge of quality; resolve practical operational problems and deal with a variety of situations in a high pressure environment.</li></ul><ul><li>Ability to self-motivate, work as a team player, and work in a fast paced environment.</li></ul><ul><li>Continuous improvement.</li></ul><br><h3>Equipment Knowledge:</h3><p>Strong computer skills, proficient with (MS Office; Word, Excel, PowerPoint)</p><p>Experience with Google Business Suite (Gmail, Drive, Docs, Sheets, Forms) preferred</p><br><h3>Experience Requirements:</h3><ul>\n<li>Generally requires a minimum of two (2) years or more in logistics industry</li>\n<li>Understanding of business processes and operational workflows</li>\n<li>Understanding of logistics related terminology</li>\n<li>Bilingual abilities are a plus</li>\n</ul><br><h3>Education Requirements:</h3><p>Bachelor’s Degree in Business or related field preferred, or a combination of education and equivalent work experience.</p><br><p><b>Judgment/Reasoning Ability: </b>Able to identify, troubleshoot and resolve problems quickly using sound judgment, poise and diplomacy. Ability to use judgment and reasoning skills, and determine when to escalate issues, as required, in a timely manner.</p><br><p><b>Physical Demands:  </b>The physical demands described here are representative of those that must be met by a Team Member to successfully perform the essential functions of this job.  While performing the duties of this job, the Team Member is regularly required to talk and hear. The Team Member is frequently required to sit, walk, climb stairs, use hands and fingers, bend, stoop and reach with hands and arms. Reaching above shoulder heights, below the waist or lifting as required to file documents or store materials throughoutthe work day. The Team Member may occasionally lift or move office products and supplies up to 25 pounds.  Proper lifting techniques required. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.</p><br><p><b>Work Environment: </b>The noise in the work environment is usually moderate. Other factors are:</p><ul><li>Hectic, fast-paced with multi-level distractions</li></ul><ul><li>Professional, yet casual work environment</li></ul><ul><li>Office / Warehouse environment</li></ul><ul><li>Ability to work extended hours as required</li></ul><ul><li>Willing to work during weekends and national holidays as needed<br>\n</li></ul><br><p><b>Compensation</b>: </p>The expected salary range for this role is 71,000.00-74,000.00 USD. The actual base pay offered will be determined by factors such as the candidate's relevant experience, education, geographic location, and internal equity.<br><p>If you like wild growth and working with happy, enthusiastic over-achievers, you'll enjoy your career with us!</p><br><p><b>Staffing Agency Submission Notice<br></b><a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a> does not accept unsolicited 3rd party (\"Agency\") candidates. If you are an Agency, please send any requests to be considered as a supplier in our Vendor Management System to . Do not contact <a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a> employees directly. If requested to work on a role, any Agency candidates would be presented through the internal recruiting organization.</p><br><p><a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a> is an Equal Opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or veteran status. <a href=\"https://himalayas.app/companies/iherb-com\">iHerb</a> provides equal employment opportunities to all applicants for employment and prohibits discrimination and harassment.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658407,
+      "expiryDate": 1798842405,
+      "applicationLink": "https://himalayas.app/companies/iherb-com/jobs/ocean-trucking-specialist?utm_source=api",
+      "guid": "https://himalayas.app/companies/iherb-com/jobs/ocean-trucking-specialist"
+    },
+    {
+      "title": "SENIOR EVENT MANAGER - DEDICATED PHARMA ACCOUNT (f/m/d)",
+      "excerpt": "At eggwe make experiences.  Real ones.  The kind that take creativity, sharp thinking, attention to detail and, every now and then, a sense of humour when everything changes five minutes before launch.",
+      "companyName": "egg",
+      "companySlug": "egg",
+      "companyLogo": "https://cdn-images.himalayas.app/hl1ldqx5dkw7yrcvckoca0q1il1n",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "Spain"
+      ],
+      "timezoneRestrictions": [
+        0,
+        1
+      ],
+      "categories": [
+        "Event-Manager",
+        "Senior-Event-Manager",
+        "Project-Manager",
+        "Account-Manager"
+      ],
+      "parentCategories": [
+        "Marketing",
+        "Operations",
+        "Sales"
+      ],
+      "description": "<p>At <strong><a href=\"https://himalayas.app/companies/egg\">egg</a></strong>we make experiences. Real ones.</p><p>The kind that take creativity, sharp thinking, attention to detail and, every now and then, a sense of humour when everything changes five minutes before launch.</p><p>We work across countries, cultures and clients, so things move fast and no two days look the same. That's part of what we enjoy. It also means we need people who can stay calm under pressure, take ownership and care about getting things right.</p><p>No big egos. No hiding mistakes. No silent chickens in this nest.</p><h3>Which brings us to you</h3><p>You understand that great client experiences don't happen by chance. They are the result of strong processes, effective planning, clear accountability and teams that have the support they need to perform at their best.</p><p>You enjoy helping people succeed, bringing structure to complexity and ensuring that projects are delivered consistently, compliantly and efficiently. You're equally comfortable discussing account performance with senior stakeholders, mentoring project teams or stepping into an event when operational support is needed.</p><h3>What you'll be doing</h3><p><strong>In this role, you will work 100% on one of our key pharmaceutical clients.</strong></p><ul>\n<li><p>Lead the production and delivery of congresses, meetings, symposia and brand experiences, ensuring projects are delivered on time, within budget and in line with client requirements</p></li>\n<li><p>Coach, mentor and support Project Managers and operational team members, helping develop capabilities and drive delivery excellence across the account</p></li>\n<li><p>Partner with the Account Lead to monitor client satisfaction, operational performance, resource allocation and overall account health</p></li>\n<li><p>Monitor SLAs, KPIs, compliance requirements and RAID logs, identifying risks, proposing solutions and driving continuous improvement</p></li>\n<li><p>Oversee account financials, including budget consolidation, forecasting, reporting and operational performance tracking</p></li>\n<li><p>Improve delivery standards, processes, templates, reporting tools and AI-enabled ways of working that increase efficiency and quality</p></li>\n</ul><div><h3>What you’ll bring</h3></div><p><em>(We really mean it. Candidates who do not meet the following criteria will not be considered.)</em></p><h3>Experience &amp; skills</h3><ul>\n<li><p>8+ years of experience within an <strong>event agency environment</strong>, including significant exposure to <strong>pharmaceutical and/or healthcare</strong>clients</p></li>\n<li><p>Proven experience working on dedicated client accounts with complex governance, compliance and operational requirements</p></li>\n<li><p>Strong experience managing event delivery, operational processes, reporting frameworks and team coordination</p></li>\n<li><p>Demonstrated expertise in resource planning, utilization management, forecasting and budget oversight</p></li>\n<li><p>Advanced knowledge of <strong>Cvent</strong>and strong proficiency in <strong>Microsoft 365</strong>, including Excel-based reporting and analysis</p></li>\n<li><p>Exceptional stakeholder management, leadership and communication skills, with the ability to influence and support teams at all levels</p></li>\n<li><p>Fluency in English and Spanish, written and spoken (No scrambled oeufs at <strong><a href=\"https://himalayas.app/companies/egg\">egg</a></strong>, svp.)</p></li>\n</ul><h3>How we work at <a href=\"https://himalayas.app/companies/egg\">egg</a>\n</h3><p>Things move fast here. Priorities shift. Clients expect excellence.</p><p>The people who thrive at <strong><a href=\"https://himalayas.app/companies/egg\">egg</a></strong> tend to:</p><ul>\n<li><h3>Take ownership and get things done</h3></li>\n<li><h3>Stay calm when priorities change</h3></li>\n<li><h3>Focus on outcomes and quality</h3></li>\n<li><h3>Be comfortable with ambiguity</h3></li>\n<li><p>Look for smarter ways of working, including AI and technology</p></li>\n<li><p>Balance creativity with structure and execution</p></li>\n</ul><h3>Bonus points if...</h3><ul><li><p>Previous experience overseeing a dedicated pharmaceutical account at regional or global level</p></li></ul><h3>What we bring to the table</h3><ul>\n<li><p>Flexible working setup (remote in some places, hybrid in others)</p></li>\n<li><p>Competitive salary + performance-based bonus</p></li>\n<li><p>Home office / tech stipend, lunch vouchers</p></li>\n<li><p>Smart, supportive colleagues who genuinely enjoy working together</p></li>\n<li><p>International career opportunities + annual global offsite in somewhere excellent</p></li>\n<li><p>Free coffee, pet-friendly offices and a culture that cares about people as much as performance</p></li>\n</ul><p><em>(Yes, the coffee is good. We're not monsters.)</em></p><h3>The hiring process</h3><ul>\n<li><p>Online application <em>(you’ve swiped right)</em></p></li>\n<li><p>First intro call <em>(we’ve swiped right too — let’s see if there’s chemistry)</em></p></li>\n<li><p>First interview <em>(time to crack things open a bit)</em></p></li>\n<li><p>Second interview <em>(meet the family — don’t worry, they’re mostly well-behaved <a href=\"https://himalayas.app/companies/egg\">egg</a>s)</em></p></li>\n<li><p>Offer <em>(we’re in love. hope you are too)</em></p></li>\n</ul><h3>The most important bit</h3><p>At <strong><a href=\"https://himalayas.app/companies/egg\">egg</a></strong>, feedback goes in all directions: up, down and sideways. We believe accountability and kindness can coexist.</p><p>It’s okay to make mistakes here, as long as we own them, learn from them, and don’t keep serving them sunny-side up forever.</p><p>We’re proud of a team made up of people from all walks of life, backgrounds and perspectives. We believe this makes our work better, our thinking sharper, and our outcomes stronger.</p><p>We welcome applications from all genders, including transgender and non-binary people, as well as BIPOC communities, LGBTQ2S+ communities, and people with visible and non-visible disabilities.</p><p>We are also an ESG-driven company committed to making a positive impact beyond our own walls.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658395,
+      "expiryDate": 1798842394,
+      "applicationLink": "https://himalayas.app/companies/egg/jobs/senior-event-manager-dedicated-pharma-account-f-m-d?utm_source=api",
+      "guid": "https://himalayas.app/companies/egg/jobs/senior-event-manager-dedicated-pharma-account-f-m-d"
+    },
+    {
+      "title": "Technical Program Manager",
+      "excerpt": "Role: Technical Program Manager Department: Data & Analytics Location: USA / Remote Reports: Director of Data & Analytics Employment Type: Full-Time Position SummaryThe Technical Program Manager (TPM) drives end-to-end delivery of complex, cross-functional data and technology initiatives within a governance-first cloud environment.",
+      "companyName": "Inizio Partners Corp",
+      "companySlug": "inizio-partners-corp",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": 150000,
+      "maxSalary": 150000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Technical-Program-Manager",
+        "IT-Program-Manager",
+        "Data-Program-Manager",
+        "Cloud-Program-Manager",
+        "Data-Governance-Program-Manager"
+      ],
+      "parentCategories": [
+        "Product"
+      ],
+      "description": "<p><strong>Role: </strong>Technical Program Manager</p><p><strong>Department: </strong>Data &amp; Analytics</p><p><strong>Location: </strong>USA / Remote</p><p><strong>Reports: </strong>Director of Data &amp; Analytics </p><p><strong>Employment Type</strong>: Full-Time </p><h3>Position Summary</h3><p>The Technical Program Manager (TPM) drives end-to-end delivery of complex, cross-functional data and technology initiatives within a governance-first cloud environment. This role is the owner for program execution, risk management, compliance coordination, and stakeholder alignment across Engineering, Security, Legal, Privacy, and Compliance. TPM establishes and operates the governance operating model, ensuring every workstream adheres to regulatory requirements, enterprise security standards, and data governance policies.</p><h3>AWS Technology Stack Knowledge</h3><p>Strong technical fluency is required to manage dependencies, assess risks, and coordinate compliance across:</p><ul>\n<li>Data Platform </li>\n<li>Networking &amp; Operations</li>\n<li>PII Handling </li>\n</ul><h3><em>Governance &amp; Compliance Responsibilities</em></h3><h3>Program Governance Framework</h3><ul>\n<li>Establish the governance operating model: council cadences, RACI matrices, decision rights, escalation protocols, and reviews with mandatory compliance checkpoints at design, development, testing, and deployment.</li>\n<li>Maintain program-level risk registers with compliance/security/operational categorization, drive ARB and Security Review Board submissions, and produce governance KPI dashboards for executive reporting.</li>\n</ul><h3>Regulatory Compliance Coordination</h3><ul>\n<li>Serve as program-level coordination point for compliance. Privacy Impact Assessments before engineering begins.</li>\n<li>Maintain regulatory changes tracking to identify and implement changes required by evolving data privacy laws</li>\n<li>Track encryption compliance across all data stores and transit paths. Coordinate third-party vendor security assessments and data processing agreement (DPA) reviews.</li>\n</ul><h3>Data Governance &amp; Stewardship</h3><ul>\n<li>Partner with Data Stewards to enforce policies on data quality, lineage, retention, and disposal. Coordinate Data Governance Council agendas and drive policy implementation.</li>\n<li>Track consent &amp; workflows for SLA compliance. Maintain data processing records.</li>\n</ul><h3>Key Responsibilities</h3><ul>\n<li>Own end-to-end program delivery for multi-workstream data initiatives with critical path analysis, dependency mapping, and resource allocation.</li>\n<li>Design masking, tokenization, and anonymization pipelines for production environments. Enforce governance via CloudFormation/Terraform with security review.</li>\n<li>Facilitate cross-functional alignment across Engineering, Security, Legal, Privacy, Compliance, and Business stakeholders with structured decision logs and action tracking.</li>\n<li>Manage logs with proactive escalation; drive operational readiness including runbooks, incident management, and production readiness reviews.</li>\n<li>Produce executive status reports, governance dashboards, and compliance scorecards. Coordinate changes across Engineering team and do post-deployment validation.</li>\n<li>Leading Clean Rooms program execution, partner onboarding, privacy-preserving collaboration design, analysis rule governance, and cross-org data sharing compliance.</li>\n</ul><h3>Qualifications Required</h3><ul>\n<li>Bachelors degree in CS, Information Systems, Engineering, or equivalent; 8+ years in Technical Program Management or IT Governance.</li>\n<li>Demonstrated experience managing programs in regulated industries with active HIPAA, SOC 2, GDPR requirements.</li>\n<li>Strong AWS technical fluency across the data, security, and governance stack. Proven track record establishing governance frameworks and compliance processes.</li>\n<li>Excellent communication skills; ability to translate technical complexity into executive-level narratives.</li>\n</ul><h3>Preferred</h3><ul>\n<li>AWS certifications (Cloud Practitioner, Solutions Architect, Security Specialty). </li>\n<li>Professional certifications (PMP, SAFe).</li>\n<li>Experience with data governance tools.</li>\n<li>Experience driving compliance programs in the Sports &amp; Gaming industry.</li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658392,
+      "expiryDate": 1798842391,
+      "applicationLink": "https://himalayas.app/companies/inizio-partners-corp/jobs/technical-program-manager?utm_source=api",
+      "guid": "https://himalayas.app/companies/inizio-partners-corp/jobs/technical-program-manager"
+    },
+    {
+      "title": "Senior Product Manager Next Generation MRI Solutions",
+      "excerpt": "Job Description SummaryAt GE HealthCare, we are passionate about advancing healthcare technology that helps clinicians make faster, more confident decisions and improves outcomes for patients around the world.",
+      "companyName": "GE HealthCare",
+      "companySlug": "ge-healthcare",
+      "companyLogo": "https://cdn-images.himalayas.app/osoon1pewm898snf9jspqkt8eyyz",
+      "employmentType": "Full Time",
+      "minSalary": 149600,
+      "maxSalary": 224400,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Product-Manager",
+        "Technical-Product-Manager",
+        "Healthcare-Product-Manager",
+        "Medical-Imaging-Product-Manager"
+      ],
+      "parentCategories": [
+        "Product"
+      ],
+      "description": "<h3><b><b><b>Job Description Summary</b></b></b></h3>At <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a>, we are passionate about advancing healthcare technology that helps clinicians make faster, more confident decisions and improves outcomes for patients around the world. We are seeking a Senior Product Manager, Next Generation MRI Solutions to help define and guide the future of MRI technology, AI-enabled capabilities, and imaging workflows.<br><br>In this highly visible role, you will translate customer insights, clinical needs, emerging technologies, and market opportunities into innovative MRI solutions that create meaningful value for healthcare providers and patients. You will work alongside talented colleagues across Engineering, Clinical, Research, Regulatory, Quality, Marketing, Finance, and Commercial teams to shape product strategy, influence investment decisions, and bring transformative solutions to market.<h3><b>Job Description</b></h3><h3>Product Strategy and Product Definition</h3><ul>\n<li>Define the strategy and multi-generation roadmap for next-generation MRI solutions, AI-enabled capabilities, and workflow innovations.</li>\n<li>Lead end-to-end product definition efforts, including customer segments, intended use, user needs, clinical and operational workflows, product requirements, feature prioritization, and value propositions.</li>\n<li>Translate customer feedback, clinical insights, competitive intelligence, and market trends into clear, actionable product requirements.</li>\n<li>Develop product requirement documents, use cases, workflow specifications, release content, and acceptance criteria in partnership with cross-functional teams.</li>\n<li>Identify product capabilities and technology investments that create meaningful differentiation and customer value.</li>\n<li>Evaluate trade-offs by balancing customer needs, clinical impact, technical feasibility, regulatory requirements, business priorities, investment needs, and timing considerations.</li>\n</ul><br><h3>Business Planning and Growth Strategy</h3><ul>\n<li>Develop and maintain business plans for new MRI solutions, including market opportunity assessments, customer segmentation, competitive positioning, adoption assumptions, pricing considerations, investment needs, risks, and financial impact.</li>\n<li>Build business cases and investment recommendations that connect product capabilities to customer value, market demand, and growth opportunities.</li>\n<li>Partner with Marketing, Commercial, Regional, and Finance teams to develop revenue forecasts, market share objectives, customer adoption goals, and launch assumptions.</li>\n<li>Identify opportunities to expand market reach, increase product adoption, strengthen competitive positioning, and support portfolio growth.</li>\n<li>Monitor market performance and recommend adjustments to product strategy, roadmap priorities, positioning, pricing, and commercialization plans as needed.</li>\n</ul><br><h3>Customer and Market Insights</h3><ul>\n<li>Engage with customers, key opinion leaders, clinical researchers, technologists, radiologists, field teams, and regional stakeholders to understand evolving clinical and operational needs.</li>\n<li>Lead structured customer research activities and translate insights into prioritized user needs and product requirements.</li>\n<li>Conduct market, customer, and competitive assessments to identify opportunities for differentiation and growth.</li>\n<li>Validate product concepts, workflows, value propositions, and adoption assumptions with representative customers and stakeholders.</li>\n<li>Develop a deep understanding of clinical, operational, and economic value drivers across priority customer segments.</li>\n</ul><br><h3>Roadmap and New Product Introduction (NPI) Execution</h3><ul>\n<li>Develop and maintain the product roadmap, balancing near-term customer needs with long-term platform evolution.</li>\n<li>Partner with Engineering, Research, Clinical, Applications, and Technology teams to define and mature capabilities required for future product releases.</li>\n<li>Ensure external collaborations and advanced technology development timelines align with product release plans and program milestones.</li>\n<li>Provide product leadership throughout the NPI lifecycle, from concept and feasibility through development, verification, validation, launch, and post-launch evaluation.</li>\n<li>Lead roadmap and product reviews, communicate priorities, and facilitate informed, data-driven decision-making across stakeholders.</li>\n<li>Partner with Regulatory and Clinical Affairs teams to define evidence plans, intended claims, and regulatory strategies that support product value.</li>\n</ul><br><h3>Commercialization and Revenue Enablement</h3><ul>\n<li>Collaborate with global and regional marketing teams to develop product positioning, messaging, launch strategies, and customer engagement plans.</li>\n<li>Translate product capabilities into compelling clinical, operational, and economic value propositions that support customer adoption and commercial success.</li>\n<li>Support customer advisory boards, clinical collaborations, industry events, internal training programs, launch activities, and sales initiatives.</li>\n<li>Partner with Marketing Communications to develop launch collateral, sales enablement tools, competitive materials, and NPI communications.</li>\n<li>Work closely with Commercial and Regional teams to monitor launch readiness, customer adoption, revenue performance, and pipeline development.</li>\n<li>Track key business indicators, including revenue contribution, market share, adoption, customer conversion, and portfolio performance, and recommend improvements where appropriate.</li>\n</ul><br><h3>Cross-Functional Leadership and Operational Excellence</h3><ul>\n<li>Foster alignment across Product Management, Engineering, Clinical, Applications, Research, Regulatory, Quality, Marketing, Finance, and Commercial teams.</li>\n<li>Build strong partnerships and influence stakeholders across a global matrix organization to align resources and decisions around customer and business priorities.</li>\n<li>Communicate product strategy, business rationale, risks, dependencies, and progress clearly to senior leaders and cross-functional teams.</li>\n<li>Establish effective operating mechanisms and metrics to monitor roadmap execution, market readiness, and business outcomes.</li>\n<li>Champion behaviors aligned with integrity, quality standards, regulatory requirements, environmental health and safety (EHS) expectations, and a culture of continuous improvement.</li>\n</ul><br><h3>Required Qualifications</h3><ul>\n<li>Master's degree in Engineering, MRI Physics, Biomedical Engineering, Computer Science, Medical Imaging, or a related technical field.</li>\n<li>Minimum of 8 years of experience in Product Management, Product Definition, Systems Engineering, Research &amp; Development (R&amp;D), or Technology Development within medical imaging or medical devices.</li>\n<li>Experience defining and commercializing MRI, software, or AI-enabled healthcare products.</li>\n<li>Experience developing product requirements, product roadmaps, business cases, market assessments, and commercialization plans.</li>\n<li>Strong understanding of MRI technology, clinical imaging workflows, and healthcare market dynamics.</li>\n<li>Demonstrated ability to lead complex cross-functional initiatives and build alignment across diverse stakeholders.</li>\n</ul><br><h3>Preferred Qualifications</h3><ul>\n<li>PhD in MRI Physics, Biomedical Engineering, Electrical Engineering, Computer Science, or a related field.</li>\n<li>Deep expertise in MRI product management, product definition, roadmap development, NPI execution, and lifecycle management.</li>\n<li>Experience with artificial intelligence (AI), machine learning, image reconstruction, workflow optimization, and advanced imaging technologies.</li>\n<li>Experience developing business plans, financial models, pricing strategies, and revenue forecasts for medical imaging products.</li>\n<li>Strong understanding of MRI clinical applications, image quality, scanner workflow design, and advanced imaging techniques.</li>\n<li>Experience supporting regulatory submissions, clinical evidence generation, claims development, and commercialization of medical imaging products.</li>\n<li>Experience collaborating globally with customers, academic institutions, research partners, and external technology organizations.</li>\n<li>Strong strategic thinking, analytical, communication, influencing, and presentation skills.</li>\n<li>Customer-focused and collaborative approach, with the ability to drive initiatives from concept through execution.</li>\n</ul><br><h3>Why Join Us?</h3><ul>\n<li>Help shape the future of MRI technology.</li>\n<li>Influence products that have a meaningful impact on patient care and clinical outcomes.</li>\n<li>Work with multidisciplinary teams across engineering, clinical, research, commercial, and business functions.</li>\n<li>Contribute to innovative technologies at the intersection of healthcare, imaging, software, and artificial intelligence.</li>\n<li>Grow your leadership, technical, and strategic capabilities through high-impact, global collaboration.</li>\n<li>Be part of an inclusive environment where diverse perspectives are valued, respected, and essential to innovation.</li>\n</ul>We will not sponsor individuals for employment visas, now or in the future, for this job opening.For U.S. based positions only, the pay range for this position is $149,600.00-$224,400.00 Annual. It is not typical for an individual to be hired at or near the top of the pay range and compensation decisions are dependent on the facts and circumstances of each case. The specific compensation offered to a candidate may be influenced by a variety of factors including skills, qualifications, experience and location. In addition, this position may also be eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> offers a competitive benefits package, including not but limited to medical, dental, vision, paid time off, a 401(k) plan with employee and company contribution opportunities, life, disability, and accident insurance, and tuition reimbursement.<div><div><div><div><div><div><div><p><a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> offers a great work environment, professional development, challenging careers, and competitive compensation. <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> is an Equal Opportunity Employer. Employment decisions are made without regard to race, color, religion, national or ethnic origin, sex, sexual orientation, gender identity or expression, age, disability, protected veteran status or other characteristics protected by law.</p></div></div></div></div></div></div></div><div><div><div><div><div><div><div><p><a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> will only employ those who are legally authorized to work in the United States for this opening. Any offer of employment is conditioned upon the successful completion of a drug screen (as applicable). </p></div></div></div></div></div></div></div><p>While <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> does not currently require U.S. employees to be vaccinated against COVID-19, some <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> customers have vaccination mandates that may apply to certain <a href=\"https://himalayas.app/companies/ge-healthcare\">GE HealthCare</a> employees.</p><div><div><div><div><div><div><div><p><b>Relocation Assistance Provided: </b>Yes</p></div></div></div></div></div></div></div><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658389,
+      "expiryDate": 1798842388,
+      "applicationLink": "https://himalayas.app/companies/ge-healthcare/jobs/senior-product-manager-next-generation-mri-solutions?utm_source=api",
+      "guid": "https://himalayas.app/companies/ge-healthcare/jobs/senior-product-manager-next-generation-mri-solutions"
+    },
+    {
+      "title": "Senior Principal, Sales Compensation Design & Strategy",
+      "excerpt": "About UsAt Cloudflare, we are on a mission to help build a better Internet.",
+      "companyName": "Cloudflare",
+      "companySlug": "cloudflare",
+      "companyLogo": "https://cdn-images.himalayas.app/bd9tklu1bix53646kk0qc8zi487g",
+      "employmentType": "Full Time",
+      "minSalary": 200000,
+      "maxSalary": 317000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Sales-Compensation-Analyst",
+        "Sales-Operations-Analyst",
+        "GTM-Analyst",
+        "Sales-Strategy-Analyst",
+        "Sales-Planning-Analyst"
+      ],
+      "parentCategories": [
+        "Sales"
+      ],
+      "description": "<div class=\"content-intro\">\n<h3>About Us</h3>\n<p>At <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that powers millions of websites and other Internet properties for customers ranging from individual bloggers to SMBs to Fortune 500 companies. <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> protects and accelerates any Internet application online without adding hardware, installing software, or changing a line of code. Internet properties powered by <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> all have web traffic routed through its intelligent global network, which gets smarter with every request. As a result, they see significant improvement in performance and a decrease in spam and other attacks. <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> was named to Entrepreneur Magazine’s Top Company Cultures list and ranked among the World’s Most Innovative Companies by Fast Company.</p>\n<p>At <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>, we’re not looking for people who wait for a polished roadmap; we’re looking for the builders who see the cracks in the Internet that everyone else has simply learned to live with. We value candidates who have the instinct to spot a \"normalized\" problem and the AI-native curiosity to create a solution using the latest tools. Our culture is built on iteration, leveraging AI to ship faster today to make it better tomorrow, while ensuring that every improvement, no matter how small, is shared across the team to lift everyone up. If you’re the type of person who values curiosity over bureaucracy, and that AI is a partner in solving tough problems to keep the Internet moving forward, you’ll fit right in.</p>\n</div><h3>Available Locations</h3><ul><li>US</li></ul><p><strong>Applications will be accepted until October 13, 2026.</strong></p><h3>About the Role</h3><p>The Global GTM Strategy, Planning and Operations team at <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> supports our high-growth Sales organization through scalable, AI supported GTM planning and operations. We focus on thoughtful planning of sales capacity, segmentation, territory carving, quota setting, and compensation design while ensuring clear rules of engagement for our Sales Team. Our goal is to establish a cohesive, consistent process framework that can support high growth, enable the Company's strategy, and accelerate <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>'s leadership in the developer and AI-native business segments.</p><p>As the Senior Principal, Sales Compensation Design &amp; Strategy, you will design and manage <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>'s Sales Compensation Plans across all customer facing teams including Sales, Technical Sales, Partner Sales, and Customer Success &amp; Experience, to ensure they are motivating, aligned with <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>'s strategy, and industry leading. This is a high visibility role with significant executive engagement, including leading C-level discussions with our CRO, CFO, CPO, and COO, and serving as the design authority on the Executive Compensation Steering Committee.</p><p>You will architect new compensation metrics that reflect how <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> monetizes a developer first, AI supportive business - including consumption, adoption, and platform attach - and ensure roles, territories, and quotas align with compensation plans to achieve our GTM objectives. You will establish a governance framework for efficient compensation planning and partner closely with the Compensation Administration and Operations Teams to ensure effective implementation and accurate payouts. A strong understanding of SaaS bookings, monetization approaches, and consumption and adoption models is essential.</p><p>The scope of executive influence, the architectural work required to support our developer/AI business model, and the AI-native transformation of the compensation design function make this seat fundamental to our GTM execution strategy. </p><h3>Responsibilities</h3><h3>Executive Leadership &amp; Design Authority</h3><ul>\n<li>Lead the Sales Compensation Design Process with the Executive Steering Committee, including CRO, CFO, and CPO level stakeholders.</li>\n<li>Drive C-level discussions on compensation philosophy, pay-for-performance outcomes, and strategic trade-offs; develop recommendation decks and own the narrative through approval.</li>\n<li>Architect new metrics that align seller incentives with <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>'s developer platform and AI product strategy (e.g., Workers consumption, AI Gateway adoption, platform attach, multi-product penetration).</li>\n<li>Create a 3-year roadmap for the Sales Compensation Design function.</li>\n</ul><h3>AI-Native Compensation Design</h3><ul>\n<li>Build the AI Compensation Design Framework and Application - an internal capability that uses AI to accelerate plan modeling, scenario simulation, payout forecasting, and what-if analysis across thousands of sellers and territories.</li>\n<li>Leverage AI to design high-quality SPIFFs and incentive structures, including generating candidate designs, simulating seller behavior, and stress-testing against historical data before launch.</li>\n<li>Track ROI of comp plans, SPIFFs, and incentive programs using AI-driven analytics - moving from lagging reporting to predictive measurement of plan effectiveness, seller behavior change, and revenue lift.</li>\n<li>Develop AI-powered pay-for-performance reporting that surfaces insights for executives, managers, and sellers in real time, replacing static quarterly reviews with continuous intelligence.</li>\n</ul><h3>Cross-Functional Execution</h3><ul>\n<li>Collaborate with GTM Strategy, Operations, Finance, HR, IT, and Product to ensure effective deployment of compensation plans and GTM strategy.</li>\n<li>Lead compensation enablement and change management for the global Sales team, including AI-assisted communications, FAQ generation, and plan-acceptance workflows.</li>\n<li>Design SPIFFs and incentive strategies that balance long-term strategic bets with short-term revenue goals.</li>\n<li>Partner with the Compensation Administration and Operations Teams to ensure design intent translates into accurate, auditable payouts.</li>\n</ul><h3>Required Experience &amp; Skills</h3><ul>\n<li>15+ years of experience in Sales Compensation Design in a fast-paced tech company or as a management consultant.</li>\n<li>Demonstrated fluency with AI tools and AI-augmented workflows - whether through prior comp design work, analytics, or strategic projects. Comfort building or directing the build of AI-powered internal applications is strongly preferred.</li>\n<li>Strong analytical skills, including the ability to architect new metrics for emerging business models (consumption, AI monetization).</li>\n<li>Exceptional presentation and communication skills, with proven experience presenting to and influencing C-level executives.</li>\n<li>Proven experience driving Executive Steering Committee meetings and owning the decision narrative end-to-end.</li>\n<li>Experience leading cross-functional initiatives to completion across Finance, HR, IT, Product, and GTM.</li>\n<li>Detail-oriented with a strategic mindset.</li>\n<li>Bachelor's degree required.</li>\n</ul><h3>Bonus Points</h3><p>The ideal candidate combines a strong background in sales strategy and compensation design with genuine curiosity about applying AI to transform the function. Candidates will have exceptional stakeholder management skills, executive presence, and the confidence to manage evolving strategies in a high-growth company. </p><h3>Compensation</h3><p>Compensation may be adjusted depending on work location.</p><ul>\n<li>For San Francisco based hires: Estimated annual salary of $230,000 - $317,000</li>\n<li>For California (excluding Bay Area), Washington, Washington DC, NY and NJ based hires: $220,000 - $303,000</li>\n<li>For Colorado based hires: Estimated annual salary of $200,000 - $275,000</li>\n</ul><h3>Equity</h3><p>This role is eligible to participate in <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>'s equity plan.</p><h3>Benefits</h3><p><a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> offers a complete package of benefits and programs to support you and your family. Our benefits programs can help you pay health care expenses, support caregiving, build capital for the future and make life a little easier and fun! The below is a description of our benefits for employees in the United States, and benefits may vary for employees based outside the U.S.</p><h3>Health &amp; Welfare Benefits</h3><ul>\n<li>Medical/Rx Insurance</li>\n<li>Dental Insurance</li>\n<li>Vision Insurance</li>\n<li>Flexible Spending Accounts</li>\n<li>Commuter Spending Accounts</li>\n<li>Fertility &amp; Family Forming Benefits</li>\n<li>On-demand mental health support and Employee Assistance Program</li>\n<li>Global Travel Medical Insurance</li>\n</ul><h3>Financial Benefits</h3><ul>\n<li>Short and Long Term Disability Insurance</li>\n<li>Life &amp; Accident Insurance</li>\n<li>401(k) Retirement Savings Plan</li>\n<li>Employee Stock Participation Plan</li>\n</ul><h3>Time Off</h3><ul>\n<li>Flexible paid time off covering vacation and sick leave</li>\n<li>Leave programs, including parental, pregnancy health, medical, and bereavement leave</li>\n</ul><div class=\"content-conclusion\">\n<h3>What Makes <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> Special?</h3>\n<p>We’re not just a highly ambitious, large-scale technology company. We’re a highly ambitious, large-scale technology company with a soul. Fundamental to our mission to help build a better Internet is protecting the free and open Internet.</p>\n<p><strong>Project Galileo</strong>: Since 2014, we've equipped more than 2,400 journalism and civil society organizations in 111 countries with powerful tools to defend themselves against attacks that would otherwise censor their work, technology already used by <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a>’s enterprise customers--at no cost.</p>\n<p><strong>Athenian Project</strong>: In 2017, we created the Athenian Project to ensure that state and local governments have the highest level of protection and reliability for free, so that their constituents have access to election information and voter registration. Since the project, we've provided services to more than 425 local government election websites in 33 states.</p>\n<p>: We released to help fix the foundation of the Internet by building a faster, more secure and privacy-centric public DNS resolver. This is available publicly for everyone to use - it is the first consumer-focused service <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> has ever released. Here’s the deal - we don’t store client IP addresses never, ever. We will continue to abide by our privacy commitment and ensure that no user data is sold to advertisers or used to target consumers.</p>\n<p>Sound like something you’d like to be a part of? We’d love to hear from you!</p>\n<p>Please note that applicants who progress to the offer stage of the interview process may be asked to attend an in-person interview within one of the <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> Offices or <a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> Hubs.  More details about this will be available at that stage of the interview process.</p>\n<p>This position may require access to information protected under U.S. export control laws, including the U.S. Export Administration Regulations. Please note that any offer of employment may be conditioned on your authorization to receive software or technology controlled under these U.S. export laws without sponsorship for an export license.</p>\n<p><a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> is proud to be an equal opportunity employer.  We are committed to providing equal employment opportunity for all people and place great value in both diversity and inclusiveness.  All qualified applicants will be considered for employment without regard to their, or any other person's, perceived or actualrace, color, religion, sex, gender, gender identity, gender expression, sexual orientation, national origin, ancestry, citizenship, age, physical or mental disability, medical condition, family care status, or any other basis protected by law. We are an AA/Veterans/Disabled Employer.</p>\n<p><a href=\"https://himalayas.app/companies/cloudflare\">Cloudflare</a> provides reasonable accommodations to qualified individuals with disabilities.  Please tell us if you require a reasonable accommodation to apply for a job. Examples of reasonable accommodations include, but are not limited to, changing the application process, providing documents in an alternate format, using a sign language interpreter, or using specialized equipment.  If you require a reasonable accommodation to apply for a job, please contact us via e-mail at  or via mail at 101 Townsend St. San Francisco, CA 94107.</p>\n</div><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658369,
+      "expiryDate": 1798842368,
+      "applicationLink": "https://himalayas.app/companies/cloudflare/jobs/senior-principal-sales-compensation-design-strategy?utm_source=api",
+      "guid": "https://himalayas.app/companies/cloudflare/jobs/senior-principal-sales-compensation-design-strategy"
+    },
+    {
+      "title": "Clinical Independent Rater for Clinical Trial - Polish Speaking",
+      "excerpt": "Job Title: Clinical Independent Rater for Clinical Trial - Polish Speaking Job Location: Chicago, Illinois, United States of America Job Location Type: Remote Job Contract Type: Part-time Job Seniority Level: Clinical Independent Rater -PolishSpeakingLocation: Remote/Virtual Hours: Estimated 10–16 hours per month Role: Clinical Specialist About IQVIAIQVIA is a global leader in advanced analytics, technology solutions, and clinical research services, dedicated to driving healthcare forward.",
+      "companyName": "Lifelancer",
+      "companySlug": "lifelancer",
+      "companyLogo": "https://cdn-images.himalayas.app/ztdsyzatuliky237a5zq922sir0k",
+      "employmentType": "Full Time",
+      "minSalary": 104600,
+      "maxSalary": 194200,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": "PLN",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Clinical-Specialist",
+        "Clinician-Rater",
+        "Psychiatry-Specialist",
+        "Clinical-Research-Associate"
+      ],
+      "parentCategories": [
+        "Research & Development"
+      ],
+      "description": "<p><b>Job Title: </b>Clinical Independent Rater for Clinical Trial - Polish Speaking</p><p><b>Job Location: </b>Chicago, Illinois, United States of America</p><p><b>Job Location Type: </b>Remote</p><p><b>Job Contract Type: </b>Part-time</p><h3>Job Seniority Level: </h3><h3>\n<b>Clinical Independent Rater -</b><b>Polish</b><b>Speaking</b>\n</h3><p><b>Location:</b> Remote/Virtual<br><b>Hours:</b> Estimated 10–16 hours per month<br><b>Role:</b> Clinical Specialist</p><h3>About IQVIA</h3><p>IQVIA is a global leader in advanced analytics, technology solutions, and clinical research services, dedicated to driving healthcare forward. We partner with the world’s leading pharmaceutical, biotechnology, and medical device companies to improve patient outcomes and accelerate innovation. Our team combines deep scientific expertise with cutting-edge technology to deliver high-quality data and insights that shape the future of clinical trials.</p><h3>Position Overview</h3><p>The Clinical Specialist plays a key role in ensuring the integrity and reliability of clinical trial data. This position involves reviewing scales administered by raters to confirm standardized assessment practices. Responsibilities include evaluating assessment quality, engaging in live discussions with raters to provide guidance on methodology and scoring techniques, and supporting rater performance through functional assessments (e.g., mock interviews). Additional tasks may include assisting with communication materials and documentation.</p><h3>Key Responsibilities</h3><ul>\n<li><p>Participate in all required orientation, training, and calibration activities.</p></li>\n<li><p>Review case data and prepare for rater discussions, ensuring all relevant documents and scale items are available.</p></li>\n<li><p>Conduct live interactions with raters to provide feedback and guidance on assessment methodology and scoring.</p></li>\n<li><p>Complete assigned tasks and rater interactions according to schedule.</p></li>\n<li><p>Submit all required documentation accurately and on time.</p></li>\n</ul><h3>Required Qualifications</h3><ul>\n<li><p><b>Education:</b> Master’s degree (MA/MS) in Psychology, Counseling, Psychiatric Nursing, or Social Work (or equivalent). MD, DO, or PhD preferred.</p></li>\n<li>\n<h3>Experience:</h3>\n<ul>\n<li><p>Minimum 3 years administering psychiatric assessments, rating scales, and/or structured clinical interviews <b>(specifically</b><b>MINI and MADRS).</b></p></li>\n<li><p>Minimum 3 years of clinical experience with psychiatric populations.</p></li>\n<li><p>Minimum 3 years administering scales in clinical research trials (excluding graduate/doctoral research).</p></li>\n<li><h3>Experience in CNS trials preferred.</h3></li>\n</ul>\n</li>\n<li>\n<h3>Skills:</h3>\n<ul>\n<li><p>Strong interpersonal and communication skills for professional interaction at all levels.</p></li>\n<li><p>Excellent organizational skills, attention to detail, time management, and problem-solving ability.</p></li>\n<li><p>Proficiency with Windows and Microsoft Office applications.</p></li>\n</ul>\n</li>\n</ul><h3>Language Requirement</h3><p>Current openings require fluency in English and <b>native-level proficiency in Polish.</b></p><p>IQVIA is a leading global provider of clinical research services, commercial insights and healthcare intelligence to the life sciences and healthcare industries. We create intelligent connections to accelerate the development and commercialization of innovative medical treatments to help improve patient outcomes and population health worldwide. Learn more at </p><p>IQVIA is committed to integrity in our hiring process and maintains a zero tolerance policy for candidate fraud. All information and credentials submitted in your application must be truthful and complete. Any false statements, misrepresentations, or material omissions during the recruitment process will result in immediate disqualification of your application, or termination of employment if discovered later, in accordance with applicable law. We appreciate your honesty and professionalism.</p>The potential base pay range for this role, when annualized, is zł104,600.00 - zł194,200.00. The actual base pay offered may vary based on a number of factors including job-related qualifications such as knowledge, skills, education, and experience; location; and/or schedule (full or part-time). Dependent on the position offered, incentive plans, bonuses, and/or other forms of compensation may be offered, in addition to a range of health and welfare and/or other benefits.<br><br><h3>This job is curated by <a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a>.</h3><p><strong><a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a> is a talent-hiring platform in Life Sciences, Pharma and IT. The platform connects talent with opportunities in pharma, biotech, health sciences, healthtech and IT domains.</strong></p><p><strong>Please apply via <a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a> platform to get connected to the application page and to find  similar roles.</strong></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658322,
+      "expiryDate": 1798842321,
+      "applicationLink": "https://himalayas.app/companies/lifelancer/jobs/clinical-independent-rater-for-clinical-trial-polish-speaking-4035772327?utm_source=api",
+      "guid": "https://himalayas.app/companies/lifelancer/jobs/clinical-independent-rater-for-clinical-trial-polish-speaking-4035772327"
+    },
+    {
+      "title": "Chief Executive Officer, СЕО",
+      "excerpt": "CEO, ZNOHUBВід 300 учнів до 200 000+.  Тепер будуємо наступну версію ZNOHUBZNOHUB – один із лідерів українського EdTech і велика digital-компанія у сфері підготовки до НМТ.",
+      "companyName": "A-Players",
+      "companySlug": "a-players",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Executive"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "Albania",
+        "Andorra",
+        "Austria",
+        "Belarus",
+        "Belgium",
+        "Bosnia and Herzegovina",
+        "Bulgaria",
+        "Croatia",
+        "Cyprus",
+        "Czechia",
+        "Denmark",
+        "Estonia",
+        "Faroe Islands",
+        "Finland",
+        "France",
+        "Germany",
+        "Gibraltar",
+        "Greece",
+        "Guernsey",
+        "Holy See (Vatican City State)",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Isle of Man",
+        "Italy",
+        "Jersey",
+        "Kosovo",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Moldova",
+        "Monaco",
+        "Montenegro",
+        "Netherlands",
+        "North Macedonia",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Romania",
+        "San Marino",
+        "Serbia",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Svalbard and Jan Mayen",
+        "Sweden",
+        "Switzerland",
+        "Ukraine",
+        "United Kingdom",
+        "Åland Islands"
+      ],
+      "timezoneRestrictions": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "categories": [
+        "Chief-Executive-Officer",
+        "CEO"
+      ],
+      "parentCategories": [],
+      "description": "<h3>CEO, ZNOHUB</h3><h3>Від 300 учнів до 200 000+. Тепер будуємо наступну версію ZNOHUB</h3><p>ZNOHUB – один із лідерів українського EdTech і велика digital-компанія у сфері підготовки до НМТ.</p><p><strong>За п’ять років із продуктами ZNOHUB навчалися понад 200 000 учнів.</strong>Сьогодні це команда близько 100 людей, власна технологічна платформа та комплексний освітній продукт, який об’єднує живі заняття, записи, навчальні матеріали, тести, пробні НМТ, трекінг прогресу й підтримку учнів.</p><p>ZNOHUB уже має те, чого більшість стартапів лише намагаються досягти: сильний бренд, підтверджений попит, масштабний core-бізнес і команду, здатну запускати нові продукти.</p><h3>Що буде у вашій зоні відповідальності</h3><h3>Повний P&amp;L і стратегія компанії</h3><p>Взяти відповідальність за комерційні, фінансові та операційні результати ZNOHUB.</p><p>Сформувати стратегію зростання, перевести її у річні та квартальні пріоритети, визначати, куди інвестувати ресурси, і забезпечувати виконання цілей за виручкою, прибутковістю та розвитком бізнесу.</p><h3>Масштабування основного бізнесу</h3><p>Посилювати core-продукт ZNOHUB через розвиток продуктового портфеля, pricing, маркетинг, продажі, conversion, retention і monetisation.</p><p>Забезпечити, щоб продукт, маркетинг, продажі та операції були готові до кожного нового сезонного циклу заздалегідь.</p><h3>Data-driven growth</h3><p>Побудувати єдину картину маркетингу, продажів і retention:</p><ul>\n<li><h3>звідки приходять клієнти;</h3></li>\n<li><h3>які канали дають найкращу economics;</h3></li>\n<li><h3>де втрачається конверсія;</h3></li>\n<li><p>що впливає на утримання та повторні продажі;</p></li>\n<li><p>які продукти й сегменти мають найбільший потенціал.</p></li>\n</ul><p>Використовувати ці дані для рішень щодо бюджету, pricing, продукту та growth-пріоритетів.</p><h3>Нові напрями зростання</h3><p>Визначати й тестувати нові можливості за межами підготовки до НМТ, зокрема продукти для молодших школярів, підтримку вступу за кордон та інші освітні сервіси.</p><p>Швидко перевіряти попит і unit-економіку, масштабувати сильні напрями та зупиняти ті, що не підтверджують бізнес-потенціал.</p><h3>Leadership team і система управління</h3><p>Оцінити поточну структуру та команду лідерів, визначити чіткі зони відповідальності й decision rights.</p><p>Побудувати management cadence, у якому компанія працює через зрозумілі цілі, метрики, регулярне прогнозування та accountability, без постійного залучення засновника у щоденні рішення.</p><h3>Якого результату очікуємо</h3><h3>Перші 30 днів</h3><ul>\n<li><p>Глибоке розуміння бізнес-моделі, продукту, команди, фінансів і customer journey.</p></li>\n<li><p>Письмова діагностика ключових можливостей і вузьких місць.</p></li>\n<li><p>Розуміння того, де компанія заробляє, що обмежує зростання і які напрями потребують найбільшої уваги.</p></li>\n<li><h3>Без передчасних структурних змін.</h3></li>\n</ul><h3>До 60 днів</h3><ul>\n<li><p>Діагностика переведена у сфокусований план.</p></li>\n<li><h3>Визначені основні growth-пріоритети.</h3></li>\n<li><p>Компанія починає працювати через спільні цілі, метрики та зони відповідальності.</p></li>\n<li><p>Запущений регулярний управлінський ритм: планування, business reviews, forecasting і звітність.</p></li>\n</ul><h3>До 90 днів</h3><ul>\n<li><p>CEO є очевидним виконавчим лідером для C-level і всієї компанії.</p></li>\n<li><p>Засновник більше не є дефолтною точкою для щоденних операційних рішень.</p></li>\n<li><p>Є вимірюваний план розвитку core-бізнесу та нових напрямів.</p></li>\n<li><p>Видно перші покращення у growth, управлінні або economics.</p></li>\n</ul><h3>Протягом 6–12 місяців</h3><ul>\n<li><p>Core-бізнес зростає відповідно до погодженого плану.</p></li>\n<li><p>Marketing, sales і retention працюють через єдину систему метрик.</p></li>\n<li><p>Один або два нові напрями валідовані, масштабовані або зупинені за чіткими критеріями.</p></li>\n<li><p>ZNOHUB готовий до наступного сезонного циклу без постійного залучення засновника.</p></li>\n<li><p>CEO повністю володіє P&amp;L і загальним результатом компанії.</p></li>\n</ul><h3>Потрібний досвід</h3><ul>\n<li><p>Досвід керування компанією або великим бізнес-юнітом із реальною відповідальністю за P&amp;L.</p></li>\n<li><p>Конкретний track record зростання виручки та прибутковості.</p></li>\n<li><p>Досвід роботи з marketing funnel, sales, conversion, retention, monetisation і unit-економікою.</p></li>\n<li><p>Досвід роботи в EdTech (великий плюс) або в digital B2C, subscriptions, marketplaces та інші consumer-продукти.</p></li>\n<li><p>Розуміння того, як ростуть digital consumer-продукти.</p></li>\n<li><p>Досвід керування senior-лідерами у кількох функціях: product, marketing, sales, operations, finance та people.</p></li>\n<li><p>Здатність поєднувати стратегічне мислення з hands-on виконанням.</p></li>\n<li><p>Досвід роботи у founder-led компанії або тісної взаємодії із засновником.</p></li>\n<li><p>Сильне фінансове й аналітичне мислення: budgeting, forecasting, CAC, retention, cash flow та інвестиційні рішення.</p></li>\n<li><p>Досвід роботи у швидкозмінному або сезонному бізнесі.</p></li>\n<li><h3>Вільна українська та сильна англійська.</h3></li>\n</ul><h3>Що буде у вашій зоні відповідальності</h3><ul>\n<li><p>Повний P&amp;L: виручка, прибутковість, бюджет та ключові інвестиційні рішення.</p></li>\n<li><h3>Growth strategy для core-бізнесу ZNOHUB.</h3></li>\n<li><p>Маркетингова й sales funnel: acquisition, conversion, CAC та ефективність каналів.</p></li>\n<li><p>Retention, monetisation і розвиток продуктового портфеля.</p></li>\n<li><p>Валідація нових освітніх напрямів і масштабування тих, які показують сильну economics.</p></li>\n<li><p>Leadership team, оргструктура та система управління.</p></li>\n</ul><h3>Що ми пропонуємо?</h3><ul>\n<li><p>Високий рівень базової фінансової винагороди, суттєві бонуси за досягнення цілей та програму опціонів (через 12 місяців)</p></li>\n<li><p>повністю віддалений формат у межах GMT±3;</p></li>\n<li><h3>гнучкий графік</h3></li>\n<li><h3>Реальний вплив на компанію</h3></li>\n<li><h3>Безлімітні days-off і sick leaves.</h3></li>\n</ul><p>Якщо вам цікаво не просто очолити компанію, а взяти сильний бізнес у точці трансформації та побудувати наступну версію ZNOHUB, будемо раді познайомитися.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658290,
+      "expiryDate": 1798842289,
+      "applicationLink": "https://himalayas.app/companies/a-players/jobs/chief-executive-officer?utm_source=api",
+      "guid": "https://himalayas.app/companies/a-players/jobs/chief-executive-officer"
+    },
+    {
+      "title": "Product Owner",
+      "excerpt": "OverviewSteampunk is seeking a Product Owner to drive the development of well-architected solutions in a government consulting environment.",
+      "companyName": "Steampunk",
+      "companySlug": "steampunk",
+      "companyLogo": "https://cdn-images.himalayas.app/xu1tml1zrny7azlipcexk1s1rnkj",
+      "employmentType": "Other",
+      "minSalary": 75000,
+      "maxSalary": 150000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Product-Owner",
+        "Product-Manager",
+        "Agile-Product-Manager",
+        "Technical-Product-Manager"
+      ],
+      "parentCategories": [
+        "Product"
+      ],
+      "description": "<h3>Overview</h3><p><a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a> is seeking a <strong>Product Owner</strong> to drive the development of well-architected solutions in a government consulting environment. In this role, you will collaborate with Technical and Solutions Architects, Developers, and stakeholders to translate business needs into actionable solutions, ensuring successful delivery and client satisfaction.</p><h3>Contributions</h3><ul>\n<li>Serve as the Product Owner, ensuring the successful completion of team deliverables, maintaining quality oversight, and securing client acceptance.</li>\n<li>Navigate challenging client situations, providing technical and business guidance to client executives.</li>\n<li>Lead product and training rollouts for new users, enhancing application adoption and knowledge.</li>\n<li>Develop and deploy tools to streamline processes, improve efficiencies, and enhance key metrics.</li>\n<li>Facilitate discovery workshops to understand business needs, prioritize work, and guide solution development.</li>\n<li>Conduct trade-off analysis to anticipate client needs and recommend optimal solutions.</li>\n<li>Act as the primary liaison between government sponsors, business owners, and delivery teams.</li>\n<li>Monitor progress against the product roadmap to ensure project and program success.</li>\n</ul><h3>Qualifications</h3><ul>\n<li>Eligible to obtain and maintain a government security clearance.</li>\n<li>Bachelor’s degree in Information Technology, Business Administration or a related field.</li>\n<li>4+ years of experience working in an Agile environment.</li>\n<li>Experience collaborating with business and product owners to translate needs into actionable plans.</li>\n<li>Strong ability to document requirements in the form of roadmaps, release plans, epics, features, and user stories.</li>\n<li>Proficiency in Agile Lifecycle Management (ALM) tools; Jira preferred.</li>\n<li>Proven ability to build strong customer relationships and lead enterprise software deployments.</li>\n<li>Excellent communication, presentation, and facilitation skills.</li>\n<li>Strong interpersonal, analytical, and organizational abilities.</li>\n</ul><strong>Preferred:</strong><ul>\n<li>Experience with software development lifecycle methodologies.</li>\n<li>Understanding of DevSecOps concepts and practical implementation experience.</li>\n<li>Experience working with design systems and automated testing tools.</li>\n<li>Passion for building and fostering high-performing teams and driving the government mission forward.</li>\n</ul>If you're looking to make an impact in a fast-paced, mission-driven environment, apply today!<h3>About <strong>steampunk</strong>\n</h3><p><a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a> relies on several factors to determine salary, including but not limited to geographic location, contractual requirements, education, knowledge, skills, competencies, and experience. The projected compensation range for this position is $75,000 to $150,000.  The estimate displayed represents a typical annual salary range for this position. Annual salary is just one aspect of <a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a>’s total compensation package for employees. Learn more about additional <a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a> benefits here. </p><h3>Identity Statement</h3><p>As part of the application process, you are expected to be on camera during interviews and assessments. We reserve the right to take your picture to verify your identity and prevent fraud.</p><p><a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a> is a <strong>Change Agent</strong> in the Federal contracting industry, bringing new thinking to clients in the Homeland, Federal Civilian, Health and DoD sectors.  Through our <strong>Human-Centered delivery methodology</strong>, we are fundamentally changing the expectations our Federal clients have for true shared accountability in solving their toughest mission challenges.  If you want to learn more about our story, visit </p><p><em>We are an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability status, protected veteran status, or any other characteristic protected by law. <a href=\"https://himalayas.app/companies/steampunk\">Steampunk</a> participates in the E-Verify program.</em></p><p><em>.</em></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658218,
+      "expiryDate": 1798842216,
+      "applicationLink": "https://himalayas.app/companies/steampunk/jobs/product-owner?utm_source=api",
+      "guid": "https://himalayas.app/companies/steampunk/jobs/product-owner"
+    },
+    {
+      "title": "Butterfly Effects",
+      "excerpt": "About Bubba Gump Shrimp Co. Since its inception, Bubba Gump Shrimp Co.",
+      "companyName": "Bubba Gump Shrimp Co.",
+      "companySlug": "bubba-gump-shrimp-co",
+      "companyLogo": "https://cdn-images.himalayas.app/xxppivl545zbpegbwwm75uqzsjua",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Engineering-Manager",
+        "Software-Engineering-Manager",
+        "Technical-Manager",
+        "Software-Development-Manager"
+      ],
+      "parentCategories": [
+        "Developer"
+      ],
+      "description": "<h3>About <a href=\"https://himalayas.app/companies/bubba-gump-shrimp-co\">Bubba Gump Shrimp Co.</a>\n</h3><div>Since its inception, <a href=\"https://himalayas.app/companies/bubba-gump-shrimp-co\">Bubba Gump Shrimp Co.</a> has grown into a globally-recognized brand with 16 international locations throughout Asia, Europe and Mexico and 22 locations in the United States.</div><div>The story of <a href=\"https://himalayas.app/companies/bubba-gump-shrimp-co\">Bubba Gump Shrimp Co.</a> began in 1996, debuting on Cannery Row in Monterey, California, as the first and only (even to this day) casual restaurant chain based on a motion picture property. </div><h3>About the Culture at <a href=\"https://himalayas.app/companies/bubba-gump-shrimp-co\">Bubba Gump Shrimp Co.</a> </h3><div>At <a href=\"https://himalayas.app/companies/bubba-gump-shrimp-co\">Bubba Gump Shrimp Co.</a>, our culture is as vibrant and welcoming as the coastal communities we draw inspiration from. Rooted in the values of teamwork, integrity, and genuine hospitality, we strive to create an environment where every team member feels valued, empowered, and encouraged to bring their unique personality to the table. Whether you're a server, chef, or manager, we believe in fostering a sense of family where collaboration and respect are the cornerstones of our success. </div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div><h3>About the role</h3><ul>\n<li>Lead a dynamic team of engineers to innovate and develop cutting-edge solutions for our technology infrastructure, ensuring optimal performance and scalability.</li>\n<li>Collaborate closely with cross-functional teams, including product management and design, to align engineering efforts with business objectives and deliver high-quality products on time.</li>\n<li>Foster a culture of continuous learning and growth, providing mentorship and guidance to team members to help them reach their full potential while maintaining a positive and inclusive work environment.</li>\n</ul><h3>What you'll do</h3><ul>\n<li>Oversee the day-to-day activities of the engineering team, setting clear goals, priorities, and timelines to ensure project success and alignment with organizational objectives.</li>\n<li>Drive technical excellence and best practices within the team, promoting collaboration, code quality, and innovation to deliver high-performing, reliable software solutions.</li>\n<li>Mentor and coach engineers, providing regular feedback, support, and professional development opportunities to help them grow their skills, advance their careers, and contribute effectively to the team's success.</li>\n</ul><h3>Qualifications</h3><ul>\n<li>Proven track record of leadership in an engineering or technical role, with experience managing and mentoring a team of software engineers or developers.</li>\n<li>Strong technical background with expertise in software development methodologies, tools, and languages, enabling effective oversight and guidance of engineering projects from conception to delivery.</li>\n<li>Excellent communication and interpersonal skills, with the ability to collaborate effectively with cross-functional teams, articulate technical concepts to non-technical stakeholders, and inspire and motivate team members to achieve shared goals.</li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658146,
+      "expiryDate": 1798842146,
+      "applicationLink": "https://himalayas.app/companies/bubba-gump-shrimp-co/jobs/butterfly-effects?utm_source=api",
+      "guid": "https://himalayas.app/companies/bubba-gump-shrimp-co/jobs/butterfly-effects"
+    },
+    {
+      "title": "Paid Ads Manager - Google",
+      "excerpt": "About the Role:We're looking for a performance-driven Paid Ads Manager - Google to lead the planning, execution, and optimization of paid advertising campaigns across Google platforms for ecommerce brands.",
+      "companyName": "Talent Hackers",
+      "companySlug": "trytalenthackers",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": null,
+      "locationRestrictions": [
+        "Nigeria"
+      ],
+      "timezoneRestrictions": [
+        1
+      ],
+      "categories": [
+        "Paid-Ads-Manager",
+        "Google-Ads-Manager",
+        "Performance-Marketing",
+        "Digital-Marketing-Manager",
+        "E-commerce-Marketing"
+      ],
+      "parentCategories": [
+        "Marketing"
+      ],
+      "description": "<h3>About the Role:</h3><p>We're looking for a performance-driven Paid Ads Manager - Google to lead the planning, execution, and optimization of paid advertising campaigns across Google platforms for ecommerce brands. This role combines strategic media buying, campaign analysis, and conversion-focused optimization to drive scalable growth and maximize return on ad spend. The ideal candidate is analytical, proactive, and experienced in managing high-performing Google Ads campaigns across Search, Shopping, Performance Max, and retargeting. They should be comfortable working with performance metrics, testing new strategies, collaborating with creative and marketing teams, and continuously optimizing campaigns to improve lead generation and ecommerce performance. </p><h3>Responsibilities:</h3><h3>Core Tasks:</h3><ul>\n<li>Design, implement, and manage paid advertising campaigns in Google</li>\n<li>Develop audience targeting strategies, ad creatives, and campaign structures aligned with marketing goals</li>\n<li>Monitor daily performance metrics including ROAS, CPA, CTR, CPC, and conversion rates</li>\n<li>Conduct A/B testing on creatives, copy, audiences, and landing pages to improve performance</li>\n<li>Optimize budgets and bidding strategies to maximize ROI and scale winning campaigns</li>\n<li>Collaborate with creative, CRO, and marketing teams to align messaging and funnel strategy</li>\n<li>Track and report campaign performance using Google Analytics, platform dashboards, and reporting tools</li>\n<li>Stay updated on platform policy changes, trends, and best practices in paid media</li>\n<li>Perform other marketing and lead-gen related tasks as needed</li>\n</ul><h3>Must-Have:</h3><ul>\n<li>3+ years managing Google Ads campaigns for ecommerce brands (Shopping, Performance Max, Search, and retargeting)</li>\n<li>Experience managing spend of $10k - 50k+ per month (preferably ecommerce brands)</li>\n<li>Intermediate experience in Google Sheets / Excel for basic campaign reporting</li>\n<li>Familiarity with ad targeting and segmentation techniques</li>\n<li>Strong written and verbal English communication skills</li>\n<li>Ability to work full-time EST</li>\n</ul><h3>Nice-to-Have:</h3><ul>\n<li>Experience working in an agency environment (US experience preferred)</li>\n<li>Certifications or experience running Meta ads campaigns</li>\n<li>Familiarity with Gmail and Slack for internal comms</li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658127,
+      "expiryDate": 1798842125,
+      "applicationLink": "https://himalayas.app/companies/trytalenthackers/jobs/paid-ads-manager-google?utm_source=api",
+      "guid": "https://himalayas.app/companies/trytalenthackers/jobs/paid-ads-manager-google"
+    },
+    {
+      "title": "Platform Engineer - Commercial Services Tools",
+      "excerpt": "Job Title: Platform Engineer - Commercial Services Tools Job Location: Budapest, Hungary Job Location Type: Remote Job Contract Type: Full-time Job Seniority Level: Veeva Systems is a mission-driven organization and pioneer in industry cloud, helping life sciences companies bring therapies to patients faster.",
+      "companyName": "Lifelancer",
+      "companySlug": "lifelancer",
+      "companyLogo": "https://cdn-images.himalayas.app/ztdsyzatuliky237a5zq922sir0k",
+      "employmentType": "Full Time",
+      "minSalary": 14000000,
+      "maxSalary": 24000000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Mid-level"
+      ],
+      "currency": "HUF",
+      "locationRestrictions": [
+        "Hungary"
+      ],
+      "timezoneRestrictions": [
+        1
+      ],
+      "categories": [
+        "Platform-Engineer",
+        "Backend-Engineer",
+        "Full-Stack-Engineer",
+        "AI-Engineer",
+        "Cloud-Engineer"
+      ],
+      "parentCategories": [
+        "Developer",
+        "Data Science"
+      ],
+      "description": "<p><b>Job Title: </b>Platform Engineer - Commercial Services Tools</p><p><b>Job Location: </b>Budapest, Hungary</p><p><b>Job Location Type: </b>Remote</p><p><b>Job Contract Type: </b>Full-time</p><h3>Job Seniority Level: </h3><div>Veeva Systems is a mission-driven organization and pioneer in industry cloud, helping life sciences companies bring therapies to patients faster. As one of the fastest-growing SaaS companies in history, we surpassed $3B in revenue in our last fiscal year with extensive growth potential ahead.</div><div>At the heart of Veeva are our values: Do the Right Thing, Customer Success, Employee Success, and Speed. We're not just any public company – we made history in 2021 by becoming a public benefit corporation (PBC), legally bound to balancing the interests of customers, employees, society, and investors.</div><div>As a Work Anywhere company, we support your flexibility to work from home or in the office, so you can thrive in your ideal environment.</div><div>Join us in transforming the life sciences industry, committed to making a positive impact on its customers, employees, and communities.</div><h3>The Role</h3><div>Veeva Systems is the cloud software leader for the life sciences industry, building the platform that helps the world’s largest pharma and biotech companies bring treatments to patients faster. The Commercial Tools team is building the next generation of services tools that our global services teams rely on every day, and we're building them best-in-class on a genuinely modern stack.</div><div>As a Services Platform Engineer you'll ship real, cutting-edge AI features to production fast — working shoulder-to-shoulder with a small, highly collaborative team that moves quickly and hands you real ownership from day one. You'll go deep across backend, frontend, cloud and applied AI, learn from engineers who know the craft, and build a career at the frontier of AI engineering — in an industry where the software you write helps get treatments to patients faster.</div><h3>What You'll Do</h3><div><ul class=\"my-4\"><ul>\n<li>Build best-in-class AI features end to end — RAG pipelines, agentic workflows and LLM apps on AWS Bedrock and Bedrock Knowledge Bases, like our CRM Helper on ECS Fargate — and ship them to production fast</li>\n<li>Design and ship async Python services (FastAPI, SQLAlchemy 2 async, asyncpg on Postgres 17) that stream live job progress to users over WebSocket/SSE</li>\n<li>Build and own features in our React/TypeScript portal that global services teams rely on every single day</li>\n<li>Take real ownership from day one — features are yours from design through deploy, with mentorship from engineers who know the craft</li>\n<li>Move fast and keep it solid: own the tests, CI and observability that let a small team ship confidently every day</li>\n<li>Range across the whole stack — backend, frontend, cloud (AWS) and applied AI — and go as deep as your curiosity takes you</li>\n<li>Learn the Veeva Vault and CRM platform APIs that power the life-sciences tools you're building</li>\n</ul></ul></div><h3>Requirements</h3><div><ul class=\"my-4\"><ul>\n<li>2+ years building and shipping real production software — you've put your work in front of real users</li>\n<li>Strong Python with hands-on experience building async REST APIs, FastAPI ideal (SQLAlchemy 2 async / asyncpg / Postgres a plus)</li>\n<li>You've built at least one real agent or RAG application and understand embeddings, vector search, chunking, and prompting in practice</li>\n<li>Comfortable across the stack — happy to jump into a React/TypeScript frontend as well as backend services</li>\n<li>Working knowledge of SQL / PostgreSQL and confident with Git-based team workflows</li>\n<li>Foundational AWS — you've deployed something and understand IAM roles and containers (Docker)</li>\n<li>Genuine curiosity for AI and hunger to learn new tech fast — you want to build a career at the frontier of AI engineering</li>\n<li>Strong written and verbal English, and you thrive in a fast-moving, fully remote team</li>\n</ul></ul></div><h3>Nice to Have</h3><div><ul class=\"my-4\"><ul>\n<li>Exposure to AWS Bedrock and agent frameworks such as LangChain/LangGraph</li>\n<li>Async Python and WebSocket/SSE streaming</li>\n<li>Frontend experience with React, TypeScript, Vite and MUI</li>\n<li>Infrastructure-as-code (Terraform or CloudFormation) and CI/CD pipelines</li>\n<li>Observability tooling such as CloudWatch, Grafana, or Prometheus</li>\n</ul></ul></div><h3>Interviewing with Veeva</h3><div>\n<p>We value your time and believe in a transparent hiring process. Here is the process you can expect.</p>\n<ul class=\"my-4\"><ul>\n<li>Follow the application process and submit your resume.</li>\n<li>Within 3 days, you will receive a link to a personality assessment administered by a third party.</li>\n<li>Once you complete the assessment, our team will review your full application package and follow up via email with our decision.</li>\n<li>If moving to the interview stage, the process is as follows:<ol class=\"my-4\"><ol>\n<li>A conversation with the hiring manager</li>\n<li>A practical case exercise</li>\n<li>A final conversation with our group's Senior Leader.</li>\n</ol></ol>\n</li>\n<li>Once all interviews are complete, the manager will be in touch with a final decision.</li>\n</ul></ul>\n</div><h3>Compensation</h3><div><ul class=\"my-4\"><ul>\n<li>Total compensation: 14,000,000 - 24,000,000 HUF</li>\n<li>The total compensation range listed here has been provided to comply with local regulations and represents a potential total compensation range for this role. Please note that actual total compensation may vary within the range above or below, depending on experience and location. We look at compensation for each individual and base our offer on your unique qualifications, experience, and expected contributions. This position's total compensation may be composed of other types of compensation, such as variable bonus and/or stock bonus.</li>\n</ul></ul></div><h6>#RemoteHungary</h6><div>Veeva’s headquarters is located in the San Francisco Bay Area with offices in more than 15 countries around the world.</div><div>As an equal opportunity employer, Veeva is committed to fostering a culture of inclusion and growing a diverse workforce. Diversity makes us stronger. It comes in many forms. Gender, race, ethnicity, religion, politics, sexual orientation, age, disability and life experience shape us all into unique individuals. We value people for the individuals they are and the contributions they can bring to our teams.</div><div>If you need assistance or accommodation due to a disability or special need when applying for a role or in our recruitment process, please contact us at .</div><br><br><h3>This job is curated by <a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a>.</h3><p><strong><a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a> is a talent-hiring platform in Life Sciences, Pharma and IT. The platform connects talent with opportunities in pharma, biotech, health sciences, healthtech and IT domains.</strong></p><p><strong>Please apply via <a href=\"https://himalayas.app/companies/lifelancer\">Lifelancer</a> platform to get connected to the application page and to find  similar roles.</strong></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658084,
+      "expiryDate": 1798842082,
+      "applicationLink": "https://himalayas.app/companies/lifelancer/jobs/platform-engineer-commercial-services-tools-6928137535?utm_source=api",
+      "guid": "https://himalayas.app/companies/lifelancer/jobs/platform-engineer-commercial-services-tools-6928137535"
+    },
+    {
+      "title": "Application Engineer - Data Center, Hyperscale Systems Design",
+      "excerpt": "Eaton’s ES AMER NAS division is currently seeking an Application Engineer - Data Center, Hyperscale Systems Design.",
+      "companyName": "Eaton",
+      "companySlug": "eaton",
+      "companyLogo": "https://cdn-images.himalayas.app/1x2sdogqv23wges2n3yvx0a5rql8",
+      "employmentType": "Full Time",
+      "minSalary": 167250,
+      "maxSalary": 245300,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "application-engineering",
+        "Data-Center-Engineering",
+        "Hyperscale-Systems-Design",
+        "Technical-Sales-Engineering",
+        "Power-Distribution-Engineering"
+      ],
+      "parentCategories": [],
+      "description": "<p><a href=\"https://himalayas.app/companies/eaton\">Eaton</a>’s ES AMER NAS division is currently seeking an Application Engineer - Data Center, Hyperscale Systems Design. This is a home-based/remote position and candidates must reside within the United States to be considered for this position.</p><div>\n<div>\n<div><h2>What you’ll do:</h2></div>\n<div>\n<p><strong>Position Overview:</strong><br>The Application Engineer is a consultative technical sales professional responsible for customers in-house design engineering staff at hyperscale accounts. An application design engineer must possess both strong technical and commercial skills and be experienced in electrical power distribution, power quality, control and rack level power.</p>\n<p>This position is responsible for working with hyperscale principal design, product and reliability engineering teams to develop <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> solutions for current and future data center distribution systems needs, medium voltage to rack level power. Externally, this position will be titled “Systems Design Engineer” to better align with hyperscale engineering teams. This position will also be responsible for providing technical product and application leadership for the Global Account Team. They will engage closely with sales and hyperscale teams, and ensure <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> has cohesive strategy across all hyperscale accounts. They will represent hyperscale accounts during product line roadmap sessions to ensure <a href=\"https://himalayas.app/companies/eaton\">Eaton</a>’s short-term and long-term strategies position <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> for success.</p>\n<p><strong>In this function you will:</strong><br>• Support design engineers at hyperscale accounts, aid in technical design and position <a href=\"https://himalayas.app/companies/eaton\">Eaton</a>-related products in a preferred position<br>• Act as the primary point of contact for technical and engineering support for the <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> rep sales teams<br>• Serve as a technical expert within the hyperscale accounts team &amp; offer comprehensive support to account managers for <a href=\"https://himalayas.app/companies/eaton\">Eaton</a>'s full portfolio<br>• Collaborate with MTDC AE team to align future ready <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> data center solutions<br>• Lead global design efforts and collaborating with global AE team to localize designs for all regions<br>• Facilitate technical collaboration between hyperscale and <a href=\"https://himalayas.app/companies/eaton\">Eaton</a>’s product lines, supporting product innovation and design recommendations based on customer needs<br>• Represents hyperscale in discussions with <a href=\"https://himalayas.app/companies/eaton\">Eaton</a>’s data center architect team, provide insight and guidance to long-term roadmap and grid to chip development</p>\n</div>\n</div>\n<div>\n<div><h2>Qualifications:</h2></div>\n<div>\n<p><strong>Required (Basic) Qualifications:</strong><br>• Bachelor’s degree from an accredited institution<br>• Minimum seven (7) years of electrical sales/marketing/application engineering experience</p>\n<h3>• Possess a valid driver’s license</h3>\n<ul>\n<li>No relocation benefit is offered for this position. Active-Duty Military Service member candidates are exempt from the geographical area limitation.</li>\n</ul>\n<p><strong>Preferred Qualifications:</strong><br>• Bachelor’s degree in Electrical Engineering from an accredited institution</p>\n<h3>• MBA</h3>\n<ul>\n<li>Product Line, engineering, and/or field engineering experience<br>• Reliability and/or material science experience<br>• Professional Engineer (PE) License<br>• LEED AP certification<br>• Extensive electrical experience<br>• Knowledge of <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> electrical products, services and competitors</li>\n</ul>\n</div>\n</div>\n<div>\n<div><h2>Skills:</h2></div>\n<div>\n<h3>Position Criteria:</h3>\n<h3>• Possess excellent communication skills</h3>\n<ul>\n<li>Must be able to work in the United States without corporate sponsorship now and within the future<br>• Technical knowledge regarding the application of power distribution products including medium and low voltage switchgear, panelboards and switchboards, protective relaying and busway<br>• Experience in working with products and applications such as three-phase UPS systems, power distribution units, static transfer switches, remote power panels, power monitoring products (including metering and software), and power control products<br>• Strategic understanding of the U.S. power distribution and data center market<br>• Ability to write technical specifications for new projects in a manner that will put <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> in an advantageous position when the project is bid<br>• Ability to interface with electrical consultant principals and lead electrical engineers, as well as facility engineers at data centers<br>• Problem solving skills<br>• Effective communication skills with the ability to interact at all levels of an organization, including consultant or end user organizations<br>• Presentation and training skills<br>• Initiative and self-management skills<br>• Proven capability to find creative solutions to solve complex technical application problems<br>• Value selling experience<br>• Ability to travel up to 50% (closer to 35%)</li>\n</ul>\n</div>\n</div>\n</div><p>All positions may require participation in video and in-person interviews as part of the hiring process. All candidates will be evaluated based on job-related competencies, and all candidates’ privacy rights and data security will be protected in accordance with applicable laws.</p><p>The compensation range for this full-time position includes base pay and target sales performance incentive. This position has a target total compensation range of $167,250 - $245,300.</p><p>Base salaries are based upon candidate skills, experience, and qualifications, as well as market and business considerations.</p><p><strong>The application window for this position is anticipated to close on August 6, 2026.</strong></p><p>We are committed to ensuring equal employment opportunities for all job applicants and employees. Employment decisions are based upon job-related reasons regardless of an applicant's race, color, religion, sex, sexual orientation, gender identity, age, national origin, disability, marital status, genetic information, protected veteran status, or any other status protected by law.</p><p><a href=\"https://himalayas.app/companies/eaton\">Eaton</a> believes in second chance employment. Qualified applicants with arrest or conviction history will be considered regardless of their arrest or conviction history, consistent with the Los Angeles County Fair Chance Ordinance, the California Fair Chance Act and other local laws.</p><p>You do not need to disclose your conviction history or participate in a background check until a conditional job offer is made to you. After making a conditional offer and running a background check, if <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> is concerned about conviction that is directly related to the job, you will be given the chance to explain the circumstances surrounding the conviction, provide mitigating evidence, or challenge the accuracy of the background report.</p><p>To request a disability-related reasonable accommodation to assist you in your job search, application, or interview process, please call us at 1-800-836-6345 to discuss your specific need. Only accommodation requests will be accepted by this phone number.</p><p>We know that good benefit programs are important to employees and their families. <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> provides various Health and Welfare benefits as well as Retirement benefits, and several programs that provide for paid and unpaid time away from work. Click here for more detail: <a href=\"https://himalayas.app/companies/eaton\">Eaton</a> Benefits Overview. Please note that specific programs and options available to an employee may depend on eligibility factors such as geographic location, date of hire, and the applicability of collective bargaining agreements.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793658019,
+      "expiryDate": 1798842019,
+      "applicationLink": "https://himalayas.app/companies/eaton/jobs/application-engineer-data-center-hyperscale-systems-design?utm_source=api",
+      "guid": "https://himalayas.app/companies/eaton/jobs/application-engineer-data-center-hyperscale-systems-design"
+    },
+    {
+      "title": "Certified Nutrition Specialist",
+      "excerpt": "Join a team that's rebuilding healthcare from the patient up.",
+      "companyName": "Mochi Health",
+      "companySlug": "mochi-health",
+      "companyLogo": "https://cdn-images.himalayas.app/i4txw2jll48rjypmaub6mrre0lgm",
+      "employmentType": "Contractor",
+      "minSalary": 50,
+      "maxSalary": 50,
+      "salaryPeriod": "hourly",
+      "seniority": [
+        "Entry-level"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Certified-Nutrition-Specialist",
+        "Nutritionist",
+        "Registered-Dietitian-Nutritionist",
+        "Medical-Nutrition-Therapist"
+      ],
+      "parentCategories": [],
+      "description": "<div class=\"content-intro\">\n<p>Join a team that's rebuilding healthcare from the patient up. At Mochi Medical, you'll work alongside people who value bold thinking, inclusive collaboration, and getting meaningful work into the world. If you want to do the most impactful work of your career, this is where to do it.</p>\n<p>This position is a contract role with Mochi Medical, a physician-owned professional corporation affiliated with <a href=\"https://himalayas.app/companies/mochi-health\">Mochi Health</a> Corp. <a href=\"https://himalayas.app/companies/mochi-health\">Mochi Health</a> is a management service organization that supports Mochi Medical by providing administrative and operational services, but the role and clinical practice are with Mochi Medical.</p>\n</div><p><strong>Certified Nutrition Specialist (CNS)</strong>Capitated Model | Contract / Remote (US-Only)</p><h3>About The Role</h3><p>Mochi Medical, originally founded as an obesity management practice, is expanding its virtual care model beyond weight management. We're looking for Certified Nutrition Specialists who are committed to delivering high-quality, accessible, and affordable medical nutrition therapy alongside our Registered Dietitian Nutritionists. While obesity and metabolic health remain core areas of focus, our providers also support patients in areas such as dermatology, hormone replacement therapy, depression and anxiety, longevity, and hair loss. You will guide patients through their health journey with personalized, evidence-based nutrition care as part of a physician-led team.</p><h3>What You'll Do</h3><ul>\n<li>Conduct one-on-one virtual medical nutrition therapy and nutrition counseling visits, including personalized meal planning.</li>\n<li>Provide nutrition counseling that supports patients across multiple specialty areas and recognizes the link between nutrition and whole-body health.</li>\n<li>Build rapport, credibility, and engagement with patients through exceptional communication.</li>\n<li>Use motivational interviewing to guide patients toward sustainable lifestyle change.</li>\n<li>Document visits in our EMR using our nutrition note templates.</li>\n<li>Stay current with research on obesity medicine, GLP-1 therapy and nutrition, binge eating disorder, and emerging specialty areas.</li>\n<li>Practice only in states where you are legally permitted to provide MNT and only with patients located in those states.</li>\n<li>Adapt to a fast-paced startup environment and contribute to team-wide improvements.</li>\n</ul><h3>Who You Are</h3><h3>Required Qualifications</h3><ul>\n<li>Active Certified Nutrition Specialist (CNS) credential in good standing with the Board for Certification of Nutrition Specialists (BCNS).</li>\n<li>At least 1 year of experience providing individualized nutrition counseling or MNT to patients with obesity, diabetes, or other cardiometabolic conditions.</li>\n<li>Legally permitted to provide medical nutrition therapy in at least one state where Mochi sees patients. A state nutritionist license or certification is required for insurance-covered visits (see \"A note on states\" below) and is strongly preferred.</li>\n<li>Individual professional liability (malpractice) insurance, or willingness to obtain it before your start date.</li>\n<li>Proficient in online scheduling tools, EMR systems, and video-visit coordination.</li>\n<li>Skilled in motivational interviewing and patient education.</li>\n<li>Comfortable working in a dynamic, evolving startup environment.</li>\n</ul><h3>Preferred Qualifications</h3><ul>\n<li>Current state license or certification as a nutritionist in one or more of: Florida, New York, Washington, North Carolina, Maryland, Pennsylvania, Illinois, Minnesota, Massachusetts, Kentucky, Connecticut, New Mexico, Montana, Delaware, North Dakota, District of Columbia, or Alaska. CNS candidates practicing in other states are also encouraged to apply.</li>\n<li>Experience with GLP-1 or other anti-obesity medications and the nutrition considerations that accompany them.</li>\n<li>Experience or interest in nutrition as it relates to dermatology, hormone replacement therapy, mental health, longevity, or hair loss.</li>\n<li>Bilingual (English/Spanish) (a plus).</li>\n</ul><h3><strong>Compensation</strong></h3><div><ul>\n<li>Job Type: 1099 contractor</li>\n<li>Pay: Up to $50 per hour, with additional earning opportunities</li>\n</ul></div><div class=\"content-conclusion\">\n<h3><strong>Equal Opportunity</strong></h3>\n<p>Mochi Medical is an Equal Opportunity Employer. We make all employment decisions based solely on merit. We provide equal employment opportunities to all applicants and employees without discrimination on the basis of race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, disability status, or any other applicable legally protected characteristic. We prohibit any form of discrimination or harassment. This policy applies to all terms and conditions of employment, including hiring.</p>\n<h3 class=\"font-normal leading-normal\"><strong>Candidate Privacy Notice</strong></h3>\n<p class=\"font-normal leading-normal\">Please review our Candidate Privacy Notice here.</p>\n<h3><strong>Accommodations</strong></h3>\n<p>Mochi Medical complies with the Americans with Disabilities Act (ADA), as amended by the ADA Amendments Act, and all applicable state or local laws. We will reasonably accommodate qualified individuals with a disability during the application process and throughout employment as required by law.</p>\n<p>If you need any assistance or accommodations due to a disability, please contact us at <strong></strong>.</p>\n</div><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793657988,
+      "expiryDate": 1798841987,
+      "applicationLink": "https://himalayas.app/companies/mochi-health/jobs/certified-nutrition-specialist-5017121268?utm_source=api",
+      "guid": "https://himalayas.app/companies/mochi-health/jobs/certified-nutrition-specialist-5017121268"
+    },
+    {
+      "title": "Lead ML/AI Engineer",
+      "excerpt": "Position Summary:• As a Lead ML/AI Engineer, you will drive the design and implementation of functionality related to the end-to-end ML/AI and Feature lifecycle management on Azure/Google Cloud Platform, leveraging and integrating the cloud native services with other standard operational and automation tools.",
+      "companyName": "Inizio Partners Corp",
+      "companySlug": "inizio-partners-corp",
+      "companyLogo": "",
+      "employmentType": "Full Time",
+      "minSalary": 150000,
+      "maxSalary": 150000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "USD",
+      "locationRestrictions": [
+        "United States"
+      ],
+      "timezoneRestrictions": [
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        14
+      ],
+      "categories": [
+        "Machine-Learning-Engineer",
+        "AI-Engineer",
+        "MLOps-Engineer",
+        "Data-Scientist"
+      ],
+      "parentCategories": [
+        "Data Science"
+      ],
+      "description": "<h3>Position Summary:</h3><ul>\n<li>As a Lead ML/AI Engineer, you will drive the design and implementation of functionality related to the end-to-end ML/AI and Feature lifecycle management on Azure/Google Cloud Platform, leveraging and integrating the cloud native services with other standard operational and automation tools. Key responsibilities include: </li>\n<li>    Support the deployment of ML/AI pipelines on the platform.</li>\n<li>    Enable functionality to support analysis, model optimization, statistical testing, model versioning, deployment and monitoring of model and data.</li>\n<li>    Ability to translate functionality into scalable, tested, and configurable platform architecture and software.</li>\n<li>    Establish strong software engineering principles for development in Python on the Azure/Google Cloud Platform.</li>\n<li>    Deliver features aligned to enterprise AutoML, Feature Engineering, and MLOPS capability.</li>\n<li>    Innovative thinking and great communication skills.</li>\n<li>    Strong ownership of deliverables, with design decisions aligned to scale and industry best practices.</li>\n<li>    Provide technical leadership and mentorship to a team of machine learning engineers. Collaborate with cross-functional teams to align ML initiatives with overall business goals.</li>\n<li>    Design, implement, and optimize machine learning algorithms and models. Stay abreast of the latest advancements in ML research and apply them to solve complex business problems.</li>\n<li>    Architect and implement scalable and efficient machine learning systems. Collaborate with software engineers to integrate ML models into production systems.</li>\n<li>    Work closely with data engineers to ensure the availability and quality of data for training and evaluation of machine learning models.</li>\n<li>    Develop strategies for deploying machine learning models at scale. Ensure models are integrated into production systems with high reliability and performance.</li>\n<li>    Design and conduct experiments to evaluate the performance of machine learning models. Iterate on models based on feedback and evolving business requirements.</li>\n</ul><h3>Required Qualifications:</h3><ul>\n<li>    6+ years of experience in analytics domains, and deep understanding of ML operationalization and lifecycle management.</li>\n<li>    5+ years of deploying and monitoring analytical assets in batch/real-time business processes.</li>\n<li>    5+ years of SQL &amp; Python programming experience leveraging strong software development principles.</li>\n<li>    Experience in designing and developing AI applications and systems.</li>\n<li>    Experience with real-time and streaming technology (i.e. Azure Event Hubs, Azure Functions, Pub/Sub, Kafka, Spark Streaming etc.)</li>\n<li>    Experience with REST API/Microservice development using Python/Java.</li>\n<li>    Experience with deployment/scaling of apps on containerized environment (AKS and/or GKE)</li>\n<li>    Experience with Snowflake/Big Query, Google Dataproc/Databricks or any big data frameworks on Spark</li>\n<li>    Experience with RDBMS and NoSQL Databases and hands-on query tuning/optimization.</li>\n</ul><h3>Preferred Qualifications:</h3><ul>\n<li>    Hands on experience in building solutions using cloud native services (Azure, GCP preferred)</li>\n<li>    Understanding of DevOps, Infrastructure as Code, automation for self service</li>\n</ul><h3>Education:</h3><ul>\n<li>    Required: bachelors degree in computer science, Engineering, Statistics, Physics, Math, or related field or equivalent experience </li>\n<li>    Preferred: masters degree or PhD with coursework focused on advanced algorithms, mathematics in computing, data structures, etc.</li>\n</ul><h3>Preferred locations:  </h3><p>Dallas/Irving, Chicago, Boston/Wellesley, NYC, Hartford CT, Blue Bell PA, Scottsdale AZ, or Woonsocket RI.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793657748,
+      "expiryDate": 1798841747,
+      "applicationLink": "https://himalayas.app/companies/inizio-partners-corp/jobs/lead-ml-ai-engineer?utm_source=api",
+      "guid": "https://himalayas.app/companies/inizio-partners-corp/jobs/lead-ml-ai-engineer"
+    },
+    {
+      "title": "Senior Business Partner, Finance",
+      "excerpt": "Bring your energy to Aggreko as Senior Business Partner, Finance based in Toronto, ON.",
+      "companyName": "Aggreko",
+      "companySlug": "aggreko",
+      "companyLogo": "https://cdn-images.himalayas.app/drw2b1gtbdjxlnovav9nx1kjmzl3",
+      "employmentType": "Full Time",
+      "minSalary": 150000,
+      "maxSalary": 180000,
+      "salaryPeriod": "annual",
+      "seniority": [
+        "Senior"
+      ],
+      "currency": "CAD",
+      "locationRestrictions": [
+        "Canada"
+      ],
+      "timezoneRestrictions": [
+        -8,
+        -7,
+        -6,
+        -5,
+        -4,
+        -3.5
+      ],
+      "categories": [
+        "Senior-Finance-Business-Partner",
+        "Finance-Business-Partner",
+        "Financial-Planning-And-Analysis-Manager",
+        "Commercial-Finance-Manager",
+        "Business-Partner"
+      ],
+      "parentCategories": [
+        "Human Resources"
+      ],
+      "description": "<br><p>Bring your energy to <a href=\"https://himalayas.app/companies/aggreko\">Aggreko</a> as Senior Business Partner, Finance based in Toronto, ON. You’ll support the business by providing financial &amp; strategic insight that drives P&amp;L efficiency.</p><br><p>Power without pause. Heating, cooling and oil-free air without end. We keep our customers’ worlds on. From world-class events that last a few weeks to mining operations and remote communities who rely on us for decades. </p><p>Please note that this position is open to candidates in Toronto, Vancouver, Calgary or Edmonton.</p><br><p>In this role you will be one of the key business partners to function leaders and the Managing Director of the business. Your analysis and planning will keep the business on track for success. Your ability to work in a fast-paced environment and thrive in the unknown will be your greatest attribute. Your ability to provide key insight to our business will help drive revenue &amp; EBITDA growth</p><br><p><b>What you’ll do as a Senior Business Partner, Finance: </b></p><ul>\n<li>Partner with business leaders to provide strategic financial analysis that supports decision-making, identifies growth opportunities, strengthens targeted marketing initiatives, monitors competitive trends, and drives cross-selling opportunities.</li>\n<li>Support the development of new products, services, and commercial offerings through business case analysis, financial modelling, pricing strategies, and contract negotiations.</li>\n<li>Lead the annual budgeting process, five-year planning cycle, and ongoing forecasting activities to support business objectives and long-term growth.</li>\n<li>Challenge, influence, and support business leaders in developing robust financial assumptions, while ensuring a clear understanding of the impact of key business drivers and centrally determined assumptions.</li>\n<li>Evaluate business performance against strategic objectives and provide actionable insights and recommendations to improve profitability, operational efficiency, and overall financial performance.</li>\n<li>Develop a deep understanding of business operations to identify key performance drivers and deliver meaningful financial and operational analytics.</li>\n<li>Monitor and analyze critical performance metrics including Revenue, EBITDA, ROCE, Utilization, Sets on Hire, OPEX, and other key operational and financial KPIs to drive informed decision-making and accountability. </li>\n</ul><br><h3>You are:</h3><ul>\n<li>A minimum of 10 years of progressive experience in a similar analytical role, with a proven ability to partner effectively with non-finance stakeholders across the business.</li>\n<li>Strong expertise in financial reporting, forecasting, trend analysis, and the development of financial and operational models that support strategic decision-making.</li>\n<li>Demonstrated success working in fast-paced, high-volume environments, with the ability to manage priorities independently and deliver results with minimal supervision.</li>\n<li>Excellent communication skills, with the ability to translate complex financial and technical concepts into meaningful business insights for diverse audiences.</li>\n<li>Hands-on experience with Infor ERP, financial consolidation systems, and Power BI.</li>\n<li>Advanced proficiency in Microsoft Office, particularly Excel and PowerPoint, including financial analysis, data modeling, and executive-level presentations.</li>\n</ul><br><h3>Here’s what you’ll get:</h3><ul>\n<li>Competitive salary and performance-based bonuses</li>\n</ul><h3>•Comprehensive benefits package</h3><ul>\n<li>Opportunities for professional development and career advancement</li>\n<li>A dynamic and inclusive work environment</li>\n</ul><br><p>We recruit the best talent. Apply now and help us keep the power on.</p><br><h3>Salary range: $150,000 - $180,000</h3><br><p>This is an active vacancy, and we are currently seeking candidates for this position.</p><br><h3>[</h3><br><h3>Equal employment opportunity</h3><p>We welcome people from different backgrounds and cultures, and respect people’s unique skills, attitudes and experiences. We encourage everyone to be themselves at work because we know that’s how we do our best, for each other, for our customers, for the communities where we work, and for our careers.</p><p>We are an equal opportunity employer. If you apply for a role at <a href=\"https://himalayas.app/companies/aggreko\">Aggreko</a>, we will consider your application based on your qualifications and experience, and not on your race, colour, ethnicity, religion, sex, sexual orientation, gender identity, national origin, disability, or veteran status.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+      "pubDate": 1793657693,
+      "expiryDate": 1798841692,
+      "applicationLink": "https://himalayas.app/companies/aggreko/jobs/senior-business-partner-finance?utm_source=api",
+      "guid": "https://himalayas.app/companies/aggreko/jobs/senior-business-partner-finance"
+    }
+  ]
+}

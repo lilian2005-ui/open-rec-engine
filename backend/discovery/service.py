@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from backend.db.models import AppSetting, Company
 from backend.db.models import JobPosting as JobPostingRow
 from backend.db.normalize import company_name_key
+from backend.discovery.fetch import SourceFetchError
 from backend.schemas.enums import JobStatus
 from backend.schemas.job import JobPosting
 from backend.schemas.settings import AppSettings
@@ -17,12 +18,14 @@ from backend.schemas.settings import AppSettings
 
 @dataclass
 class DiscoveryResult:
-    """Counts for the run log (pipeline_run.jobs_fetched / jobs_new / jobs_updated)."""
+    """Counts for the run log (pipeline_run.jobs_fetched / jobs_new / jobs_updated) and
+    the failure that ended the fetch, if any (error.to_dict() goes in pipeline_run.errors)."""
     fetched: int = 0    # jobs returned by the source
     new: int = 0
     updated: int = 0
     unchanged: int = 0
     skipped: int = 0    # could not be mapped (missing or invalid fields)
+    error: SourceFetchError | None = None  # the counts cover the pages before this failure
 
 def load_settings(db: Session) -> AppSettings:
     """The editable settings from app_setting (fetch_limit, ...), parsed and validated.

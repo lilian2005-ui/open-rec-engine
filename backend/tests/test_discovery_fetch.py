@@ -144,10 +144,24 @@ def test_timeout_and_params_reach_the_request():
     assert server.requests[0].extensions["timeout"]["read"] == 7.0
 
 
-def test_timeout_defaults_to_10_seconds():
+def test_timeout_defaults_to_the_clients():
     server = FakeServer(OK)
-    server.get()
-    assert server.requests[0].extensions["timeout"]["read"] == 10.0
+    with httpx.Client(transport=httpx.MockTransport(server), timeout=30.0) as client:
+        get_json(client, URL, source="himalayas", page=2, max_retries=0)
+    assert server.requests[0].extensions["timeout"]["read"] == 30.0
+
+
+def test_validate_rejects_a_body_without_retrying():
+    server = FakeServer(status(503), httpx.Response(200, json=["a"]))
+    with pytest.raises(SourceFetchError) as e:
+        server.get(validate=lambda body: isinstance(body, dict))
+    assert len(server.requests) == 2
+    assert (e.value.error_type, e.value.status, e.value.attempts) == ("invalid_body", 200, 2)
+    assert e.value.page == 2
+
+
+def test_validate_passes_a_good_body_through():
+    assert FakeServer(OK).get(validate=lambda body: "jobs" in body) == {"jobs": ["a"]}
 
 
 # ---------------------------------------------------------------- the final error

@@ -55,11 +55,15 @@ def _retry_after(response: httpx.Response) -> int | None:
 
 def get_json(client: httpx.Client, url: str, *, source: str, page: int | str | None,
              max_retries: int, params: Mapping[str, str | int] | None = None,
-             timeout: float = 10.0, sleep: Callable[[float], None] = time.sleep) -> Any:
+             validate: Callable[[Any], bool] | None = None,
+             timeout: Any = httpx.USE_CLIENT_DEFAULT,
+             sleep: Callable[[float], None] = time.sleep) -> Any:
     """GET ``url`` and return its JSON body, making at most max_retries + 1 requests.
 
     Timeouts, connection errors, 429 and 5xx are retried after 1, 2, then 4 s (on 429,
-    after Retry-After if present). ``page`` is the page or cursor, used to report failures.
+    after Retry-After if present). ``page`` is the page number, used to report failures.
+    ``validate`` checks the shape of a parsed body; a body it rejects is not retried.
+    The timeout is the client's unless ``timeout`` is given.
     Raises SourceFetchError when retries run out or on a permanent error.
     """
     for attempt in count(1):
@@ -77,10 +81,14 @@ def get_json(client: httpx.Client, url: str, *, source: str, page: int | str | N
             status = response.status_code
             if response.is_success:
                 try:
-                    return response.json()
+                    body = response.json()
                 except ValueError as e:
                     raise SourceFetchError(source, page, "invalid_body", status, attempt,
                                            "response body is not valid JSON") from e
+                if validate is not None and not validate(body):
+                    raise SourceFetchError(source, page, "invalid_body", status, attempt,
+                                           "response body has the wrong shape")
+                return body
             error_type = "http_status"
             reason = f"HTTP {status}"
             if status != 429 and status < 500:

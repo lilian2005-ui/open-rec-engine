@@ -9,3 +9,4 @@ google-genai
 httpx
 pytest
 email-validator
+python-dotenv

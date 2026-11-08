@@ -1,17 +1,19 @@
 """Himalayas connector: turn one job from the Himalayas API into our JobPosting.
 
-Field mapping follows data contract section 5. Fields we do not store
-(timezoneRestrictions, locationRestrictions, seniority, salary, ...) are ignored,
+Field mapping follows data contract section 5. Structured fields (salary, employment
+type, seniority, location and timezone restrictions) are kept as-is in source_fields,
 whatever shape they come in.
 """
 import logging
 import os
 from typing import Any
 
+
 import httpx
 from pydantic import ValidationError
 from sqlalchemy.orm import Session
 
+from backend.config import settings as config
 from backend.db.normalize import content_hash
 from backend.discovery.cleaning import html_to_text
 from backend.discovery.fetch import SourceFetchError, get_json
@@ -19,15 +21,24 @@ from backend.discovery.service import DiscoveryResult, load_settings, save_posti
 from backend.schemas.enums import Source
 from backend.schemas.job import JobPosting
 
+
 logger = logging.getLogger(__name__)
 
 # Without these a posting cannot be stored (JD-18).
 REQUIRED_FIELDS = ("guid", "title", "companyName", "applicationLink", "description")
+SOURCE_FIELDS = (
+    "minSalary", "maxSalary", "currency", "salaryPeriod", "employmentType",
+    "seniority", "locationRestrictions", "timezoneRestrictions",
+)
 
 
 class MappingError(ValueError):
     """A Himalayas job that cannot become a JobPosting. The caller skips it and logs why."""
 
+def _source_fields(raw: dict) -> dict | None:
+    """The SOURCE_FIELDS that have a value, unchanged; None when there are none."""
+    fields = {k: raw[k] for k in SOURCE_FIELDS if raw.get(k) not in (None, "", [])}
+    return fields or None
 
 def map_job(raw: dict) -> JobPosting:
     """Map one Himalayas job (a dict from the API's "jobs" list) to a JobPosting.
@@ -54,6 +65,7 @@ def map_job(raw: dict) -> JobPosting:
             content_hash=content_hash(raw["title"], description_text),
             posted_at=raw.get("pubDate") or None,      # Unix seconds -> UTC in the schema
             expires_at=raw.get("expiryDate") or None,
+            source_fields=_source_fields(raw),
         )
     except ValidationError as e:
         problems = "; ".join(f"{'.'.join(map(str, err['loc']))}: {err['msg']}" for err in e.errors())
@@ -69,7 +81,7 @@ PAGE_SIZE = 20  # the API's maximum per request
 def make_client(api_key: str | None = None, timeout: float = 30.0) -> httpx.Client:
     """An HTTP client for Himalayas. The key comes from HIMALAYAS_API_KEY (.env only).
     The API also works without a key, with a lower shared rate limit."""
-    key = api_key if api_key is not None else os.environ.get("HIMALAYAS_API_KEY")
+    key = api_key if api_key is not None else (os.environ.get("HIMALAYAS_API_KEY") or config.HIMALAYAS_API_KEY)
     if not key:
         logger.warning("HIMALAYAS_API_KEY is not set; using the shared public rate limit")
     headers = {"Authorization": f"Bearer {key}"} if key else {}

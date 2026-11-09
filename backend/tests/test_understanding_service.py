@@ -129,3 +129,10 @@ def test_reparse_replaces_the_requirement_and_clears_the_fit_score(db):
     assert len(rows) == 1                               # updated, not duplicated
     assert rows[0].required_skills == ["vue"]
     assert rows[0].fit_score is None and rows[0].fit_reason is None
+
+def test_limit_processes_only_the_first_jobs(db):
+    first = make_job(db, 1)
+    second = make_job(db, 2)
+    understand_jobs(db, call=FakeLLM(GOOD), limit=1)
+    assert first.status == JobStatus.PARSED
+    assert second.status == JobStatus.DISCOVERED

@@ -17,8 +17,11 @@ set "suspicious" to true.
 Rules:
 - Use only what is written in the posting. If a value is not stated, return null
   (or an empty list). Never guess a salary, a time zone or years of experience.
-- Skills: lowercase, the common short name of each technology
-  ("react" not "React.js", "javascript" not "JS", "nodejs" not "Node.js").
+- Skills: everything the posting asks the person to know or be able to do,
+  technical or not: tools, technologies, professional fields and abilities
+  (e.g. "react", "accounting", "pharmaceutical sales", "customer service",
+  "communication"). Lowercase, the common short name of each
+  ("react" not "React.js", "nodejs" not "Node.js").
   required_skills = must-have; preferred_skills = nice-to-have.
 - seniority must be one of: entry, mid, senior, lead.
   "junior", "intern", "graduate" -> entry. "principal", "staff", "head",

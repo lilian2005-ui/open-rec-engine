@@ -40,12 +40,12 @@ class UnderstandingResult:
     errors: list[dict] = field(default_factory=list)   # for pipeline_run.errors (P1-6)
 
 
-def understand_jobs(db: Session, *, call=call_llm, max_retries: int = 3) -> UnderstandingResult:
-    """Process every `discovered` job. One job failing never stops the others."""
+def understand_jobs(db: Session, *, call=call_llm, max_retries: int = 3,
+                    limit: int | None = None) -> UnderstandingResult:
+    """Process every `discovered` job (or only the first `limit`). One job failing never stops the others."""
     result = UnderstandingResult()
     jobs = db.scalars(
-        select(JobPosting).where(JobPosting.status == JobStatus.DISCOVERED).order_by(JobPosting.job_id)
-    ).all()
+                select(JobPosting).where(JobPosting.status == JobStatus.DISCOVERED).order_by(JobPosting.job_id).limit(limit)).all()
     for job in jobs:
         try:
             status = understand_one(db, job, call=call, max_retries=max_retries)

@@ -225,3 +225,10 @@ def test_gemini_schema_has_no_additional_properties():
     for model in (JobRequirements, FitOutput, DraftOutput):
         assert "additionalProperties" not in str(gemini_schema(model))
     assert gemini_schema(FitOutput)["properties"]["fit_score"]["maximum"] == 100
+
+
+def test_gemini_schema_keeps_a_field_named_title():
+    from backend.schemas import gemini_schema
+    schema = gemini_schema(JobRequirements)
+    assert "title" in schema["properties"]
+    assert "title" in schema["required"]

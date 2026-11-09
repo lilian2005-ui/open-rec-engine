@@ -1,6 +1,7 @@
 """Stages 1-3: JobPosting, JobRequirements, FitOutput (data contract 4)."""
 import re
 from datetime import datetime
+from typing import Any
 
 from pydantic import Field, field_validator, model_validator
 
@@ -23,6 +24,7 @@ class JobPosting(Schema):
     content_hash: str                               # SHA-256 of title + description_text (Q3)
     posted_at: datetime | None = None
     expires_at: datetime | None = None
+    source_fields: dict[str, Any] | None = None    # structured source data, as given
 
     @field_validator("external_id", mode="before")
     @classmethod

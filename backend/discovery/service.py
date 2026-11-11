@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from backend.db.models import AppSetting, Company
 from backend.db.models import JobPosting as JobPostingRow
 from backend.db.normalize import company_name_key
+from backend.discovery.fetch import SourceFetchError
 from backend.schemas.enums import JobStatus
 from backend.schemas.job import JobPosting
 from backend.schemas.settings import AppSettings
@@ -17,12 +18,14 @@ from backend.schemas.settings import AppSettings
 
 @dataclass
 class DiscoveryResult:
-    """Counts for the run log (pipeline_run.jobs_fetched / jobs_new / jobs_updated)."""
+    """Counts for the run log (pipeline_run.jobs_fetched / jobs_new / jobs_updated) and
+    the failure that ended the fetch, if any (error.to_dict() goes in pipeline_run.errors)."""
     fetched: int = 0    # jobs returned by the source
     new: int = 0
     updated: int = 0
     unchanged: int = 0
     skipped: int = 0    # could not be mapped (missing or invalid fields)
+    error: SourceFetchError | None = None  # the counts cover the pages before this failure
 
 def load_settings(db: Session) -> AppSettings:
     """The editable settings from app_setting (fetch_limit, ...), parsed and validated.
@@ -71,12 +74,18 @@ def upsert_job(db: Session, posting: JobPosting, company_id: int, run_id: int) -
             content_hash=posting.content_hash,
             posted_at=posting.posted_at,
             expires_at=posting.expires_at,
+            source_fields=posting.source_fields,
             status=JobStatus.DISCOVERED,
         ))
         db.flush()
         return "new"
 
     if row.content_hash == posting.content_hash:
+        # Same text, but salary or seniority may have changed: refresh them without
+        # sending the job back to discovered (they are read as-is, not re-parsed).
+        if row.source_fields != posting.source_fields:
+            row.source_fields = posting.source_fields
+            db.flush()
         return "unchanged"
 
     row.company_id = company_id
@@ -88,6 +97,7 @@ def upsert_job(db: Session, posting: JobPosting, company_id: int, run_id: int) -
     row.content_hash = posting.content_hash
     row.posted_at = posting.posted_at
     row.expires_at = posting.expires_at
+    row.source_fields = posting.source_fields
     row.updated_at = datetime.now(timezone.utc)
     row.status = JobStatus.DISCOVERED
     db.flush()

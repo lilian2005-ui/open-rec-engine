@@ -8,12 +8,12 @@ from functools import lru_cache
 
 from sqlalchemy import Engine, create_engine
 from sqlalchemy.orm import Session, sessionmaker
+from backend.config import settings
 
 
 def get_database_url() -> str:
     """The only place that reads the database URL (postgresql+psycopg://...)."""
-    # TODO(P0-7): read the URL from the settings module once P0-7 is merged.
-    url = os.environ.get("DATABASE_URL")
+    url = os.environ.get("DATABASE_URL") or settings.DATABASE_URL
     if not url:
         raise RuntimeError("DATABASE_URL is not set. Copy .env.example to .env and fill it in.")
     return url

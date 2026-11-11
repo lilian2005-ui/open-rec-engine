@@ -62,9 +62,12 @@ def gemini_schema(model: type[BaseModel]) -> dict:
     accept that keyword, so it is removed here. Strict checking still happens
     afterwards in our code with Model.model_validate_json(response.text).
     """
-    def clean(node):
+    def clean(node, in_properties=False):
         if isinstance(node, dict):
-            return {k: clean(v) for k, v in node.items() if k not in ("additionalProperties", "title")}
+            if in_properties:   # keys here are field names (e.g. "title"): keep them all
+                return {k: clean(v) for k, v in node.items()}
+            return {k: clean(v, in_properties=(k == "properties"))
+                    for k, v in node.items() if k not in ("additionalProperties", "title")}
         if isinstance(node, list):
             return [clean(v) for v in node]
         return node

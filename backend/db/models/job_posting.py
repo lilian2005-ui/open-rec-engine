@@ -1,9 +1,10 @@
 """job_posting: stage 1 output, one row per (source, external_id)."""
 from datetime import datetime
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from sqlalchemy import (CHAR, BigInteger, CheckConstraint, DateTime, ForeignKey, Identity, Text,
                         UniqueConstraint, func, text)
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from backend.db.base import Base
@@ -50,6 +51,8 @@ class JobPosting(Base):
     content_hash: Mapped[str] = mapped_column(CHAR(64), index=True)
     posted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Structured fields the source gives as-is (salary, seniority, ...); NULL when none
+    source_fields: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
     discovered_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now()
     )

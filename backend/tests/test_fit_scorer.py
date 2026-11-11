@@ -1,10 +1,9 @@
-import json
 from decimal import Decimal
 
 import pytest
-from pydantic import ValidationError
 
 from backend.fit.scorer import FakeFitScorer, GeminiFitScorer, build_prompt
+from backend.llm import FakeLLM, LLMError
 
 REQ = {"title": "Senior React Developer", "seniority": "senior", "min_years_experience": 5,
        "required_skills": ["react", "typescript"], "preferred_skills": ["graphql"],
@@ -17,10 +16,7 @@ POOL = [
      "years_experience": Decimal("3.0"), "seniority": "mid", "skills": ["python"],
      "timezone_offsets": None, "availability": "now", "summary": "x"},
 ]
-
-
-def good_llm(prompt, schema):
-    return json.dumps({"fit_score": 92, "fit_reason": "Our pool has 1 profile with react."})
+GOOD = {"fit_score": 92, "fit_reason": "Our pool has 1 profile with react."}
 
 
 def test_prompt_has_only_the_needed_fields():
@@ -45,20 +41,22 @@ def test_prompt_keeps_null_as_null_and_handles_decimal():
 
 
 def test_gemini_scorer_returns_valid_output():
-    out = GeminiFitScorer(good_llm).score(REQ, POOL)
+    out = GeminiFitScorer(FakeLLM(GOOD)).score(REQ, POOL)
     assert out.fit_score == 92 and out.fit_reason
 
 
-def test_gemini_scorer_sends_prompt_and_schema():
-    seen = {}
+def test_gemini_scorer_sends_the_prompt_to_the_llm():
+    fake = FakeLLM(GOOD)
+    GeminiFitScorer(fake).score(REQ, POOL)
+    assert fake.calls == 1
+    assert fake.prompts[0] == build_prompt(REQ, POOL)
 
-    def spy(prompt, schema):
-        seen["prompt"], seen["schema"] = prompt, schema
-        return good_llm(prompt, schema)
 
-    GeminiFitScorer(spy).score(REQ, POOL)
-    assert "<job_requirements>" in seen["prompt"]
-    assert set(seen["schema"]["properties"]) == {"fit_score", "fit_reason"}
+def test_gemini_scorer_asks_again_when_the_answer_is_bad():
+    fake = FakeLLM({"fit_score": 150, "fit_reason": "too high"}, "{not json", GOOD)
+    out = GeminiFitScorer(fake).score(REQ, POOL)
+    assert out.fit_score == 92
+    assert fake.calls == 3                       # 2 bad answers, then a good one
 
 
 @pytest.mark.parametrize("bad", [
@@ -68,16 +66,14 @@ def test_gemini_scorer_sends_prompt_and_schema():
     {"fit_score": 80, "fit_reason": "x" * 301},
     {"fit_score": 80},
     {"fit_score": 80, "fit_reason": "ok", "extra": "not allowed"},
+    "I give it 100!",                            # text that is not JSON
 ])
-def test_gemini_scorer_rejects_bad_answers(bad):
-    scorer = GeminiFitScorer(lambda prompt, schema: json.dumps(bad))
-    with pytest.raises(ValidationError):
-        scorer.score(REQ, POOL)
-
-
-def test_gemini_scorer_rejects_text_that_is_not_json():
-    with pytest.raises(ValidationError):
-        GeminiFitScorer(lambda prompt, schema: "I give it 100!").score(REQ, POOL)
+def test_gemini_scorer_gives_up_after_4_bad_answers(bad):
+    fake = FakeLLM(bad, bad, bad, bad)
+    with pytest.raises(LLMError) as err:
+        GeminiFitScorer(fake).score(REQ, POOL)
+    assert err.value.attempts == 4               # first call + 3 retries
+    assert fake.calls == 4
 
 
 def test_fake_scorer_fixed_and_per_title():
@@ -85,4 +81,3 @@ def test_fake_scorer_fixed_and_per_title():
     assert fake.score(REQ, POOL).fit_score == 95
     assert fake.score({"title": "Other"}, POOL).fit_score == 70
     assert [n for _, n in fake.calls] == [2, 2]
-    

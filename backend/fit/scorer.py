@@ -13,7 +13,8 @@ from collections.abc import Callable, Mapping, Sequence
 from decimal import Decimal
 from typing import Any
 
-from backend.schemas.common import gemini_schema
+from backend.llm import call_llm as shared_call_llm
+from backend.llm import generate
 from backend.schemas.job import FitOutput
 
 # Only the fields that matter for "can the pool cover this job?". Salary and the
@@ -91,18 +92,23 @@ LLMCall = Callable[[str, dict[str, Any]], str]
 
 
 class GeminiFitScorer(FitScorer):
-    """Scores with Gemini. ``call_llm`` is the function from backend/llm/client.py
-    (P1-3). It is passed in, so this file does not depend on P1-3 yet."""
+    """Scores with Gemini, through the shared tool ``backend.llm.generate``.
 
-    def __init__(self, call_llm: LLMCall):
+    ``generate`` checks the answer with the FitOutput schema (score 0-100, reason max
+    300 chars, no extra fields) and asks again, up to 4 calls in total, when the answer
+    is broken or the error is temporary. If it still fails it raises ``LLMError``
+    and nothing is saved.
+
+    ``call_llm`` is the function that talks to Gemini. By default it is the shared one
+    (``backend.llm.call_llm``). Tests pass a ``FakeLLM`` instead.
+    """
+
+    def __init__(self, call_llm: LLMCall = shared_call_llm):
         self._call_llm = call_llm
 
     def score(self, requirements, pool) -> FitOutput:
         prompt = build_prompt(requirements, pool)
-        text = self._call_llm(prompt, gemini_schema(FitOutput))
-        # strict check: range 0-100, reason length, no extra fields (FR-09, FR-10).
-        # A bad answer raises pydantic.ValidationError and nothing is saved.
-        return FitOutput.model_validate_json(text)
+        return generate(prompt, FitOutput, call=self._call_llm)
 
 
 class FakeFitScorer(FitScorer):

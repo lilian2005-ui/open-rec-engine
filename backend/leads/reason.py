@@ -32,6 +32,8 @@ Return JSON: {{"reason": "..."}}
 
 # Implementation guide, section 5 (stage 4 code).
 NOT_QUALIFIED_REASON = "No suitable job (fit below threshold or expired)."
+# None of the company's jobs has a fit score yet (still being processed or waiting for review).
+NOT_SCORED_REASON = "No job of this company has been scored yet."
 
 # (prompt, response_schema) -> the JSON text the LLM answered with.
 LLMCall = Callable[[str, dict[str, Any]], str]

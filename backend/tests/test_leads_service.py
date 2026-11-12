@@ -9,7 +9,7 @@ from backend.db.models import (AppSetting, Company, JobPosting, JobRequirement, 
 from backend.db.models.enums import (ExtractionStatus, JobStatus, LeadStatus, RunStatus, Source,
                                      TriggerType)
 from backend.db.normalize import company_name_key, content_hash
-from backend.leads.reason import NOT_QUALIFIED_REASON
+from backend.leads.reason import NOT_QUALIFIED_REASON, NOT_SCORED_REASON
 from backend.leads.service import score_leads
 from backend.llm import FakeLLM
 
@@ -296,6 +296,95 @@ def test_llm_failure_saves_the_fallback_reason_and_the_run_continues(db):
         "2 suitable jobs; the best fit score is 92, which gives a lead score of 97.")
     assert lead_of(db, helix).reason == "Helix reason"
     assert (result.qualified, result.fallback_reasons, result.failed) == (2, 1, 0)
+
+
+def test_company_with_no_scored_job_gets_the_not_scored_reason(db):
+    acme = make_company(db)
+    make_job(db, acme, None, status=JobStatus.NEEDS_REVIEW)
+    make_job(db, acme, None, status=JobStatus.PARSED)
+
+    score_leads(db, make_run(db), call=reasons(0), now=NOW)
+
+    lead = lead_of(db, acme)
+    assert lead.status == LeadStatus.NOT_QUALIFIED
+    assert lead.reason == NOT_SCORED_REASON
+
+
+def test_company_with_a_low_scored_job_keeps_the_below_threshold_reason(db):
+    acme = make_company(db)
+    make_job(db, acme, 30)
+    make_job(db, acme, None, status=JobStatus.PARSED)
+
+    score_leads(db, make_run(db), call=reasons(0), now=NOW)
+
+    assert lead_of(db, acme).reason == NOT_QUALIFIED_REASON
+
+
+# ---------- reason reuse (no LLM call when nothing changed) ----------
+
+LATER = NOW + timedelta(days=1)
+
+
+def test_unchanged_company_reuses_the_last_reason_without_calling_the_llm(db):
+    acme = make_company(db)
+    make_job(db, acme, 92); make_job(db, acme, 78)
+    score_leads(db, make_run(db), call=reasons(1), now=NOW)
+    fake = reasons(0)                    # any call would fail the test
+
+    run2 = make_run(db)
+    result = score_leads(db, run2, call=fake, now=LATER)
+
+    lead = lead_of(db, acme)
+    assert fake.calls == 0
+    assert lead.reason == "LLM reason 0"
+    assert (lead.lead_score, lead.run_id, lead.scored_at) == (97, run2, LATER)
+    assert result.reused_reasons == 1
+    assert db.scalar(select(func.count()).select_from(LeadSnapshot)) == 2   # history still saved
+
+
+def test_new_suitable_job_asks_the_llm_again(db):
+    acme = make_company(db)
+    make_job(db, acme, 92)
+    score_leads(db, make_run(db), call=reasons(1), now=NOW)
+    make_job(db, acme, 80)
+    fake = FakeLLM({"reason": "new reason"})
+
+    result = score_leads(db, make_run(db), call=fake, now=LATER)
+
+    assert fake.calls == 1
+    assert lead_of(db, acme).reason == "new reason"
+    assert result.reused_reasons == 0
+
+
+def test_rescored_job_with_the_same_lead_score_asks_the_llm_again(db):
+    # 92 + 78 -> 97, then 92 + 80 -> still 97: the old reason says 78, so it is stale
+    acme = make_company(db)
+    make_job(db, acme, 92)
+    job = make_job(db, acme, 78)
+    score_leads(db, make_run(db), call=reasons(1), now=NOW)
+    job.requirement.fit_score, job.requirement.fit_reason = 80, "re-scored"
+    job.updated_at = NOW + timedelta(hours=1)          # the posting changed (Q1)
+    db.flush()
+    fake = FakeLLM({"reason": "fresh reason"})
+
+    score_leads(db, make_run(db), call=fake, now=LATER)
+
+    lead = lead_of(db, acme)
+    assert lead.lead_score == 97
+    assert fake.calls == 1
+    assert lead.reason == "fresh reason"
+
+
+def test_fallback_reason_is_not_reused_the_llm_is_tried_again(db):
+    acme = make_company(db)
+    make_job(db, acme, 92)
+    score_leads(db, make_run(db), call=FakeLLM(*["not json"] * 4), now=NOW)
+    fake = FakeLLM({"reason": "real reason"})
+
+    score_leads(db, make_run(db), call=fake, now=LATER)
+
+    assert fake.calls == 1
+    assert lead_of(db, acme).reason == "real reason"
 
 
 def test_company_without_jobs_gets_no_lead(db):

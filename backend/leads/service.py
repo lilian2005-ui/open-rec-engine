@@ -21,8 +21,8 @@ from sqlalchemy.orm import Session, selectinload
 from backend.db.models import Company, JobPosting, Lead, LeadSnapshot
 from backend.db.models.enums import JobStatus, LeadStatus
 from backend.discovery.service import load_settings
-from backend.leads.reason import (NOT_QUALIFIED_REASON, LLMCall, fallback_reason,
-                                  write_reason)
+from backend.leads.reason import (NOT_QUALIFIED_REASON, NOT_SCORED_REASON, LLMCall,
+                                  fallback_reason, write_reason)
 from backend.llm import LLMError
 from backend.llm import call_llm as shared_call_llm
 from backend.schemas.lead import LeadEvidence, LeadResult, compute_lead_score
@@ -41,6 +41,7 @@ class LeadRunResult:
     qualified: int = 0
     not_qualified: int = 0
     fallback_reasons: int = 0          # companies saved with the fallback sentence
+    reused_reasons: int = 0            # nothing changed: last reason kept, no LLM call
     errors: list[str] = field(default_factory=list)
 
     @property
@@ -68,6 +69,22 @@ def next_status(current: LeadStatus | None, qualifying_jobs: int) -> LeadStatus:
     return LeadStatus.QUALIFIED
 
 
+def can_reuse_reason(lead: Lead | None, suitable: list[JobPosting], job_ids: list[int],
+                     lead_score: int, best: int) -> bool:
+    """True when the last LLM reason still describes the evidence, so no new LLM call
+    is needed. That is when:
+    - the suitable jobs are the same ones as last time, and there is at least one,
+    - none of them changed since the last scoring (a job gets a new fit score only
+      after its posting changes, and that sets ``updated_at``; Q1),
+    - the last reason is not the fallback sentence (then the LLM is tried again).
+    """
+    if lead is None or not job_ids or lead.evidence.get("job_ids") != job_ids:
+        return False
+    if any(j.updated_at is not None and j.updated_at > lead.scored_at for j in suitable):
+        return False
+    return lead.reason != fallback_reason(lead_score, best, len(job_ids))
+
+
 def score_leads(db: Session, run_id: int, call: LLMCall = shared_call_llm,
                 now: datetime | None = None) -> LeadRunResult:
     """Score every company that has jobs, for pipeline run ``run_id``.
@@ -92,9 +109,17 @@ def score_leads(db: Session, run_id: int, call: LLMCall = shared_call_llm,
             key=lambda j: (-j.requirement.fit_score, j.job_id),
         )
         lead_score, best, n = compute_lead_score([j.requirement.fit_score for j in suitable])
+        job_ids = sorted(j.job_id for j in suitable)
+        lead = company.lead
 
         if n == 0:
-            reason = NOT_QUALIFIED_REASON
+            # a company whose jobs are all still waiting (discovered, parsed,
+            # needs_review, failed) has no fit score yet: say that, not "below threshold"
+            has_scored_job = any(j.status == JobStatus.SCORED for j in company.job_postings)
+            reason = NOT_QUALIFIED_REASON if has_scored_job else NOT_SCORED_REASON
+        elif can_reuse_reason(lead, suitable, job_ids, lead_score, best):
+            reason = lead.reason
+            result.reused_reasons += 1
         else:
             evidence_jobs = [{"title": j.title, "fit_score": j.requirement.fit_score,
                               "fit_reason": j.requirement.fit_reason} for j in suitable]
@@ -106,13 +131,12 @@ def score_leads(db: Session, run_id: int, call: LLMCall = shared_call_llm,
                 reason = fallback_reason(lead_score, best, n)
                 result.fallback_reasons += 1
 
-        lead = company.lead
         try:
             checked = LeadResult(
                 company_id=company.company_id, run_id=run_id, lead_score=lead_score,
                 best_job_score=best, qualifying_jobs=n,
                 status=next_status(lead.status if lead else None, n), reason=reason,
-                evidence=LeadEvidence(job_ids=sorted(j.job_id for j in suitable)),
+                evidence=LeadEvidence(job_ids=job_ids),
             )
         except ValidationError as exc:
             msg = f"company {company.company_id}: invalid lead result: {exc}"

@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     LLM_MODEL: str = ""
     HIMALAYAS_API_KEY: str = ""
     JWT_SECRET: str = ""
+    JWT_EXPIRE_MINUTES: int = 480
 
 
 settings = Settings()

@@ -265,17 +265,23 @@ def test_make_client_keeps_the_key_in_the_header():
         assert API_KEY not in str(client.params)
 
 
-def test_page_requests_use_the_30_second_timeout_of_make_client():
+def test_page_requests_use_the_30_second_timeout_of_make_client(monkeypatch):
     seen = []
 
     def handler(request: httpx.Request) -> httpx.Response:
-        seen.append(request.extensions["timeout"]["read"])
+        seen.append(request.extensions["timeout"])
         return httpx.Response(200, json=SAMPLE)
 
+    real_client = httpx.Client
+
+    def client_with_mock_transport(*args, **kwargs):
+        # transport= at construction also turns off env and system proxies
+        return real_client(*args, transport=httpx.MockTransport(handler), **kwargs)
+
+    monkeypatch.setattr(himalayas.httpx, "Client", client_with_mock_transport)
     with make_client(API_KEY) as client:
-        client._transport = httpx.MockTransport(handler)
         fetch_page(client)
-    assert seen == [30.0]
+    assert seen == [{"connect": 30.0, "read": 30.0, "write": 30.0, "pool": 30.0}]
 
 
 # ---------------------------------------------------------------- with the database

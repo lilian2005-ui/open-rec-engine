@@ -5,7 +5,7 @@
  */
 
 // ---- allowed values (data contract, section 11). Lowercase, like in the database.
-export type Source = "himalayas" | "remotive";
+export type Source = "himalayas";
 export type JobStatus = "discovered" | "parsed" | "needs_review" | "scored" | "failed";
 export type LeadStatus = "qualified" | "not_qualified" | "draft_ready" | "approved" | "rejected";
 export type DraftStatus = "pending_review" | "approved" | "edited" | "rejected";
@@ -54,7 +54,7 @@ export interface Job {
   discovered_at: string;
   updated_at: string | null;
   status: JobStatus;
-  requirement: JobRequirements | null; // null before stage 2
+  requirements: JobRequirements | null; // null before stage 2
 }
 
 /** The current score of one company. */

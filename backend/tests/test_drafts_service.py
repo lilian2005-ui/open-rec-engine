@@ -94,17 +94,31 @@ def test_qualified_lead_gets_a_pending_draft_and_becomes_draft_ready(db):
     assert (result.created, result.failed) == (1, 0)
 
 
-def test_lead_that_has_a_draft_gets_no_new_one(db):
+def test_draft_ready_lead_gets_no_new_draft(db):
     lead = make_lead(db)
     create_drafts(db, call=FakeLLM(answer()))
-    lead.status = LeadStatus.QUALIFIED          # even if it were qualified again
-    db.flush()
     fake = FakeLLM()                            # any call would fail the test
 
     result = create_drafts(db, call=fake)
 
+    assert lead.status == LeadStatus.DRAFT_READY
     assert fake.calls == 0 and len(drafts_of(db, lead)) == 1
     assert result.created == 0
+
+
+def test_lead_that_came_back_qualified_gets_version_2(db):
+    # draft_ready -> not_qualified (jobs expired) -> qualified (a new job), by P1-5
+    lead = make_lead(db)
+    create_drafts(db, call=FakeLLM(answer()))
+    lead.status = LeadStatus.QUALIFIED
+    db.flush()
+
+    result = create_drafts(db, call=FakeLLM(answer()))
+
+    drafts = sorted(drafts_of(db, lead), key=lambda d: d.version)
+    assert [d.version for d in drafts] == [1, 2]
+    assert all(d.status == DraftStatus.PENDING_REVIEW for d in drafts)
+    assert lead.status == LeadStatus.DRAFT_READY and result.created == 1
 
 
 def test_not_qualified_and_reviewed_leads_get_no_draft(db):

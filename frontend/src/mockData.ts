@@ -49,7 +49,7 @@ export const MOCK_JOBS: Job[] = [
     title: "Senior React Developer", description_text: TEXT,
     posted_at: "2026-10-26T08:00:00Z", expires_at: "2026-11-25T08:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(1, "Senior React Developer", {
+    requirements: requirement(1, "Senior React Developer", {
       required_skills: ["react", "typescript", "redux"], preferred_skills: ["graphql"],
       timezone_offsets: [-5, -4], salary_min: 90000, salary_max: 120000,
       salary_currency: "USD", salary_period: "annual", fit_score: 92,
@@ -57,12 +57,12 @@ export const MOCK_JOBS: Job[] = [
     }),
   },
   {
-    job_id: 2, company_id: 1, company_name: "Acme Corp", source: "remotive",
-    external_id: "1893441", url: "https://remotive.com/remote-jobs/software-dev/frontend-engineer-1893441",
+    job_id: 2, company_id: 1, company_name: "Acme Corp", source: "himalayas",
+    external_id: "acme-frontend-engineer-4c82", url: "https://himalayas.app/companies/acme/jobs/frontend-engineer",
     title: "Frontend Engineer", description_text: TEXT,
-    posted_at: "2026-10-26T05:00:00Z", expires_at: null,
+    posted_at: "2026-10-26T05:00:00Z", expires_at: "2026-11-25T05:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(2, "Frontend Engineer", {
+    requirements: requirement(2, "Frontend Engineer", {
       seniority: "mid", min_years_experience: 3,
       required_skills: ["react", "javascript", "css"], fit_score: 78,
       fit_reason: "Our pool covers 2 of the 3 required skills",
@@ -75,18 +75,18 @@ export const MOCK_JOBS: Job[] = [
     title: "ML Engineer (NLP)", description_text: TEXT,
     posted_at: "2026-10-25T21:00:00Z", expires_at: "2026-11-24T21:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(3, "ML Engineer (NLP)", {
+    requirements: requirement(3, "ML Engineer (NLP)", {
       required_skills: ["python", "pytorch", "nlp"], fit_score: 81,
       fit_reason: "Our pool covers python and pytorch well for NLP roles",
     }),
   },
   {
-    job_id: 4, company_id: 2, company_name: "Helix AI", source: "remotive",
-    external_id: "1893102", url: "https://remotive.com/remote-jobs/data/data-scientist-1893102",
+    job_id: 4, company_id: 2, company_name: "Helix AI", source: "himalayas",
+    external_id: "helix-data-scientist-8a17", url: "https://himalayas.app/companies/helix-ai/jobs/data-scientist",
     title: "Data Scientist", description_text: TEXT,
-    posted_at: "2026-10-25T18:00:00Z", expires_at: null,
+    posted_at: "2026-10-25T18:00:00Z", expires_at: "2026-11-24T18:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(4, "Data Scientist", {
+    requirements: requirement(4, "Data Scientist", {
       seniority: "mid", min_years_experience: 3,
       required_skills: ["python", "sql", "pandas"], fit_score: 76,
       fit_reason: "Our pool covers python and sql, with fewer profiles in pandas",
@@ -99,18 +99,18 @@ export const MOCK_JOBS: Job[] = [
     title: "Python Backend Developer", description_text: TEXT,
     posted_at: "2026-10-25T09:00:00Z", expires_at: "2026-11-24T09:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(5, "Python Backend Developer", {
+    requirements: requirement(5, "Python Backend Developer", {
       required_skills: ["python", "fastapi", "postgresql"], fit_score: 74,
       fit_reason: "Our pool covers fastapi and postgresql",
     }),
   },
   {
-    job_id: 6, company_id: 4, company_name: "Brightly", source: "remotive",
-    external_id: "1892877", url: "https://remotive.com/remote-jobs/devops/devops-engineer-1892877",
+    job_id: 6, company_id: 4, company_name: "Brightly", source: "himalayas",
+    external_id: "brightly-devops-engineer-62d0", url: "https://himalayas.app/companies/brightly/jobs/devops-engineer",
     title: "DevOps Engineer", description_text: TEXT,
-    posted_at: "2026-10-25T08:00:00Z", expires_at: null,
+    posted_at: "2026-10-25T08:00:00Z", expires_at: "2026-11-24T08:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "scored",
-    requirement: requirement(6, "DevOps Engineer", {
+    requirements: requirement(6, "DevOps Engineer", {
       required_skills: ["kubernetes", "docker", "terraform"], fit_score: 45,
       fit_reason: "Few profiles have kubernetes with 5 years of experience",
     }),
@@ -122,18 +122,18 @@ export const MOCK_JOBS: Job[] = [
     title: "Platform Engineer", description_text: TEXT,
     posted_at: "2026-10-25T07:00:00Z", expires_at: "2026-11-24T07:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "needs_review",
-    requirement: requirement(7, "Platform Engineer", {
+    requirements: requirement(7, "Platform Engineer", {
       required_skills: ["go", "kubernetes"], extraction_status: "needs_review",
       flag_reason: "Instruction-like text in the posting",
     }),
   },
   {
-    job_id: 8, company_id: 5, company_name: "Nile Systems", source: "remotive",
-    external_id: "1892500", url: "https://remotive.com/remote-jobs/data/data-engineer-1892500",
+    job_id: 8, company_id: 5, company_name: "Nile Systems", source: "himalayas",
+    external_id: "nile-data-engineer-b5e9", url: "https://himalayas.app/companies/nile-systems/jobs/data-engineer",
     title: "Data Engineer", description_text: TEXT,
-    posted_at: "2026-10-24T10:00:00Z", expires_at: null,
+    posted_at: "2026-10-24T10:00:00Z", expires_at: "2026-11-23T10:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "discovered",
-    requirement: null, // stage 2 has not run yet
+    requirements: null, // stage 2 has not run yet
   },
   {
     job_id: 9, company_id: 5, company_name: "Nile Systems", source: "himalayas",
@@ -142,7 +142,7 @@ export const MOCK_JOBS: Job[] = [
     title: "QA Engineer", description_text: TEXT,
     posted_at: "2026-10-24T09:00:00Z", expires_at: "2026-11-23T09:00:00Z",
     discovered_at: "2026-10-26T10:02:00Z", updated_at: null, status: "parsed",
-    requirement: requirement(9, "QA Engineer", {
+    requirements: requirement(9, "QA Engineer", {
       seniority: "mid", min_years_experience: 3, required_skills: ["selenium", "python"],
     }),
   },

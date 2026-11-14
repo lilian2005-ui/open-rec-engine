@@ -10,9 +10,9 @@ function expectedScore(companyId: number) {
     (j) =>
       j.company_id === companyId &&
       j.status === "scored" &&
-      (j.requirement?.fit_score ?? -1) >= THRESHOLD &&
+      (j.requirements?.fit_score ?? -1) >= THRESHOLD &&
       (j.expires_at === null || new Date(j.expires_at) > TODAY),
-  ).map((j) => j.requirement!.fit_score!);
+  ).map((j) => j.requirements!.fit_score!);
   if (fits.length === 0) return { score: 0, best: 0, count: 0 };
   const best = Math.max(...fits);
   return { score: Math.min(100, best + 5 * (fits.length - 1)), best, count: fits.length };
@@ -50,7 +50,7 @@ describe("fake jobs follow the data contract", () => {
 
   it("has a fit score and a reason together, or neither (DB rule fit_score_has_reason)", () => {
     for (const job of MOCK_JOBS) {
-      const r = job.requirement;
+      const r = job.requirements;
       expect(r === null || (r.fit_score === null) === (r.fit_reason === null)).toBe(true);
       if (r?.fit_score != null) {
         expect(r.fit_score).toBeGreaterThanOrEqual(0);
@@ -61,15 +61,15 @@ describe("fake jobs follow the data contract", () => {
 
   it("only scored jobs have a fit score, and every scored job has one", () => {
     for (const job of MOCK_JOBS) {
-      expect(job.requirement?.fit_score != null).toBe(job.status === "scored");
+      expect(job.requirements?.fit_score != null).toBe(job.status === "scored");
     }
   });
 
   it("has requirements that belong to their job, with lowercase skills", () => {
     for (const job of MOCK_JOBS) {
-      if (!job.requirement) continue;
-      expect(job.requirement.job_id).toBe(job.job_id);
-      for (const skill of [...job.requirement.required_skills, ...job.requirement.preferred_skills]) {
+      if (!job.requirements) continue;
+      expect(job.requirements.job_id).toBe(job.job_id);
+      for (const skill of [...job.requirements.required_skills, ...job.requirements.preferred_skills]) {
         expect(skill).toBe(skill.toLowerCase());
       }
     }
@@ -85,12 +85,12 @@ describe("fake jobs follow the data contract", () => {
   it("flags a needs_review job with a reason", () => {
     const flagged = MOCK_JOBS.filter((j) => j.status === "needs_review");
     expect(flagged.length).toBeGreaterThan(0);
-    for (const job of flagged) expect(job.requirement?.flag_reason).toBeTruthy();
+    for (const job of flagged) expect(job.requirements?.flag_reason).toBeTruthy();
   });
 
-  it("has no Remotive job with an expiry date (Remotive does not give one)", () => {
-    for (const job of MOCK_JOBS.filter((j) => j.source === "remotive")) {
-      expect(job.expires_at).toBeNull();
+  it("uses only Himalayas as a source", () => {
+    for (const job of MOCK_JOBS) {
+      expect(job.source).toBe("himalayas");
     }
   });
 });

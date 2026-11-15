@@ -32,6 +32,7 @@ export function usePipelineRun(onFinished?: (run: PipelineRun) => void) {
         const run = await api.getRun(running.run_id);
         if (run.status !== "running") {
           setRunning(null);
+          setError(null);
           finished.current?.(run);
         }
       } catch {
@@ -47,7 +48,19 @@ export function usePipelineRun(onFinished?: (run: PipelineRun) => void) {
       const { run_id } = await api.startRun();
       setRunning(await api.getRun(run_id));
     } catch (e) {
-      setError(e instanceof api.ApiError && e.status === 409 ? "A run is already in progress" : errorText(e));
+      if (e instanceof api.ApiError && e.status === 409) {
+        setError("A run is already in progress");
+        // follow the run that is already going, so the button is disabled and the message clears when it ends
+        try {
+          const runs = await api.getRuns(1);
+          if (runs[0]?.status === "running") setRunning(runs[0]);
+          else setError(null); // it finished a moment ago, nothing to wait for
+        } catch {
+          /* keep the message */
+        }
+      } else {
+        setError(errorText(e));
+      }
     }
   }, []);
 

@@ -5,6 +5,7 @@ from fastapi.testclient import TestClient
 
 from backend.api.deps import get_current_user
 from backend.api.main import app
+from backend.config import settings
 from backend.db.models import AppUser
 from backend.db.models.enums import UserRole
 from backend.db.session import get_db
@@ -70,13 +71,16 @@ def test_nothing_can_send_a_message():
 
 
 def test_frontend_origin_is_allowed_by_cors(client):
+    """The new routes use the CORS setting of the auth update (settings.CORS_ORIGINS),
+    including the Authorization header the frontend sends."""
+    origin = settings.CORS_ORIGINS[0]
     response = client.options("/jobs", headers={
-        "Origin": "http://localhost:5173",
+        "Origin": origin,
         "Access-Control-Request-Method": "GET",
         "Access-Control-Request-Headers": "authorization",
     })
     assert response.status_code == 200
-    assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+    assert response.headers["access-control-allow-origin"] == origin
 
 
 def test_other_origins_are_not_allowed_by_cors(client):

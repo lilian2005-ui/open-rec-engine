@@ -203,6 +203,7 @@ class SettingsOut(Out):
     himalayas_enabled: bool
     run_mode: TriggerType
     max_retries: int
+    run_interval_hours: int
 
 
 class SettingsUpdate(Schema):
@@ -214,3 +215,4 @@ class SettingsUpdate(Schema):
     himalayas_enabled: bool | None = None
     run_mode: TriggerType | None = None
     max_retries: int | None = None
+    run_interval_hours: int | None = None

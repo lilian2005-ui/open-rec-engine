@@ -301,7 +301,8 @@ def test_run_with_history_cannot_be_deleted(db):
 def test_default_settings_are_seeded(db):
     rows = {s.key: s.value for s in db.scalars(select(AppSetting))}
     assert rows == {"lead_threshold": "60", "fetch_limit": "100", "himalayas_enabled": "true",
-                    "remotive_enabled": "true", "run_mode": "manual", "max_retries": "3"}
+                    "remotive_enabled": "true", "run_mode": "manual", "max_retries": "3",
+                    "run_interval_hours": "32"}
 
 
 def test_seeded_settings_match_the_pydantic_defaults(db):

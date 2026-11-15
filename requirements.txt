@@ -12,3 +12,4 @@ email-validator
 python-dotenv
 bcrypt
 PyJWT
+apscheduler>=3.10,<4

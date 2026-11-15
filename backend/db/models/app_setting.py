@@ -14,6 +14,7 @@ DEFAULT_SETTINGS = {
     "remotive_enabled": "true",
     "run_mode": "manual",
     "max_retries": "3",
+    "run_interval_hours": "32",  # added by migration P1-7, not in data contract v1.1
 }
 
 

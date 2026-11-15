@@ -5,7 +5,7 @@ from backend.discovery.service import load_settings
 from backend.tests.api_fixtures import admin, client, reviewer  # noqa: F401
 
 DEFAULTS = {"lead_threshold": 60, "fetch_limit": 100, "himalayas_enabled": True,
-            "run_mode": "manual", "max_retries": 3}
+            "run_mode": "manual", "max_retries": 3, "run_interval_hours": 32}
 
 
 def row(db, key: str) -> AppSetting:
@@ -55,6 +55,17 @@ def test_a_value_outside_the_limits_is_422_and_saves_nothing(client, admin, db):
 
     assert row(db, "lead_threshold").value == "60"
     assert client.get("/settings").json() == DEFAULTS
+
+
+def test_run_interval_hours_is_saved_and_checked(client, admin, db):
+    response = client.put("/settings", json={"run_interval_hours": 24})
+
+    assert response.status_code == 200
+    assert response.json() == {**DEFAULTS, "run_interval_hours": 24}
+    assert row(db, "run_interval_hours").value == "24"
+    for hours in (0, 169):
+        assert client.put("/settings", json={"run_interval_hours": hours}).status_code == 422
+    assert row(db, "run_interval_hours").value == "24"
 
 
 def test_remotive_and_unknown_fields_are_rejected(client, admin, db):

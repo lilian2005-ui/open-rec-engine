@@ -12,6 +12,8 @@ class AppSettings(Schema):
     remotive_enabled: bool = True
     run_mode: TriggerType = TriggerType.MANUAL
     max_retries: int = Field(default=3, ge=0, le=5)
+    # P1-7: a scheduled run starts when the last finished run is this many hours old
+    run_interval_hours: int = Field(default=32, ge=1, le=168)
 
     def to_rows(self) -> list[tuple[str, str]]:
         """(key, value) pairs for the app_setting table."""

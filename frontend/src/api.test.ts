@@ -114,6 +114,14 @@ describe("leads and drafts", () => {
     await expect(api.rejectDraft(2, "late")).rejects.toMatchObject({ status: 409 });
   });
 
+  it("saves the name of the logged-in reviewer on every decision", async () => {
+    await api.login("lilian@simera.com", "anything");
+    expect((await api.approveDraft(2)).reviewed_by).toBe("Lilian Abu Ramadan");
+    await api.login("nadeen@simera.com", "anything");
+    expect((await api.editDraft(3, { subject: "New subject", body: "one two three" })).reviewed_by).toBe("Nadeen Shadeed");
+    expect((await api.rejectDraft(3, "too long")).reviewed_by).toBe("Nadeen Shadeed");
+  });
+
   it("refuses to reject without a comment (422) and keeps the comment", async () => {
     await expect(api.rejectDraft(3, "  ")).rejects.toMatchObject({ status: 422 });
     expect((await api.rejectDraft(3, "too long")).review_comment).toBe("too long");

@@ -33,7 +33,7 @@ export function LoginPage() {
   return (
     <div className="auth-page">
       <form className="card auth-card" onSubmit={submit}>
-        <div className="brand"><div className="brand-logo">❄</div><div><b>Open Rec</b><small>by Simera</small></div></div>
+        <div className="brand"><img className="brand-logo" src="/simera-logo.jpg" alt="Simera" /><div><b>Open Rec</b><small>by Simera</small></div></div>
         <h1>Log in</h1>
         <p className="sub">Internal tool for the Simera team</p>
         {state?.registered && <div className="notice success">Account created, please log in.</div>}

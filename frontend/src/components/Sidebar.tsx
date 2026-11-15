@@ -16,7 +16,7 @@ export function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="brand">
-        <div className="brand-logo">❄</div>
+        <img className="brand-logo" src="/simera-logo.jpg" alt="Simera" />
         <div><b>Open Rec</b><small>by Simera</small></div>
       </div>
       <nav>

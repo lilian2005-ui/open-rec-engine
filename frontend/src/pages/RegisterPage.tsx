@@ -35,7 +35,7 @@ export function RegisterPage() {
   return (
     <div className="auth-page">
       <form className="card auth-card" onSubmit={submit} noValidate>
-        <div className="brand"><div className="brand-logo">❄</div><div><b>Open Rec</b><small>by Simera</small></div></div>
+        <div className="brand"><img className="brand-logo" src="/simera-logo.jpg" alt="Simera" /><div><b>Open Rec</b><small>by Simera</small></div></div>
         <h1>Create an account</h1>
         <p className="sub">New accounts can review leads and drafts</p>
         {problems.length > 0 && (

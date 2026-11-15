@@ -1,65 +1,55 @@
 import { useState, type FormEvent } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { USE_MOCK } from "../api";
 import { useAuth } from "../useAuth";
 
-/** Minimal login form, only so we can get into the app. The real screen comes later. */
+/** Log in (FR-35). Any wrong field gives the same message, like the backend. */
 export function LoginPage() {
-  const { user, loading, login } = useAuth();
+  const { user, login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = (location.state as { from?: string } | null)?.from ?? "/jobs";
-
+  const state = location.state as { from?: string; registered?: boolean } | null;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [busy, setBusy] = useState(false);
 
-  if (!loading && user) return <Navigate to={from} replace />;
+  if (user) return <Navigate to={state?.from ?? "/dashboard"} replace />;
 
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    setBusy(true);
     setError(null);
-    setSubmitting(true);
     try {
       await login(email, password);
-      navigate(from, { replace: true });
+      navigate(state?.from ?? "/dashboard", { replace: true });
     } catch {
       setError("Wrong email or password");
     } finally {
-      setSubmitting(false);
+      setBusy(false);
     }
   }
 
   return (
-    <main className="login">
-      <h1>Open Rec Engine</h1>
-      <h2>Log in</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        {error && <p className="error">{error}</p>}
-        <button type="submit" disabled={submitting}>
-          {submitting ? "Logging in…" : "Log in"}
-        </button>
+    <div className="auth-page">
+      <form className="card auth-card" onSubmit={submit}>
+        <div className="brand"><div className="brand-logo">❄</div><div><b>Open Rec</b><small>by Simera</small></div></div>
+        <h1>Log in</h1>
+        <p className="sub">Internal tool for the Simera team</p>
+        {state?.registered && <div className="notice success">Account created, please log in.</div>}
+        {error && <div className="notice error" role="alert">{error}</div>}
+        <div className="field">
+          <label htmlFor="email">Email</label>
+          <input id="email" className="input" type="email" autoComplete="username" required value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="field">
+          <label htmlFor="password">Password</label>
+          <input id="password" className="input" type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <button className="btn btn-primary btn-block" disabled={busy}>{busy ? "Logging in…" : "Log in"}</button>
+        <p className="auth-foot">No account? <Link to="/register">Create an account</Link></p>
+        {USE_MOCK && <p className="auth-foot">Fake data: lilian@simera.com (admin) or nadeen@simera.com (reviewer), any password.</p>}
       </form>
-      {USE_MOCK && (
-        <p className="hint">
-          Mock mode: use <code>lilian@simera.com</code> (admin) or <code>nadeen@simera.com</code>{" "}
-          (reviewer) with any password.
-        </p>
-      )}
-    </main>
+    </div>
   );
 }

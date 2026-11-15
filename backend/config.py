@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     HIMALAYAS_API_KEY: str = ""
     JWT_SECRET: str = ""
     JWT_EXPIRE_MINUTES: int = 480
+    # Frontend addresses allowed to call the API (CORS). In .env write it as a JSON list.
+    CORS_ORIGINS: list[str] = ["http://localhost:5173"]
 
 
 settings = Settings()

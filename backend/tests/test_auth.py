@@ -4,26 +4,21 @@ import pytest
 from fastapi.testclient import TestClient
 
 from backend.api.main import app
-from backend.db.session import get_engine, SessionLocal
+from backend.config import settings
 from backend.db.models.app_user import AppUser
 from backend.api.security import hash_password, verify_password, create_token, read_token
 
 
-@pytest.fixture()
-def db():
-    """One DB session per test, rolled back at the end."""
-    connection = get_engine().connect()
-    transaction = connection.begin()
-    session = SessionLocal(bind=connection)
-    yield session
-    session.close()
-    transaction.rollback()
-    connection.close()
+@pytest.fixture(autouse=True)
+def jwt_secret(monkeypatch):
+    """A test-only JWT secret, so the tests do not need JWT_SECRET in .env."""
+    monkeypatch.setattr(settings, "JWT_SECRET", "x" * 40)
 
 
 @pytest.fixture()
 def client(db):
-    """TestClient with the DB session overridden."""
+    """TestClient with the DB session overridden.
+    `db` comes from conftest.py: TEST_DATABASE_URL, rolled back after each test."""
     from backend.db.session import get_db
 
     def _override():

@@ -357,7 +357,7 @@ export async function editDraft(draftId: number, changes: { subject: string; bod
       return mockFail(422, "Subject (1–150 characters) and message are required");
     }
     Object.assign(d, { subject: changes.subject.trim(), body: changes.body.trim(), word_count: countWords(changes.body),
-      status: "edited", reviewed_at: now() });
+      status: "edited", reviewed_by: mockUserFromToken()?.full_name ?? null, reviewed_at: now() });
     return mock(publicDraft(d));
   }
   return request<Draft>(ENDPOINTS.draft(draftId), { method: "PATCH", body: JSON.stringify(changes) });
@@ -369,7 +369,7 @@ export async function approveDraft(draftId: number): Promise<Draft> {
     if (denied) return mockFail(...denied);
     const d = mockDecide(draftId);
     if (Array.isArray(d)) return mockFail(...d);
-    Object.assign(d, { status: "approved", reviewed_at: now() });
+    Object.assign(d, { status: "approved", reviewed_by: mockUserFromToken()?.full_name ?? null, reviewed_at: now() });
     const lead = db.leads.find((l) => l.lead_id === d.lead_id);
     if (lead) lead.status = "approved";
     return mock(publicDraft(d));
@@ -384,7 +384,7 @@ export async function rejectDraft(draftId: number, review_comment: string): Prom
     if (!review_comment.trim()) return mockFail(422, "A comment is required to reject a draft");
     const d = mockDecide(draftId);
     if (Array.isArray(d)) return mockFail(...d);
-    Object.assign(d, { status: "rejected", reviewed_at: now(), review_comment: review_comment.trim() });
+    Object.assign(d, { status: "rejected", reviewed_by: mockUserFromToken()?.full_name ?? null, reviewed_at: now(), review_comment: review_comment.trim() });
     const lead = db.leads.find((l) => l.lead_id === d.lead_id);
     if (lead) lead.status = "rejected";
     return mock(publicDraft(d));
@@ -416,7 +416,7 @@ Simera team`;
     const version = (newestDraft(leadId)?.version ?? 0) + 1;
     const d: MockDraft = { draft_id: Math.max(0, ...db.drafts.map((x) => x.draft_id)) + 1, lead_id: leadId, version,
       subject: `${titles[0] ?? "Remote"} talent for ${company.name}`, body, word_count: countWords(body),
-      status: "pending_review", reviewed_at: null, review_comment: null };
+      status: "pending_review", reviewed_by: null, reviewed_at: null, review_comment: null };
     db.drafts.push(d);
     lead.status = "draft_ready";
     await new Promise((resolve) => setTimeout(resolve, 900)); // the real AI call takes a few seconds

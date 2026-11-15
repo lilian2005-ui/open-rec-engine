@@ -13,6 +13,13 @@ import type { Company, ContactUpdate, Draft, LeadDetail } from "../types";
 const MIN_WORDS = 120;
 const MAX_WORDS = 180;
 
+/** "Approved by Lilian on Nov 15, 03:30 PM". No name: "Approved on ...". No date: only the word. */
+function reviewLine(verb: string, d: Draft): string {
+  const by = d.reviewed_by ? ` by ${d.reviewed_by}` : "";
+  const on = d.reviewed_at ? ` on ${formatDate(d.reviewed_at)}` : "";
+  return `${verb}${by}${on}`;
+}
+
 /** Lead review (FR-19 to FR-26). Approving only marks the draft: NOTHING is sent from Open Rec. */
 export function LeadDetailPage() {
   const leadId = Number(useParams().leadId);
@@ -198,8 +205,9 @@ function DraftCard({ lead, onChange }: { lead: LeadDetail; onChange: (d: Draft, 
               </span>
             </div>
             {draft.status === "rejected" && draft.review_comment && (
-              <div className="notice warn"><Icon name="alert" /><div><b>Rejected</b><p>{draft.review_comment}</p></div></div>
+              <div className="notice warn"><Icon name="alert" /><div><b>{reviewLine("Rejected", draft)}</b><p>{draft.review_comment}</p></div></div>
             )}
+            {draft.status === "edited" && <p className="muted small" style={{ marginBottom: 10 }}>{reviewLine("Edited", draft)}</p>}
             <small className="muted">Subject</small>
             <p style={{ fontWeight: 500, marginBottom: 12 }}>{draft.subject}</p>
             <small className="muted">Message</small>
@@ -231,7 +239,7 @@ function DraftCard({ lead, onChange }: { lead: LeadDetail; onChange: (d: Draft, 
             </>
           ) : draft.status === "approved" ? (
             <>
-              <div className="notice success" style={{ marginBottom: 12 }}><Icon name="check" /><span>Approved{draft.reviewed_at ? ` on ${formatDate(draft.reviewed_at)}` : ""}. Copy it and send it yourself.</span></div>
+              <div className="notice success" style={{ marginBottom: 12 }}><Icon name="check" /><span>{reviewLine("Approved", draft)}. Copy it and send it yourself.</span></div>
               <button className="btn" onClick={copy}><Icon name="clipboard" />{copied ? "Copied" : "Copy subject and message"}</button>
             </>
           ) : (

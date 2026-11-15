@@ -122,6 +122,7 @@ export interface Draft {
   word_count: number;
   version: number;
   status: DraftStatus;
+  reviewed_by?: string | null; // full name of the reviewer
   reviewed_at?: string | null;
   review_comment?: string | null;
 }

@@ -134,6 +134,7 @@ export const MOCK_LEADS: MockLead[] = [
 function draft(draft_id: number, lead_id: number, version: number, status: Draft["status"], subject: string, body: string,
   review_comment: string | null = null): MockDraft {
   return { draft_id, lead_id, version, status, subject, body, word_count: countWords(body),
+    reviewed_by: status === "pending_review" ? null : "Lilian Abu Ramadan",
     reviewed_at: status === "pending_review" ? null : hoursAgo(3), review_comment };
 }
 

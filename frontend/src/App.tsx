@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { RequireAuth } from "./components/RequireAuth";
+import { JobDetailPage } from "./pages/JobDetailPage";
 import { JobsPage } from "./pages/JobsPage";
 import { LeadsPage } from "./pages/LeadsPage";
 import { LoginPage } from "./pages/LoginPage";
@@ -14,6 +15,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Navigate to="/jobs" replace />} />
           <Route path="jobs" element={<JobsPage />} />
+          <Route path="jobs/:jobId" element={<JobDetailPage />} />
           <Route path="leads" element={<LeadsPage />} />
           <Route path="settings" element={<SettingsPage />} />
         </Route>

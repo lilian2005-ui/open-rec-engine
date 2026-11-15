@@ -24,7 +24,9 @@ def test_edit_saves_the_text_and_counts_the_words_again(client, reviewer, db):
     assert response.json() == {
         "draft_id": draft.draft_id, "subject": "A new subject",
         "body": "Only five words here now", "word_count": 5,   # no 120-180 rule for a person
-        "version": 1, "status": "edited"}
+        "version": 1, "status": "edited", "review_comment": None,
+        "reviewed_at": response.json()["reviewed_at"], "reviewed_by": reviewer.full_name}
+    assert response.json()["reviewed_at"].endswith("Z")
     assert draft.reviewed_by == reviewer.user_id
     assert draft.reviewed_at is not None
     assert lead.status == LeadStatus.DRAFT_READY
@@ -54,7 +56,11 @@ def test_approve_marks_the_draft_and_the_lead_and_records_who_and_when(client, r
     assert response.status_code == 200
     assert response.json()["status"] == "approved"
     assert set(response.json()) == {"draft_id", "subject", "body", "word_count", "version",
-                                    "status"}
+                                    "status", "review_comment", "reviewed_at", "reviewed_by"}
+    # the reviewer's name, not the user id
+    assert response.json()["reviewed_by"] == reviewer.full_name
+    assert response.json()["reviewed_at"] is not None
+    assert response.json()["review_comment"] is None
     assert draft.status == DraftStatus.APPROVED
     assert lead.status == LeadStatus.APPROVED
     assert draft.reviewed_by == reviewer.user_id
@@ -105,6 +111,8 @@ def test_reject_saves_the_comment_and_marks_the_draft_and_the_lead(client, revie
 
     assert response.status_code == 200
     assert response.json()["status"] == "rejected"
+    assert response.json()["review_comment"] == "Too generic"
+    assert response.json()["reviewed_by"] == reviewer.full_name
     assert (draft.status, draft.review_comment) == (DraftStatus.REJECTED, "Too generic")
     assert lead.status == LeadStatus.REJECTED
     assert draft.reviewed_by == reviewer.user_id

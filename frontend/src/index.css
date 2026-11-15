@@ -273,3 +273,24 @@ tr.clickable:hover td { background: var(--hover); }
   .kv { grid-template-columns: 1fr; }
   td, th { padding: 10px 12px; }
 }
+
+/* ---------- dashboard ---------- */
+.stat-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.stat-icon { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; background: var(--blue-soft); color: var(--blue-text); flex: none; }
+.stat-icon .icon { width: 16px; height: 16px; }
+.needs-review { display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; min-width: 380px; }
+.needs-review > .icon { color: var(--amber); }
+.needs-review span { font-weight: 500; }
+.needs-review .link-plain { margin-left: auto; }
+.link-plain { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: var(--text); font: inherit; font-weight: 500; cursor: pointer; }
+.link-plain:hover { color: var(--blue); }
+.link-plain .icon { width: 16px; height: 16px; }
+.dash-flow { margin: 24px 0; padding: 14px 20px; }
+.dash-flow > .icon { width: 14px; height: 14px; }
+.dash-flow span { display: inline-flex; align-items: center; gap: 6px; }
+.dash-flow span .icon { width: 15px; height: 15px; color: var(--blue); }
+.dash-flow span .icon:last-child:not(:first-child) { color: var(--green); }
+.top-lead { display: flex; gap: 14px; align-items: center; padding: 12px 0; }
+.top-lead + .top-lead { border-top: 1px solid var(--line); }
+.top-lead .name { font-weight: 500; }
+@media (max-width: 760px) { .needs-review { min-width: 0; display: flex; } }

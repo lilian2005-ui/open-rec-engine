@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { RequireAdmin } from "./components/RequireAdmin";
 import { RequireAuth } from "./components/RequireAuth";
+import { DashboardPage } from "./pages/DashboardPage";
 import { JobDetailPage } from "./pages/JobDetailPage";
 import { JobsPage } from "./pages/JobsPage";
 import { LeadDetailPage } from "./pages/LeadDetailPage";
@@ -17,7 +18,8 @@ export default function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route element={<RequireAuth />}>
         <Route element={<Layout />}>
-          <Route index element={<Navigate to="/jobs" replace />} />
+          <Route index element={<Navigate to="/dashboard" replace />} />
+          <Route path="dashboard" element={<DashboardPage />} />
           <Route path="jobs" element={<JobsPage />} />
           <Route path="jobs/:jobId" element={<JobDetailPage />} />
           <Route path="leads" element={<LeadsPage />} />
@@ -27,7 +29,7 @@ export default function App() {
           </Route>
         </Route>
       </Route>
-      <Route path="*" element={<Navigate to="/jobs" replace />} />
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
 }

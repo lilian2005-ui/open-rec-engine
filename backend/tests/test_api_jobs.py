@@ -2,8 +2,12 @@
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
-from backend.db.models.enums import (EmploymentType, JobStatus, RemotePolicy, SalaryPeriod,
-                                     Seniority)
+from backend.db.models import PipelineRun
+from backend.db.models.enums import (EmploymentType, JobStatus, RemotePolicy, RunStatus,
+                                     SalaryPeriod, Seniority, TriggerType)
+from backend.db.normalize import content_hash
+from backend.discovery.service import upsert_job
+from backend.schemas.job import JobPosting as JobPostingIn
 from backend.tests.api_fixtures import (NOW, TEXT, client, make_company, make_job,  # noqa: F401
                                         reviewer)
 
@@ -150,6 +154,31 @@ def test_detail_of_a_discovered_job_has_no_requirements(client, reviewer, db):
 
     assert body["requirements"] is None
     assert body["fit_score"] is None
+
+
+def test_a_posting_that_changed_hides_its_old_requirements(client, reviewer, db):
+    """Q1: a changed posting goes back to discovered but keeps its old requirement
+    row. The API must not show that old fit score or those old requirements."""
+    company = make_company(db, "Acme Corp")
+    job = make_job(db, company, fit_score=92, required_skills=["react"])
+    run = PipelineRun(trigger_type=TriggerType.MANUAL, status=RunStatus.RUNNING, started_at=NOW)
+    db.add(run)
+    db.flush()
+    new_text = "The same role, with a new description."
+    changed = JobPostingIn(source=job.source, external_id=job.external_id, url=job.url,
+                           title=job.title, company_name=company.name,
+                           description_text=new_text,
+                           content_hash=content_hash(job.title, new_text))
+
+    assert upsert_job(db, changed, company.company_id, run.run_id) == "updated"
+    assert job.status == JobStatus.DISCOVERED
+    assert job.requirement.fit_score == 92             # the old row is still in the database
+
+    [item] = client.get("/jobs").json()["items"]
+    assert (item["status"], item["fit_score"]) == ("discovered", None)
+    detail = client.get(f"/jobs/{job.job_id}").json()
+    assert (detail["fit_score"], detail["requirements"]) == (None, None)
+    assert detail["description_text"] == new_text
 
 
 def test_unknown_job_is_404(client, reviewer, db):

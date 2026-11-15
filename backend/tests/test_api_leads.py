@@ -42,6 +42,18 @@ def test_highest_score_first_then_name_and_not_qualified_last(client, reviewer, 
     assert names(client.get("/leads")) == ["Acme Corp", "Alpha", "Zeta", "Aaa Not Qualified"]
 
 
+def test_not_qualified_is_last_even_with_the_same_score(client, reviewer, db):
+    """With lead_threshold 0 a qualified company can score 0, like a not_qualified one;
+    the not_qualified group still comes after it, whatever the names."""
+    make_lead(db, "Zzz Qualified", scores=(0,))
+    make_lead(db, "Bbb Not Qualified", scores=(40,), status=LeadStatus.NOT_QUALIFIED)
+    make_lead(db, "Aaa Not Qualified", scores=(40,), status=LeadStatus.NOT_QUALIFIED)
+    make_lead(db, "Mmm Approved", scores=(70,), status=LeadStatus.APPROVED)
+
+    assert names(client.get("/leads")) == ["Mmm Approved", "Zzz Qualified",
+                                           "Aaa Not Qualified", "Bbb Not Qualified"]
+
+
 def test_status_filter_and_pages(client, reviewer, db):
     make_lead(db, "Acme Corp", scores=(92,))
     make_lead(db, "Globex", scores=(85,), status=LeadStatus.DRAFT_READY)

@@ -15,6 +15,7 @@ NEW_ROUTES = [
     ("GET", "/leads"),
     ("GET", "/leads/1"),
     ("PATCH", "/leads/1/contact"),
+    ("POST", "/leads/1/draft/regenerate"),
     ("PATCH", "/drafts/1"),
     ("POST", "/drafts/1/approve"),
     ("POST", "/drafts/1/reject"),

@@ -2,29 +2,40 @@
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from backend.api.deps import get_current_user
 from backend.api.schemas import DraftEdit, DraftOut, RejectIn
-from backend.db.models import AppUser, OutreachDraft
+from backend.db.models import AppUser, Lead, OutreachDraft
 from backend.db.session import get_db
+from backend.drafts.service import CANNOT_REGENERATE_MESSAGE, latest_draft
 from backend.schemas.draft import count_words
 from backend.schemas.enums import DraftStatus, LeadStatus
 
 router = APIRouter(prefix="/drafts", tags=["drafts"])
 
 DECIDED = (DraftStatus.APPROVED, DraftStatus.REJECTED)
+NOT_QUALIFIED_MESSAGE = CANNOT_REGENERATE_MESSAGE[LeadStatus.NOT_QUALIFIED]
 
 
 def _reviewable(db: Session, draft_id: int) -> OutreachDraft:
-    """The draft, if a decision can still be made on it."""
+    """The draft, locked, if a decision can still be made on it.
+
+    The lead row is locked the same way ``save_draft`` (Regenerate) locks it, so two
+    decisions, or a decision and a new version, happen one after the other. The
+    draft and the lead are read again after the lock: what we read before it may
+    have been changed by the request we waited for.
+    """
     draft = db.get(OutreachDraft, draft_id)
     if draft is None:
         raise HTTPException(404, "Draft not found")
-    latest = db.scalar(select(func.max(OutreachDraft.version))
-                       .where(OutreachDraft.lead_id == draft.lead_id))
-    if draft.version != latest:
+    db.execute(select(Lead.lead_id).where(Lead.lead_id == draft.lead_id).with_for_update())
+    db.refresh(draft)
+    db.refresh(draft.lead)
+
+    latest = latest_draft(db, draft.lead)
+    if latest.draft_id != draft.draft_id:
         raise HTTPException(409, "Only the latest draft version can be reviewed")
     if draft.status in DECIDED:
         raise HTTPException(409, "This draft is already decided")
@@ -42,8 +53,9 @@ def _decide(db: Session, draft: OutreachDraft, user: AppUser, status: DraftStatu
             lead_status: LeadStatus) -> OutreachDraft:
     """Approve or reject: the draft and its company get the decision."""
     if draft.lead.status == LeadStatus.NOT_QUALIFIED:
-        # database rule: a lead with no qualifying job is not_qualified and nothing else
-        raise HTTPException(409, "This lead is no longer qualified")
+        # database rule: a lead with no qualifying job is not_qualified and nothing else.
+        # Nothing was changed; the lock ends when the request's session is closed.
+        raise HTTPException(409, NOT_QUALIFIED_MESSAGE)
     _record(draft, user, status)
     draft.lead.status = lead_status
     db.commit()

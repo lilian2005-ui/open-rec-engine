@@ -136,7 +136,7 @@ def test_a_lead_that_is_no_longer_qualified_cannot_be_decided(client, reviewer, 
                      client.post(f"/drafts/{draft.draft_id}/reject",
                                  json={"review_comment": "No"})):
         assert response.status_code == 409
-        assert response.json() == {"detail": "This lead is no longer qualified"}
+        assert response.json() == {"detail": "This company has no suitable jobs"}
     assert draft.status == DraftStatus.PENDING_REVIEW
     assert draft.reviewed_by is None
     assert lead.status == LeadStatus.NOT_QUALIFIED

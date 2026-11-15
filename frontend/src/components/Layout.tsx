@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import { TopBar } from "./TopBar";
+import { Sidebar } from "./Sidebar";
 
-/** Top bar + the screen of the current page. */
+/** Sidebar + the screen of the current page. */
 export function Layout() {
   return (
-    <>
-      <TopBar />
-      <main className="page">
-        <Outlet />
+    <div className="app">
+      <Sidebar />
+      <main className="main">
+        <div className="main-inner"><Outlet /></div>
       </main>
-    </>
+    </div>
   );
 }

@@ -4,7 +4,9 @@ import type { User } from "./types";
 export interface AuthState {
   user: User | null;
   loading: boolean; // true while we check if somebody is already logged in
+  isAdmin: boolean;
   login: (email: string, password: string) => Promise<void>;
+  register: (fullName: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 

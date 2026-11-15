@@ -8,12 +8,17 @@ from backend.api.routes.drafts import router as drafts_router
 from backend.api.routes.jobs import router as jobs_router
 from backend.api.routes.leads import router as leads_router
 from backend.api.routes.settings import router as settings_router
+from backend.config import settings
 
 app = FastAPI(title="Open Rec")
 
-# The frontend dev server (Vite). The token travels in the Authorization header.
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"],
-                   allow_methods=["*"], allow_headers=["*"])
+# Only the frontend address(es) from settings may call the API. Never "*".
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.CORS_ORIGINS,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(auth_router)
 app.include_router(jobs_router)

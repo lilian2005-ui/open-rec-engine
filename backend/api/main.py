@@ -7,6 +7,7 @@ from backend.api.routes.auth import router as auth_router
 from backend.api.routes.drafts import router as drafts_router
 from backend.api.routes.jobs import router as jobs_router
 from backend.api.routes.leads import router as leads_router
+from backend.api.routes.pipeline import router as pipeline_router
 from backend.api.routes.settings import router as settings_router
 from backend.config import settings
 
@@ -25,3 +26,4 @@ app.include_router(jobs_router)
 app.include_router(leads_router)
 app.include_router(drafts_router)
 app.include_router(settings_router)
+app.include_router(pipeline_router)

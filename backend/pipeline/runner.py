@@ -16,6 +16,7 @@ from sqlalchemy.orm import Session
 
 from backend.db.models import PipelineRun
 from backend.db.models.enums import RunStatus, TriggerType
+from backend.db.session import SessionLocal, get_engine
 from backend.discovery.himalayas import discover
 from backend.discovery.service import DiscoveryResult
 from backend.drafts.service import DraftRunResult, create_drafts
@@ -237,6 +238,17 @@ def run_pipeline(db: Session, started_by: int | None,
         return PipelineOutcome(run_id=None, status=None, message=ALREADY_RUNNING)
 
     # ---- 2. the five stages, 3. close the run ----
+    runlog = run_and_close(db, run, limit, raw_jobs=raw_jobs, client=client,
+                           scorer=scorer, call=call)
+    return PipelineOutcome(run_id=run.run_id, status=run.status,
+                           stages=runlog.stages, errors=runlog.errors)
+
+
+def run_and_close(db: Session, run: PipelineRun, limit: int | None = None, *,
+                  raw_jobs=None, client=None, scorer=None, call=None) -> RunLog:
+    """Steps 2 and 3 for a run that is already open: the five stages, then close it.
+    If anything stops the run in the middle, it is closed as ``failed`` and the error
+    is raised again."""
     runlog = RunLog()
     try:
         run_stages(db, run, runlog, limit, raw_jobs=raw_jobs, client=client,
@@ -245,5 +257,30 @@ def run_pipeline(db: Session, started_by: int | None,
     except BaseException as exc:  # BaseException: Ctrl+C (KeyboardInterrupt) too
         fail_run(db, run, runlog, exc)
         raise
-    return PipelineOutcome(run_id=run.run_id, status=run.status,
-                           stages=runlog.stages, errors=runlog.errors)
+    return runlog
+
+
+def execute_run(run_id: int, limit: int | None = None, *, db: Session | None = None,
+                raw_jobs=None, client=None, scorer=None, call=None) -> None:
+    """Run an already opened run to the end. Used by "Run pipeline" (P2-3): the
+    request opens the run and answers 202 at once, and this runs in the background.
+
+    It opens its own session, because the request's session is closed as soon as the
+    response is sent. ``db`` and the other keywords are for tests only.
+    """
+    own = db is None
+    if own:
+        db = SessionLocal(bind=get_engine())
+    try:
+        run = db.get(PipelineRun, run_id)
+        if run is None or run.status != RunStatus.RUNNING:
+            log.error("run %s cannot be executed: not found or not running", run_id)
+            return
+        try:
+            run_and_close(db, run, limit, raw_jobs=raw_jobs, client=client,
+                          scorer=scorer, call=call)
+        except Exception:  # already closed as failed; nobody waits for this task
+            log.exception("run %s stopped", run_id)
+    finally:
+        if own:
+            db.close()

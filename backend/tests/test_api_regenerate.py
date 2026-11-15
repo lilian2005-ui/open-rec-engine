@@ -10,7 +10,8 @@ from backend.llm import FakeLLM
 from backend.tests.api_fixtures import NOW, client, reviewer  # noqa: F401
 from backend.tests.test_drafts_service import answer, make_lead
 
-DRAFT_KEYS = {"draft_id", "subject", "body", "word_count", "version", "status"}
+DRAFT_KEYS = {"draft_id", "subject", "body", "word_count", "version", "status",
+              "review_comment", "reviewed_at", "reviewed_by"}
 
 
 def use_llm(*answers) -> FakeLLM:
@@ -45,6 +46,8 @@ def test_regenerate_gives_the_next_version_with_201(client, reviewer, db):
     body = response.json()
     assert set(body) == DRAFT_KEYS
     assert (body["version"], body["status"]) == (2, "pending_review")
+    # a new draft is not reviewed yet
+    assert (body["review_comment"], body["reviewed_at"], body["reviewed_by"]) == (None, None, None)
     assert lead.status == LeadStatus.DRAFT_READY
     assert v1.status == DraftStatus.PENDING_REVIEW            # older version untouched
     # the review page now shows the new version

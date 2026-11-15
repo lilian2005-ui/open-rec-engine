@@ -1,14 +1,14 @@
-"""Job routes (P2-4): the job feed and one job."""
+"""Job routes (P2-4): the job feed, one job, and the person's correction (FR-12)."""
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import or_, select
 from sqlalchemy.orm import Session, selectinload
 
 from backend.api.deps import get_current_user
 from backend.api.pagination import Page, PageParams, paginate
-from backend.api.schemas import JobDetail, JobListItem, RequirementsOut
+from backend.api.schemas import JobDetail, JobListItem, RequirementsEdit, RequirementsOut
 from backend.db.models import Company, JobPosting, JobRequirement
 from backend.db.session import get_db
-from backend.schemas.enums import JobStatus
+from backend.schemas.enums import ExtractionStatus, JobStatus
 
 router = APIRouter(prefix="/jobs", tags=["jobs"], dependencies=[Depends(get_current_user)])
 
@@ -67,3 +67,39 @@ def get_job(job_id: int, db: Session = Depends(get_db)):
         expires_at=job.expires_at,
         requirements=RequirementsOut.model_validate(requirement) if requirement else None,
     )
+
+
+@router.patch("/{job_id}/requirements", response_model=JobDetail)
+def edit_requirements(job_id: int, body: RequirementsEdit, db: Session = Depends(get_db)):
+    """A person corrects the extracted fields (FR-12). Only the sent fields change.
+
+    The old fit was worked out from the old values, so it is cleared and the job goes
+    back to ``parsed``: the next run scores it again with the corrected values.
+    """
+    job = db.get(JobPosting, job_id)
+    if job is None:
+        raise HTTPException(404, "Job not found")
+    requirement = _requirement(job)
+    if requirement is None:
+        raise HTTPException(404, "This job has no extracted requirements yet")
+
+    changes = body.model_dump(exclude_unset=True)
+    for field in ("required_skills", "preferred_skills"):
+        if field in changes and changes[field] is None:
+            changes[field] = []                  # the columns are lists, never null
+    # salary_min <= salary_max, also when only one of the two is sent
+    low = changes.get("salary_min", requirement.salary_min)
+    high = changes.get("salary_max", requirement.salary_max)
+    if low is not None and high is not None and low > high:
+        raise HTTPException(422, "salary_min cannot be greater than salary_max")
+
+    for field, value in changes.items():
+        setattr(requirement, field, value)
+    requirement.fit_score = None
+    requirement.fit_reason = None
+    requirement.flag_reason = None
+    # a person has checked the values, so the job no longer waits for review
+    requirement.extraction_status = ExtractionStatus.OK
+    job.status = JobStatus.PARSED
+    db.commit()
+    return get_job(job_id, db)

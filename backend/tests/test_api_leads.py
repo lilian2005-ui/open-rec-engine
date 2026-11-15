@@ -100,14 +100,41 @@ def test_detail_has_the_contract_shape(client, reviewer, db):
         ],
         # oldest first
         "history": [
-            {"run_id": older.run_id, "lead_score": 92, "created_at": "2026-11-13T12:00:00Z"},
-            {"run_id": newer.run_id, "lead_score": 97, "created_at": "2026-11-14T12:00:00Z"},
+            {"run_id": older.run_id, "lead_score": 92, "status": "draft_ready",
+             "created_at": "2026-11-13T12:00:00Z"},
+            {"run_id": newer.run_id, "lead_score": 97, "status": "draft_ready",
+             "created_at": "2026-11-14T12:00:00Z"},
         ],
-        # the newest version
+        # the newest version, not reviewed yet
         "draft": {"draft_id": latest.draft_id, "subject": "Subject v2",
                   "body": latest.body, "word_count": 150, "version": 2,
-                  "status": "pending_review"},
+                  "status": "pending_review", "review_comment": None, "reviewed_at": None,
+                  "reviewed_by": None},
     }
+
+
+def test_detail_shows_who_rejected_the_draft_when_and_why(client, reviewer, db):
+    lead = make_lead(db, status=LeadStatus.REJECTED)
+    draft = make_draft(db, lead, status=DraftStatus.REJECTED, reviewed_by=reviewer.user_id)
+    draft.review_comment = "Too generic"
+    db.flush()
+
+    shown = client.get(f"/leads/{lead.lead_id}").json()["draft"]
+
+    assert shown["reviewed_by"] == reviewer.full_name
+    assert shown["reviewed_at"] == "2026-11-14T12:00:00Z"
+    assert shown["review_comment"] == "Too generic"
+
+
+def test_history_has_the_status_of_each_run(client, reviewer, db):
+    lead = make_lead(db, status=LeadStatus.QUALIFIED)
+    make_snapshot(db, lead, lead_score=92, created_at=NOW - timedelta(days=1))
+    lead.status = LeadStatus.DRAFT_READY                   # the status at the second run
+    make_snapshot(db, lead, lead_score=97, created_at=NOW)
+
+    history = client.get(f"/leads/{lead.lead_id}").json()["history"]
+
+    assert [h["status"] for h in history] == ["qualified", "draft_ready"]
 
 
 def test_detail_without_draft_or_history(client, reviewer, db):

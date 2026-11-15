@@ -57,3 +57,8 @@ class PipelineRun(Base):
     leads: Mapped[list["Lead"]] = relationship(back_populates="run", passive_deletes="all")
     snapshots: Mapped[list["LeadSnapshot"]] = relationship(back_populates="run",
                                                            passive_deletes="all")
+
+    @property
+    def started_by_name(self) -> str | None:
+        """Who pressed "Run pipeline" (full name), for the API. None for a scheduled run."""
+        return self.started_by_user.full_name if self.started_by_user else None

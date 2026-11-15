@@ -1,13 +1,14 @@
 """Shapes the API returns and accepts, exactly as in Open_Rec_API_Contract_v1.md.
 Field names are the ones of the data contract and the database."""
 from datetime import datetime
-from typing import Annotated
+from typing import Annotated, Any
 
 from pydantic import AfterValidator, BaseModel, ConfigDict, EmailStr, Field, field_validator
 
-from backend.schemas.common import Schema, to_utc
+from backend.schemas.common import Schema, normalize_skills, to_utc
 from backend.schemas.enums import (DraftStatus, EmploymentType, JobStatus, LeadStatus,
-                                   RemotePolicy, SalaryPeriod, Seniority, Source, TriggerType)
+                                   RemotePolicy, RunStatus, SalaryPeriod, Seniority, Source,
+                                   TriggerType)
 
 # Always UTC in the JSON ("...Z"), whatever time zone the database session uses.
 UtcDatetime = Annotated[datetime, AfterValidator(to_utc)]
@@ -48,6 +49,41 @@ class RequirementsOut(Out):
     flag_reason: str | None
 
 
+class RequirementsEdit(Schema):
+    """PATCH /jobs/{job_id}/requirements (FR-12): a person corrects what stage 2
+    extracted. Only the fields that are sent change. Same limits as JobRequirements."""
+
+    required_skills: list[str] | None = None
+    preferred_skills: list[str] | None = None
+    seniority: Seniority | None = None
+    min_years_experience: int | None = Field(default=None, ge=0, le=50)
+    timezone_offsets: list[int] | None = None
+    employment_type: EmploymentType | None = None
+    remote_policy: RemotePolicy | None = None
+    salary_min: float | None = Field(default=None, ge=0)
+    salary_max: float | None = Field(default=None, ge=0)
+    salary_currency: str | None = Field(default=None, min_length=3, max_length=3)
+    salary_period: SalaryPeriod | None = None
+
+    @field_validator("required_skills", "preferred_skills")
+    @classmethod
+    def _skills(cls, v: list[str] | None) -> list[str] | None:
+        return None if v is None else normalize_skills(v)
+
+    @field_validator("salary_currency")
+    @classmethod
+    def _currency(cls, v: str | None) -> str | None:
+        return v.upper() if v else v
+
+    @field_validator("timezone_offsets")
+    @classmethod
+    def _offsets(cls, v: list[int] | None) -> list[int] | None:
+        for o in v or []:
+            if not -12 <= o <= 14:
+                raise ValueError(f"timezone offset {o} is outside -12..14")
+        return v
+
+
 class JobDetail(JobListItem):
     url: str
     description_text: str | None
@@ -86,6 +122,7 @@ class LeadJobOut(Out):
 class LeadHistoryOut(Out):
     run_id: int
     lead_score: int
+    status: LeadStatus
     created_at: UtcDatetime
 
 
@@ -96,6 +133,10 @@ class DraftOut(Out):
     word_count: int
     version: int
     status: DraftStatus
+    review_comment: str | None
+    reviewed_at: UtcDatetime | None
+    # the reviewer's full name, not the user id that the database column holds
+    reviewed_by: str | None = Field(default=None, validation_alias="reviewer_name")
 
 
 class LeadDetail(LeadListItem):
@@ -129,6 +170,27 @@ class DraftEdit(Schema):
 
 class RejectIn(Schema):
     review_comment: str = Field(min_length=1, max_length=1000)
+
+
+# ---------- pipeline ----------
+
+class RunStarted(BaseModel):
+    run_id: int
+
+
+class PipelineRunOut(Out):
+    run_id: int
+    status: RunStatus
+    trigger_type: TriggerType
+    # the full name of who pressed "Run pipeline"; null for a scheduled run
+    started_by: str | None = Field(default=None, validation_alias="started_by_name")
+    started_at: UtcDatetime
+    finished_at: UtcDatetime | None
+    jobs_fetched: int
+    jobs_new: int
+    jobs_updated: int
+    # as saved by the runner (P1-6): {"stages": [...], "errors": [...]}; null while running
+    errors: dict[str, Any] | None
 
 
 # ---------- settings ----------

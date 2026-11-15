@@ -51,3 +51,8 @@ class OutreachDraft(Base):
 
     lead: Mapped["Lead"] = relationship(back_populates="drafts")
     reviewer: Mapped["AppUser | None"] = relationship(back_populates="reviewed_drafts")
+
+    @property
+    def reviewer_name(self) -> str | None:
+        """The reviewer's full name for the API (``reviewed_by`` holds the id)."""
+        return self.reviewer.full_name if self.reviewer else None

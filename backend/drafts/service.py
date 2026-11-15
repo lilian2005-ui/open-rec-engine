@@ -226,6 +226,14 @@ def regenerate_draft(db: Session, lead_id: int, *, note: str | None = None,
     draft = write_draft(company.name, roles_of(db, lead),
                         contact_of(company.contact_name, company.contact_title),
                         candidate_names_of(db), call=call, note=note)
+
+    # The LLM takes seconds; a reviewer may have approved in the meantime. Lock the
+    # lead (as save_draft and the review routes do) and check its status again.
+    db.execute(select(Lead.lead_id).where(Lead.lead_id == lead.lead_id).with_for_update())
+    db.refresh(lead)
+    if lead.status not in CAN_REGENERATE:
+        raise CannotRegenerate(CANNOT_REGENERATE_MESSAGE.get(
+            lead.status, f"Cannot regenerate a draft for a {lead.status.value} lead"))
     try:
         return save_draft(db, lead, draft)
     except SQLAlchemyError:

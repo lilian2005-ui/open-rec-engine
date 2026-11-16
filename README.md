@@ -2,7 +2,7 @@
 
 An internal lead-qualification tool for **Simera**. It collects new job postings from Himalayas, uses an LLM (Gemini) to understand each job and score how well Simera's talent covers it, ranks the hiring **companies** as leads with a written reason, and drafts a first outreach message for human review. Nothing is sent from the system.
 
-**Team:** Lilian Abu Ramadan (Team Leader), Nadeen Shadeed, Shaymaa Kmail, Mohammed Ghanem
+**Team:** Lilian Abu Ramadan (Team Leader), Nadeen Shadeed, Shaima Kmail, Mohammed Ghanem
 
 ## Pipeline
 

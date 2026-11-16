@@ -42,15 +42,15 @@ docs/             Project report, data contract
 
 ### 1. Requirements
 
-- **Python 3.11**
-- **Node.js 22** (with npm)
+- **Python 3.11 or newer** (CI uses 3.11)
+- **Node.js 22 or newer** (with npm; CI uses 22)
 - **PostgreSQL** (running locally)
 - A **Gemini API key** from Google AI Studio
 
 ### 2. Clone and install the backend
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/lilian2005-ui/open-rec-engine.git
 cd open-rec-engine
 python -m venv .venv
 ```
@@ -83,7 +83,7 @@ Open `.env` and fill in each line:
 | `DATABASE_URL` | Your main PostgreSQL database, e.g. `postgresql+psycopg://postgres:PASSWORD@localhost:5432/openrec` |
 | `TEST_DATABASE_URL` | A **separate** database for pytest (its tables are dropped and recreated), e.g. `.../openrec_test` |
 | `GEMINI_API_KEY` | Your key from Google AI Studio |
-| `LLM_MODEL` | The Gemini model name to use |
+| `LLM_MODEL` | The Gemini model name, e.g. `gemini-3.5-flash-lite` |
 | `HIMALAYAS_API_KEY` | Optional. Free Himalayas key; works without it but with lower limits |
 | `JWT_SECRET` | A long random text used to sign login tokens. Generate one with the command below |
 | `JWT_EXPIRE_MINUTES` | How long a login lasts (default 480 = 8 hours) |
@@ -97,12 +97,14 @@ python -c "import secrets; print(secrets.token_urlsafe(48))"
 
 ### 4. Set up the database
 
-Create the two empty databases first (in psql or pgAdmin):
+Create the two empty databases first, as the `postgres` user:
 
-```sql
-CREATE DATABASE openrec;
-CREATE DATABASE openrec_test;
+```bash
+psql -U postgres -c "CREATE DATABASE openrec;"
+psql -U postgres -c "CREATE DATABASE openrec_test;"
 ```
+
+> **Windows:** if `psql` is "not recognized", either run the same SQL in **pgAdmin** (right-click the server -> Query Tool), or add `C:\Program Files\PostgreSQL\16\bin` to your PATH (Environment Variables -> Path) and open a new terminal.
 
 Then create the tables and load the starting data:
 
@@ -113,10 +115,12 @@ python -m backend.db.seed_candidates   # mock candidate pool from data/candidate
 python -m backend.db.create_admin      # asks for name, email and password of the first admin
 ```
 
+The admin password needs at least 8 characters, with both letters and numbers. It is not shown while you type.
+
 ### 5. Run the backend
 
 ```bash
-uvicorn backend.api.main:app --reload
+uvicorn backend.api.main:app --reload --reload-dir backend
 ```
 
 Open **http://localhost:8000/docs** to see and try the API.
@@ -144,6 +148,8 @@ Then:
 npm run dev
 ```
 
+Vite reads `.env.local` only at startup: after any change, stop `npm run dev` (Ctrl+C) and start it again.
+
 Open **http://localhost:5173** and log in with the admin you created in step 4.
 
 ### 7. First run
@@ -155,7 +161,7 @@ Run the pipeline once to fill the database with jobs, leads and drafts:
   ```bash
   python -m backend.pipeline.run --limit 5
   ```
-  `--limit 5` keeps the first run small (and cheap on the LLM).
+  `--limit 5` keeps the first run small (and cheap on the LLM). With only 5 jobs scored, **0 qualified leads** is normal.
 
 **Scheduled runs:** while the backend is running, a timer checks every hour whether a run is due. It is off by default (`run_mode = manual`). To turn it on, set `run_mode` to scheduled and choose `run_interval_hours` in Settings.
 
@@ -175,6 +181,8 @@ npm run lint
 npm run build
 ```
 
+`npm test` uses the fake data. If your `frontend/.env.local` has `VITE_USE_MOCK=false`, set it to `true` first (or delete `.env.local`), otherwise the tests call your real backend and fail.
+
 The same checks run automatically on GitHub for every Pull Request (`.github/workflows/ci.yml`).
 
 ## Demo without a backend
@@ -191,6 +199,17 @@ If you have a `.env.local`, make sure it says `VITE_USE_MOCK=true`, then restart
 
 Log in with **`lilian@simera.com`** and **any password**.
 
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `psql` is "not recognized" (Windows) | Use pgAdmin (right-click the server -> Query Tool), or add `C:\Program Files\PostgreSQL\16\bin` to PATH and open a new terminal |
+| `password authentication failed` | Check the user and password in `DATABASE_URL` in `.env` |
+| `create_admin` says "password must contain letters and numbers" | Use at least 8 characters with both letters and numbers |
+| The frontend still shows fake data | Set `VITE_USE_MOCK=false` in `frontend/.env.local`, then stop and restart `npm run dev` |
+| `npm test` fails with "Invalid email or password" | The tests need fake data: set `VITE_USE_MOCK=true` in `frontend/.env.local` |
+| Pipeline prints `503 UNAVAILABLE` | Gemini is busy; the pipeline retries automatically |
+| First run shows 0 qualified leads | Normal with `--limit 5`; run without `--limit` for real results |
 
 ## How we work
 

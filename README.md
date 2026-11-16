@@ -35,7 +35,10 @@ backend/
 frontend/         React + TypeScript review interface
 .github/          CI workflow (pytest + frontend lint, test, build)
 data/             candidates.json (mock candidate data)
-docs/             Project r## Getting started
+docs/             Project report, data contract
+```
+
+## Getting started
 
 ### 1. Requirements
 
@@ -188,8 +191,6 @@ If you have a `.env.local`, make sure it says `VITE_USE_MOCK=true`, then restart
 
 Log in with **`lilian@simera.com`** and **any password**.
 
-main:app --reload
-   ```
 
 ## How we work
 

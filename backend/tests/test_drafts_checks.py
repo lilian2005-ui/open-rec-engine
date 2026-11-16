@@ -32,6 +32,12 @@ def test_prompt_holds_roles_contact_and_about_simera():
     assert '{"subject": "...", "body": "..."}' in prompt
 
 
+def test_prompt_forbids_talking_about_weaknesses_of_the_pool():
+    # a real fit reason said "the overall pool depth is limited", and the draft copied it
+    prompt = build_draft_prompt("Acme Corp", ROLES, None)
+    assert "Never mention a limit, gap or weakness" in prompt
+
+
 def test_prompt_with_no_contact_says_null_and_has_no_note():
     prompt = build_draft_prompt("Acme Corp", ROLES, None)
     assert "CONTACT: null" in prompt

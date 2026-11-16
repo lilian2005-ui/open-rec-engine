@@ -2,7 +2,8 @@ from decimal import Decimal
 
 import pytest
 
-from backend.fit.scorer import FakeFitScorer, GeminiFitScorer, build_prompt, count_covering
+from backend.fit.scorer import (FakeFitScorer, GeminiFitScorer, build_prompt, count_covering,
+                                skills_needed_to_cover)
 from backend.llm import FakeLLM, LLMError
 
 REQ = {"title": "Senior React Developer", "seniority": "senior", "min_years_experience": 5,
@@ -49,13 +50,25 @@ def profile(skills, years):
     return {"skills": skills, "years_experience": years}
 
 
-def test_count_covering_needs_ALL_required_skills():
+def test_count_covering_needs_two_thirds_of_the_required_skills():
     pool = [
-        profile(["python", "sql", "pandas", "tableau"], 5),   # covers
-        profile(["python", "sql", "airflow"], 6),             # no pandas -> does not cover
-        profile(["python", "sql"], 4),                        # no pandas -> does not cover
+        profile(["python", "sql", "pandas", "tableau"], 5),   # 3 of 3 -> covers
+        profile(["python", "sql", "airflow"], 6),             # 2 of 3 -> covers
+        profile(["python", "airflow"], 4),                    # 1 of 3 -> does not cover
     ]
-    assert count_covering(DS, pool) == 1
+    assert count_covering(DS, pool) == 2
+
+
+@pytest.mark.parametrize("required, enough", [(1, 1), (2, 2), (3, 2), (6, 4), (9, 6), (14, 10)])
+def test_two_thirds_is_rounded_up(required, enough):
+    assert skills_needed_to_cover(required) == enough
+
+
+def test_a_real_job_with_soft_skills_and_languages_can_be_covered():
+    # stage 2 lists every ability, so a good profile rarely has ALL of them
+    job = {"required_skills": ["python", "llm", "rag", "json", "english", "german"],
+           "min_years_experience": None}
+    assert count_covering(job, [profile(["python", "llm", "rag", "english"], 3)]) == 1
 
 
 def test_count_covering_checks_the_years():
@@ -78,9 +91,10 @@ def test_count_covering_is_none_when_the_job_has_no_required_skills():
 
 
 def test_prompt_gives_the_ai_the_count_made_by_the_code():
-    pool = [profile(["python", "sql", "pandas"], 5), profile(["python", "sql"], 6)]
+    pool = [profile(["python", "sql", "pandas"], 5), profile(["python"], 6)]
     p = build_prompt({"title": "Data Scientist", **DS}, pool)
     assert "1 profile(s) cover the job" in p
+    assert "at least two thirds of the required skills" in p
     assert "<system_count>" in p and "do not count again" in p
 
 

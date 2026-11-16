@@ -203,8 +203,9 @@
 
 ```json
 { "lead_threshold": 60, "fetch_limit": 100, "himalayas_enabled": true,
-  "run_mode": "manual", "max_retries": 3 }
+  "run_mode": "manual", "max_retries": 3, "run_interval_hours": 32 }
 ```
+- `run_interval_hours` (P1-7): من 1 لـ 168. لما `run_mode` يكون `scheduled`، التشغيل المجدول بيبلّش لما يصير عمر آخر تشغيل خلص (يدوي أو مجدول) هالعدد من الساعات. وما بيبلّش إذا في تشغيل شغّال.
 
 ## Open Points
 

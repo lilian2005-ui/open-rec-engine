@@ -1,4 +1,5 @@
 """FastAPI application entry-point."""
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,8 +11,20 @@ from backend.api.routes.leads import router as leads_router
 from backend.api.routes.pipeline import router as pipeline_router
 from backend.api.routes.settings import router as settings_router
 from backend.config import settings
+from backend.pipeline import schedule
 
-app = FastAPI(title="Open Rec")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """P1-7: the hourly scheduled-run timer lives as long as the server.
+    TestClient(app) without ``with`` does not run this, so tests never start it."""
+    scheduler = schedule.start_scheduler()
+    yield
+    scheduler.shutdown()
+    schedule.log.info("Scheduler stopped")
+
+
+app = FastAPI(title="Open Rec", lifespan=lifespan)
 
 # Only the frontend address(es) from settings may call the API. Never "*".
 app.add_middleware(

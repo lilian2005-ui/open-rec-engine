@@ -29,6 +29,8 @@ Rules:
 - Explain how Simera's talent covers at least one of those roles, using the fit reasons.
   Never invent anything and never name a candidate.
 - Copy every number (profiles, years) exactly as the fit reasons give it. Never change it.
+- Use only what the fit reasons say Simera HAS. Never mention a limit, gap or weakness
+  of the talent pool (for example "limited pool depth" or "only one profile").
 - If CONTACT is null, start with "Hello {company_name} team"; otherwise use the contact's first name.
 - End with one clear call to action (a short call). No prices, no promises
   (never say that anyone is available, ready to start or can start immediately).

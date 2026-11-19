@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     TEST_DATABASE_URL: str = ""
     GEMINI_API_KEY: str = ""
     LLM_MODEL: str = ""
+    LLM_MIN_INTERVAL_SECONDS: float = 4.5   # free tier: 15 requests/minute
     HIMALAYAS_API_KEY: str = ""
     JWT_SECRET: str = ""
     JWT_EXPIRE_MINUTES: int = 480

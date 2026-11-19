@@ -72,3 +72,37 @@ def test_missing_settings_give_a_clear_error(monkeypatch):
     monkeypatch.setattr(llm_client.settings, "LLM_MODEL", "")
     with pytest.raises(LLMError, match="not set"):
         call_llm("p", {})
+
+def quota_error(text="Please retry in 48.5s."):
+    return llm_client.errors.ClientError(429, {"error": {"code": 429, "message": text,
+                                                         "status": "RESOURCE_EXHAUSTED"}})
+
+
+def test_quota_error_waits_as_long_as_gemini_asks():
+    waits = []
+    fake = FakeLLM(quota_error(), GOOD_FIT)
+    assert generate("p", FitOutput, call=fake, sleep=waits.append).fit_score == 92
+    assert waits == [49.5]                       # 48.5 s + 1 s margin
+
+
+def test_quota_error_without_a_time_waits_a_minute():
+    waits = []
+    generate("p", FitOutput, call=FakeLLM(quota_error("Quota exceeded"), GOOD_FIT),
+             sleep=waits.append)
+    assert waits == [60]
+
+
+def test_busy_server_waits_longer_each_time():
+    busy = llm_client.errors.ServerError(503, {"error": {"code": 503, "message": "high demand",
+                                                         "status": "UNAVAILABLE"}})
+    waits = []
+    generate("p", FitOutput, call=FakeLLM(busy, busy, GOOD_FIT), sleep=waits.append)
+    assert waits == [10, 20]
+
+
+def test_calls_are_spaced_out(monkeypatch):
+    monkeypatch.setattr(llm_client.settings, "LLM_MIN_INTERVAL_SECONDS", 4.5)
+    monkeypatch.setattr(llm_client, "_last_call", 100.0)
+    waits = []
+    llm_client.wait_for_slot(now=lambda: 101.0, sleep=waits.append)
+    assert waits == [3.5]                        # only 1 s since the last call

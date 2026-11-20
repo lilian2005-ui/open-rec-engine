@@ -21,3 +21,5 @@ Thumbs.db
 
 # Local data dumps (keep the folder, ignore big raw files)
 data/raw/
+
+.coverage

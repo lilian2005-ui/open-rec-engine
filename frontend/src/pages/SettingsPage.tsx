@@ -44,7 +44,7 @@ function SettingsForm({ initial, onSaved, lastRun }: { initial: Settings; onSave
 
   const changed = (Object.keys(form) as Array<keyof Settings>).filter((k) => form[k] !== initial[k]);
   const problem = api.settingsProblem(form);
-  const numberField = (key: "lead_threshold" | "fetch_limit" | "max_retries" | "run_interval_hours") => ({
+  const numberField = (key: "lead_threshold" | "fetch_limit" | "max_retries" | "run_interval_hours" | "run_at_hour") => ({
     type: "number", className: "input", value: Number.isNaN(form[key]) ? "" : (form[key] ?? ""),
     onChange: (e: { target: { value: string } }) => setForm({ ...form, [key]: e.target.value === "" ? NaN : Number(e.target.value) }),
   });
@@ -64,6 +64,8 @@ function SettingsForm({ initial, onSaved, lastRun }: { initial: Settings; onSave
     }
   }
 
+  // daily = a fixed hour is set (a number, or NaN while the field is being typed)
+  const daily = form.run_at_hour != null;
   const nextRun = form.run_mode === "scheduled" && lastRun?.finished_at && form.run_interval_hours
     ? new Date(new Date(lastRun.finished_at).getTime() + form.run_interval_hours * 3_600_000).toISOString() : null;
 
@@ -85,7 +87,25 @@ function SettingsForm({ initial, onSaved, lastRun }: { initial: Settings; onSave
           <option value="scheduled">Scheduled</option>
         </select>
       </div>
-      {form.run_mode === "scheduled" && form.run_interval_hours !== undefined && (
+      {form.run_mode === "scheduled" && (
+        <div className="field">
+          <label htmlFor="sched">Schedule</label>
+          <select id="sched" className="input" value={daily ? "daily" : "interval"}
+            onChange={(e) => setForm({ ...form, run_at_hour: e.target.value === "daily" ? 7 : null })}>
+            <option value="daily">Every day at a fixed hour</option>
+            <option value="interval">Every N hours</option>
+          </select>
+        </div>
+      )}
+      {form.run_mode === "scheduled" && daily && (
+        <div className="field">
+          <label htmlFor="at">Run at (hour, 0–23)</label><input id="at" min={0} max={23} {...numberField("run_at_hour")} />
+          {Number.isInteger(form.run_at_hour) && (
+            <p className="hint">Every day at {String(form.run_at_hour).padStart(2, "0")}:00 Gaza time (it may start up to 15 minutes later)</p>
+          )}
+        </div>
+      )}
+      {form.run_mode === "scheduled" && !daily && form.run_interval_hours !== undefined && (
         <div className="field">
           <label htmlFor="every">Run every (hours)</label><input id="every" min={1} max={168} {...numberField("run_interval_hours")} />
           {nextRun && <p className="hint">Next run: about {formatDate(nextRun)}</p>}

@@ -13,3 +13,4 @@ python-dotenv
 bcrypt
 PyJWT
 apscheduler>=3.10,<4
+tzdata>=2024.1

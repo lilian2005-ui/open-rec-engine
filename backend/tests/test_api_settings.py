@@ -5,7 +5,8 @@ from backend.discovery.service import load_settings
 from backend.tests.api_fixtures import admin, client, reviewer  # noqa: F401
 
 DEFAULTS = {"lead_threshold": 60, "fetch_limit": 100, "himalayas_enabled": True,
-            "run_mode": "manual", "max_retries": 3, "run_interval_hours": 32}
+            "run_mode": "manual", "max_retries": 3, "run_interval_hours": 32,
+            "run_at_hour": None}
 
 
 def row(db, key: str) -> AppSetting:
@@ -66,6 +67,21 @@ def test_run_interval_hours_is_saved_and_checked(client, admin, db):
     for hours in (0, 169):
         assert client.put("/settings", json={"run_interval_hours": hours}).status_code == 422
     assert row(db, "run_interval_hours").value == "24"
+
+
+def test_run_at_hour_is_saved_cleared_and_checked(client, admin, db):
+    response = client.put("/settings", json={"run_at_hour": 7})
+    assert response.status_code == 200
+    assert response.json() == {**DEFAULTS, "run_at_hour": 7}
+    assert row(db, "run_at_hour").value == "7"
+
+    response = client.put("/settings", json={"run_at_hour": None})
+    assert response.status_code == 200
+    assert response.json() == DEFAULTS
+    assert row(db, "run_at_hour").value == "none"
+
+    assert client.put("/settings", json={"run_at_hour": 24}).status_code == 422
+    assert row(db, "run_at_hour").value == "none"
 
 
 def test_remotive_and_unknown_fields_are_rejected(client, admin, db):

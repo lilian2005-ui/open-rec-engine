@@ -16,7 +16,7 @@ from backend.pipeline import schedule
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """P1-7: the hourly scheduled-run timer lives as long as the server.
+    """P1-7: the scheduled-run timer (every 15 minutes) lives as long as the server.
     TestClient(app) without ``with`` does not run this, so tests never start it."""
     scheduler = schedule.start_scheduler()
     yield

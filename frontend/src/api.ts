@@ -506,5 +506,8 @@ export function settingsProblem(s: Settings): string | null {
   if (s.run_interval_hours !== undefined && (!whole(s.run_interval_hours) || s.run_interval_hours < 1 || s.run_interval_hours > 168)) {
     return "Run every must be a whole number of hours from 1 to 168";
   }
+  if (s.run_at_hour != null && (!whole(s.run_at_hour) || s.run_at_hour < 0 || s.run_at_hour > 23)) {
+    return "Run at must be a whole hour from 0 to 23";
+  }
   return null;
 }

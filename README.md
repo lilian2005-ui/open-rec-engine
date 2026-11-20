@@ -163,7 +163,7 @@ Run the pipeline once to fill the database with jobs, leads and drafts:
   ```
   `--limit 5` keeps the first run small (and cheap on the LLM). With only 5 jobs scored, **0 qualified leads** is normal.
 
-**Scheduled runs:** while the backend is running, a timer checks every hour whether a run is due. It is off by default (`run_mode = manual`). To turn it on, set `run_mode` to scheduled and choose `run_interval_hours` in Settings.
+**Scheduled runs:** while the backend is running, a timer checks every 15 minutes whether a run is due. It is off by default (`run_mode = manual`). To turn it on, set `run_mode` to scheduled and choose `run_interval_hours` in Settings. To run once a day at a fixed hour instead, set `run_at_hour` (0-23, Gaza time); any run that started after that hour today, manual or scheduled, counts as today's run. On Render's free plan the server sleeps after 15 minutes without requests, and the timer sleeps with it, so a pinger (for example cron-job.org calling the backend's `/docs` every 10 minutes) keeps it awake.
 
 ## Tests
 

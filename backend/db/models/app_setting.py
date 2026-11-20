@@ -15,6 +15,7 @@ DEFAULT_SETTINGS = {
     "run_mode": "manual",
     "max_retries": "3",
     "run_interval_hours": "32",  # added by migration P1-7, not in data contract v1.1
+    "run_at_hour": "none",  # added by migration P1-7b, not in data contract v1.1
 }
 
 

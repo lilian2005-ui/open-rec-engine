@@ -183,4 +183,11 @@ describe("pipeline and settings", () => {
     await expect(api.updateSettings({ lead_threshold: 150 })).rejects.toMatchObject({ status: 422 });
     expect((await api.updateSettings({ lead_threshold: 80, run_mode: "scheduled" })).lead_threshold).toBe(80);
   });
+
+  it("checks run_at_hour: null or a whole hour from 0 to 23 (P1-7b)", () => {
+    const base = { lead_threshold: 60, fetch_limit: 100, himalayas_enabled: true, run_mode: "scheduled" as const,
+      max_retries: 3, run_interval_hours: 32 };
+    for (const ok of [null, 0, 23]) expect(api.settingsProblem({ ...base, run_at_hour: ok })).toBeNull();
+    for (const bad of [-1, 24, 7.5, NaN]) expect(api.settingsProblem({ ...base, run_at_hour: bad })).toMatch(/Run at/);
+  });
 });

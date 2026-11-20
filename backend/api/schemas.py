@@ -204,6 +204,7 @@ class SettingsOut(Out):
     run_mode: TriggerType
     max_retries: int
     run_interval_hours: int
+    run_at_hour: int | None
 
 
 class SettingsUpdate(Schema):
@@ -216,3 +217,4 @@ class SettingsUpdate(Schema):
     run_mode: TriggerType | None = None
     max_retries: int | None = None
     run_interval_hours: int | None = None
+    run_at_hour: int | None = None

@@ -173,6 +173,7 @@ export interface Settings {
   run_mode: RunMode;
   max_retries: number; // 0-5
   run_interval_hours?: number; // 1-168, from P1-7 (scheduled runs)
+  run_at_hour?: number | null; // 0-23 Gaza time, from P1-7b; null = every run_interval_hours
 }
 
 // ---------- users ----------

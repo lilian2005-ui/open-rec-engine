@@ -214,7 +214,7 @@ export const MOCK_RUNS: PipelineRun[] = [
 
 export const MOCK_SETTINGS: Settings = {
   lead_threshold: MOCK_THRESHOLD, fetch_limit: 100, himalayas_enabled: true,
-  run_mode: "manual", max_retries: 3, run_interval_hours: 32,
+  run_mode: "manual", max_retries: 3, run_interval_hours: 32, run_at_hour: null,
 };
 
 /** Mock accounts. In mock mode any password works; the email picks the user. */

@@ -302,7 +302,7 @@ def test_default_settings_are_seeded(db):
     rows = {s.key: s.value for s in db.scalars(select(AppSetting))}
     assert rows == {"lead_threshold": "60", "fetch_limit": "100", "himalayas_enabled": "true",
                     "remotive_enabled": "true", "run_mode": "manual", "max_retries": "3",
-                    "run_interval_hours": "32"}
+                    "run_interval_hours": "32", "run_at_hour": "none"}
 
 
 def test_seeded_settings_match_the_pydantic_defaults(db):
